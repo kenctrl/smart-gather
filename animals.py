@@ -30,7 +30,7 @@ CageBuildingBuilding = Relationship('bldg', RelationshipType.ONE_TO_ONE, Cage, C
 KeeperNameName = Relationship('name', RelationshipType.ONE_TO_ONE, Keeper, KeeperName)
 
 # Create schema
-schema = Schema(
+schema = ERSchema(
     [Animal, Cage, Keeper, AnimalName, AnimalAge, AnimalSpecies, CageTime, CageBuilding, KeeperName],
     [CageAnimalContains, KeeperCageKeeps, AnimalNameName, AnimalAgeAge, AnimalSpeciesSpecies, CageTimeFeedtime, CageBuildingBuilding, KeeperNameName]
 )

@@ -131,7 +131,7 @@ class Entity(Node):
     def __repr__(self):
         return f'{self.name}'
 
-class Schema:
+class ERSchema:
     '''
     An ER schema.
 
@@ -144,79 +144,7 @@ class Schema:
         self.edges = edges
     
     def __str__(self):
-        return f"Schema({self.vertices})"
+        return f"ERSchema({self.vertices})"
 
     def __repr__(self):
         return self.__str__()
-    
-    def create_schema(self) -> Dict[str, Table]:
-        tables: Dict[str, Table] = {}
-        seen: Set[str] = set()
-
-        for vertex in self.vertices:
-            if vertex.object_type == ObjectType.ENTITY:
-                if vertex.name not in seen:
-                    tables[vertex.name] = Table(vertex.name, [Column(f"{vertex.name.lower()}_id", int, KeyType.PRIMARY)])
-                    seen.add(vertex.name)
-                else:
-                    raise Exception(f'Entity {vertex.name} already exists')
-                    
-        for edge in self.edges:
-            if edge.parent.object_type == ObjectType.ENTITY and edge.parent.name in tables:
-                if edge.child.object_type == ObjectType.ENTITY:
-                    if edge.type == RelationshipType.ONE_TO_ONE:
-                        tables[edge.parent.name].columns.append(Column(f"{edge.child.name.lower()}_id", int, KeyType.FOREIGN))
-                    elif edge.type == RelationshipType.ONE_TO_MANY:
-                        tables[edge.child.name].columns.append(Column(f"{edge.parent.name.lower()}_id", int, KeyType.FOREIGN))
-                    elif edge.type == RelationshipType.MANY_TO_ONE:
-                        tables[edge.parent.name].columns.append(Column(f"{edge.child.name.lower()}_id", int, KeyType.FOREIGN))
-                    elif edge.type == RelationshipType.MANY_TO_MANY: # create new table
-                        new_table_name = f'{edge.parent.name}_{edge.child.name}'
-                        if new_table_name not in seen:
-                            tables[new_table_name] = Table(new_table_name, [
-                                Column(f"{edge.parent.name.lower()}_id", int, KeyType.FOREIGN),
-                                Column(f"{edge.child.name.lower()}_id", int, KeyType.FOREIGN)
-                            ])
-                            seen.add(new_table_name)
-                        else:
-                            raise Exception(f'Table {new_table_name} already exists')
-                    else:
-                        raise Exception(f'Unknown relationship type {edge.type}')
-                elif edge.child.object_type == ObjectType.ATTRIBUTE:
-                    tables[edge.parent.name].columns.append(Column(edge.child.name, edge.child.type))
-                else:
-                    raise Exception(f'Unknown object type {edge.child.object_type}')
-            else:
-                raise Exception(f'Input error: attributes should be children of entities')
-
-        return tables
-    
-    def create_json_schema(self) -> Dict[str, Dict]:
-        tables = self.create_schema()
-        json_schema: Dict[str, Dict] = {}
-        for table in tables.values():
-            json_schema[table.name] = {}
-            for column in table.columns:
-                json_schema[table.name][column.name] = column.type.__name__
-        return json_schema
-    
-    def print_schema(self):
-        result = '=' * 80 + '\n'
-        result += 'Schema:\n'
-        tables = self.create_schema()
-        for table in tables.values():
-            result += f'{table}\n'
-        result += '=' * 80 + '\n'
-        print(result)
-    
-    def print_entity_relations(self):
-        result = '=' * 80 + '\n'
-        result += 'Vertices:\n'
-        for vertex in self.vertices:
-            result += f'- {vertex.name}\n'
-        result += '\n'
-        result += 'Edges:\n'
-        for edge in self.edges:
-            result += f'- {edge}\n'
-        result += '=' * 80 + '\n'
-        print(result)
