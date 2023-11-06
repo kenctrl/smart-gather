@@ -1,0 +1,100 @@
+Electric Vehicle Population Data
+https://data.wa.gov/api/views/f6w7-q2d2/rows.csv?accessType=DOWNLOAD
+https://data.wa.gov/api/views/f6w7-q2d2/rows.json?accessType=DOWNLOAD
+
+
+U.S. Chronic Disease Indicators (CDI)
+https://data.cdc.gov/api/views/g4ie-h725/rows.csv?accessType=DOWNLOAD
+https://data.cdc.gov/api/views/g4ie-h725/rows.json?accessType=DOWNLOAD
+
+
+Death rates for suicide, by sex, race, Hispanic origin, and age: United States
+https://data.cdc.gov/api/views/9j2v-jamp/rows.csv?accessType=DOWNLOAD
+https://data.cdc.gov/api/views/9j2v-jamp/rows.json?accessType=DOWNLOAD
+
+
+Lottery Powerball Winning Numbers: Beginning 2010
+https://data.ny.gov/api/views/d6yy-54nr/rows.csv?accessType=DOWNLOAD
+https://data.ny.gov/api/views/d6yy-54nr/rows.json?accessType=DOWNLOAD
+
+
+Motor Vehicle Collisions - Crashes
+https://data.cityofnewyork.us/api/views/h9gi-nx95/rows.csv?accessType=DOWNLOAD
+https://data.cityofnewyork.us/api/views/h9gi-nx95/rows.json?accessType=DOWNLOAD
+
+
+Real Estate Sales 2001-2020 GL
+https://data.ct.gov/api/views/5mzw-sjtu/rows.csv?accessType=DOWNLOAD
+https://data.ct.gov/api/views/5mzw-sjtu/rows.json?accessType=DOWNLOAD
+
+
+Drug overdose death rates, by drug type, sex, age, race, and Hispanic origin: United States
+https://data.cdc.gov/api/views/95ax-ymtc/rows.csv?accessType=DOWNLOAD
+https://data.cdc.gov/api/views/95ax-ymtc/rows.json?accessType=DOWNLOAD
+
+
+Nutrition, Physical Activity, and Obesity - Behavioral Risk Factor Surveillance System
+https://data.cdc.gov/api/views/hn4x-zwk7/rows.csv?accessType=DOWNLOAD
+https://data.cdc.gov/api/views/hn4x-zwk7/rows.json?accessType=DOWNLOAD
+
+
+Lottery Mega Millions Winning Numbers: Beginning 2002
+https://data.ny.gov/api/views/5xaw-6ayf/rows.csv?accessType=DOWNLOAD
+https://data.ny.gov/api/views/5xaw-6ayf/rows.json?accessType=DOWNLOAD
+
+
+Crash Reporting - Drivers Data
+https://data.montgomerycountymd.gov/api/views/mmzv-x632/rows.csv?accessType=DOWNLOAD
+https://data.montgomerycountymd.gov/api/views/mmzv-x632/rows.json?accessType=DOWNLOAD
+
+
+Consumer Complaint Database
+https://files.consumerfinance.gov/ccdb/complaints.csv.zip
+https://files.consumerfinance.gov/ccdb/complaints.json.zip
+
+
+Conditions Contributing to COVID-19 Deaths, by State and Age, Provisional 2020-2023
+https://data.cdc.gov/api/views/hk9y-quqm/rows.csv?accessType=DOWNLOAD
+https://data.cdc.gov/api/views/hk9y-quqm/rows.json?accessType=DOWNLOAD
+
+
+Heart Disease Mortality Data Among US Adults (35+) by State/Territory and County
+https://data.cdc.gov/api/views/i2vk-mgdh/rows.csv?accessType=DOWNLOAD
+https://data.cdc.gov/api/views/i2vk-mgdh/rows.json?accessType=DOWNLOAD
+
+
+School Attendance by Student Group and District, 2021-2022
+https://data.ct.gov/api/views/t4hx-jd4c/rows.csv?accessType=DOWNLOAD
+https://data.ct.gov/api/views/t4hx-jd4c/rows.json?accessType=DOWNLOAD
+
+
+NCHS - Leading Causes of Death: United States
+https://data.cdc.gov/api/views/bi63-dtpu/rows.csv?accessType=DOWNLOAD
+https://data.cdc.gov/api/views/bi63-dtpu/rows.json?accessType=DOWNLOAD
+
+
+Health conditions among children under age 18, by selected characteristics: United States
+https://data.cdc.gov/api/views/2m93-xvra/rows.csv?accessType=DOWNLOAD
+https://data.cdc.gov/api/views/2m93-xvra/rows.json?accessType=DOWNLOAD
+
+
+Electric Vehicle Population Size History By County
+https://data.wa.gov/api/views/3d5d-sdqb/rows.csv?accessType=DOWNLOAD
+https://data.wa.gov/api/views/3d5d-sdqb/rows.json?accessType=DOWNLOAD
+
+
+Meteorite Landings
+https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD
+https://data.nasa.gov/api/views/gh4g-9sfh/rows.json?accessType=DOWNLOAD
+
+
+Traffic Crashes - Crashes
+https://data.cityofchicago.org/api/views/85ca-t3if/rows.csv?accessType=DOWNLOAD
+https://data.cityofchicago.org/api/views/85ca-t3if/rows.json?accessType=DOWNLOAD
+
+
+Obesity among children and adolescents aged 2–19 years, by selected characteristics: United States
+https://data.cdc.gov/api/views/9gay-j69q/rows.csv?accessType=DOWNLOAD
+https://data.cdc.gov/api/views/9gay-j69q/rows.json?accessType=DOWNLOAD
+
+
