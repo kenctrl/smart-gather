@@ -1,0 +1,5 @@
+https://data.nal.usda.gov/system/files/air_temp_final.csv
+https://data.nal.usda.gov/system/files/dewpoint_final.csv
+https://data.nal.usda.gov/system/files/incoming_solar_final.csv
+https://data.nal.usda.gov/system/files/precipitation_final.csv
+https://data.nal.usda.gov/system/files/relative_humidity_final.csv
