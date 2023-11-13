@@ -13,14 +13,14 @@ https://data.cdc.gov/api/views/9j2v-jamp/rows.csv?accessType=DOWNLOAD
 https://data.cdc.gov/api/views/9j2v-jamp/rows.json?accessType=DOWNLOAD
 
 
-Lottery Powerball Winning Numbers: Beginning 2010
-https://data.ny.gov/api/views/d6yy-54nr/rows.csv?accessType=DOWNLOAD
-https://data.ny.gov/api/views/d6yy-54nr/rows.json?accessType=DOWNLOAD
-
-
 Motor Vehicle Collisions - Crashes
 https://data.cityofnewyork.us/api/views/h9gi-nx95/rows.csv?accessType=DOWNLOAD
 https://data.cityofnewyork.us/api/views/h9gi-nx95/rows.json?accessType=DOWNLOAD
+
+
+Lottery Powerball Winning Numbers: Beginning 2010
+https://data.ny.gov/api/views/d6yy-54nr/rows.csv?accessType=DOWNLOAD
+https://data.ny.gov/api/views/d6yy-54nr/rows.json?accessType=DOWNLOAD
 
 
 Real Estate Sales 2001-2020 GL
