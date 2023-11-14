@@ -1,0 +1,12 @@
+https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD
+https://data.cityofchicago.org/api/views/85ca-t3if/rows.csv?accessType=DOWNLOAD
+https://data.townofcary.org/api/v2/catalog/datasets/cpd-crash-incidents/exports/csv
+https://www.eia.gov/consumption/residential/data/2015/csv/recs2015_public_v4.csv
+https://data.townofcary.org/api/v2/catalog/datasets/rdu-weather-history/exports/csv
+https://data.sfgov.org/api/views/2gdm-7nym/rows.csv?accessType=DOWNLOAD
+https://data.nal.usda.gov/system/files/air_temp_final.csv
+https://data.nal.usda.gov/system/files/dewpoint_final.csv
+https://data.nal.usda.gov/system/files/incoming_solar_final.csv
+https://data.nal.usda.gov/system/files/precipitation_final.csv
+https://data.nal.usda.gov/system/files/relative_humidity_final.csv
+https://data.cityofnewyork.us/api/views/ej9h-v6g2/rows.csv?accessType=DOWNLOAD
