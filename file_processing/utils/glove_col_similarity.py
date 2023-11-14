@@ -7,10 +7,11 @@ def get_glove_embedding_space():
     """
     Load a small set of GloVe word embeddings (https://nlp.stanford.edu/projects/glove/)
     """
-    filename = "glove.6B.50d.txt"
+
+    filename = "./file_processing/glove.6B.50d.txt"
     print("Reading embedding file...")
 
-    with open(filename, 'r', encoding="utf-8") as f:
+    with open(filename, 'r') as f:
         embedding_space = {}
         for line in f:
             values = line.split()
@@ -20,25 +21,22 @@ def get_glove_embedding_space():
 
     return embedding_space
 
-
 def get_phrase_embedding(phrase, embedding_space):
     """
     Sum embeddings for each word in `phrase` with embeddings extracted from 
     `embedding_space`
     """
+
     separators = r'[:;,!.\s_\-]+'
     words = re.split(separators, phrase)
     phrase_embedding = None
 
     for word in words:
         word = word.lower()
-
         if word not in embedding_space:
-            # print(f"word {word} not in embeddings dict")
             continue
 
         word_embedding = embedding_space[word]
-
         if phrase_embedding is None:
             phrase_embedding = word_embedding
         else:
@@ -46,20 +44,20 @@ def get_phrase_embedding(phrase, embedding_space):
 
     return phrase_embedding
 
-
 def get_all_matches(schema_headers, csv_headers, embedding_space):
     """
     Calculate and store pairwise cosine embedding similarity between desired 
-    schema headers and a given csv file's column headers.
+    schema headers and a given CSV file's column headers.
 
-    When both a schema and csv header aren't words found in the embedding space,
+    When both a schema and CSV header aren't words found in the embedding space,
     check if headers are exact string matches (common for technical terms)
     """
+
     if len(schema_headers) != len(set(schema_headers)):
         print("WARNING: duplicate column headers in schema, ")
 
     all_matches = defaultdict(list)
-
+    
     for schema_col in schema_headers:
         if schema_col not in all_matches:
             all_matches[schema_col] = []
@@ -72,6 +70,7 @@ def get_all_matches(schema_headers, csv_headers, embedding_space):
             if schema_embed is None and csv_embed is None:
                 if schema_col == csv_col: # headers can be symbols - if exact match, assign similarity of 1
                     all_matches[schema_col].append((csv_col, 1.0)) 
+            
             if schema_embed is not None and csv_embed is not None:
                 similarity = 1 - cosine(schema_embed, csv_embed)
                 all_matches[schema_col].append((csv_col, similarity))
@@ -85,8 +84,8 @@ def get_csv_matches(schema_headers, csv_headers, embedding_space):
     If no match exists for a given key, None is stored.  Otherwise, values are in 
     format (header: str, cosine_simarity: int)
     """
-    matches = get_all_matches(schema_headers, csv_headers, embedding_space)
 
+    matches = get_all_matches(schema_headers, csv_headers, embedding_space)
     best_matches = {}
 
     for schema_header, match_info in matches.items():
@@ -98,7 +97,6 @@ def get_csv_matches(schema_headers, csv_headers, embedding_space):
 
     return best_matches
 
-
 def main():
     embedding_space = get_glove_embedding_space(glove_file)
 
@@ -108,7 +106,7 @@ def main():
     best_matches = get_csv_matches(schema_headers, csv_headers, embedding_space)
     print('best matches:', best_matches)
 
-
 if __name__ == '__main__':
     main()
     
+
