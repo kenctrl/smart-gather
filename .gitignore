@@ -1,5 +1,6 @@
-file_processing/glove*
+file_processing/glove*.txt
 **/__pycache__/*
 output/*
 links.txt
-schema*
+schema*.csv
+**/.DS_Store
