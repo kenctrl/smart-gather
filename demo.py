@@ -1,6 +1,6 @@
 import json
 import openai
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "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"
 
 from er_types import *
 from helpers import run
@@ -32,8 +32,8 @@ def create_demo_schema():
         edges=[WeatherWaterYear, WeatherCalendarYear, WeatherRelativeHumidity]
     )
 
-    schema_filename = run('weather', schema)
-    return schema_filename
+    output_dir, schema_filename = run('weather', schema)
+    return output_dir, schema_filename
 
 
 def get_schema_headers(schema_file):
@@ -82,14 +82,14 @@ def get_scraper_topic(table_headers):
 
 
 def main():
-    schema_file = create_demo_schema()
+    output_dir, schema_file = create_demo_schema()
     schema_headers = get_schema_headers(schema_file)
     print("Schema headers:", schema_headers)
 
     topic = get_scraper_topic(schema_headers['non_default_pk'])
     print("Scraper topic:", topic)
     generate_scraped_urls(topic)
-    generate_smart_data(schema_headers, "./data_collection/links.txt")
+    generate_smart_data(output_dir, schema_headers, "./data_collection/links.txt")
 
 
 if __name__ == '__main__':
