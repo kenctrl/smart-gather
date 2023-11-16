@@ -14,7 +14,7 @@ def generate_scraped_urls(topic):
 	for format in ACCEPTABLE_FORMATS:
 		params += f"&res_format={format.upper()}"
 	URL = f"https://catalog.data.gov/dataset/?{params}"
-	print(f"Querying {URL}")
+	print(f"Querying {URL}\n")
 
 	res = requests.get(URL)
 

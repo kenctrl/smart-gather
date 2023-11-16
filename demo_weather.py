@@ -59,7 +59,7 @@ def get_schema_headers(schema_file):
         }
 
 
-def get_scraper_topic(table_headers):
+def get_scraper_topic(table_headers, n_words=3):
     """
     Given the column headers from our normalized tables as input, use OpenAI to 
     generate a topic for the scraper to search on
@@ -69,10 +69,10 @@ def get_scraper_topic(table_headers):
     gpt_input = " ".join(table_headers)
 
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=[
         {"role": "system",
-        "content": "Given this database schema:\n" + gpt_input + "\n\nGenerate an on-topic phrase for the database that is less than 6 words."}
+        "content": "Given this database schema:\n" + gpt_input + f"\n\nGenerate an on-topic phrase for the database that is less than {n_words} words."}
         ],
         temperature=0,
         max_tokens=256

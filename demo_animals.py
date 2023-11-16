@@ -65,6 +65,14 @@ def get_schema_headers(schema_file):
             'default_pk': default_pk,
             'non_default_pk': non_default_pk
         }
+    
+def get_scraper_topic_no_gpt(table_headers):
+    """
+    Given the column headers from our normalized tables as input, 
+    generate a topic for the scraper to search on
+    """
+
+    return " ".join(table_headers)
 
 def main():
     print("=" * 80 + "\n")
@@ -73,12 +81,30 @@ def main():
     print("Schema headers:", schema_headers)
     print()
 
-    topic = get_scraper_topic(schema_headers['non_default_pk'])
-    print("Scraper topic:", topic)
-    print()
+    n_words = 3
+    found_with_gpt = False
+    while n_words > 1:
+        topic = get_scraper_topic(schema_headers['non_default_pk'], n_words)
+        generate_scraped_urls(topic)
+        print("Scraper topic:", topic)
+        print()
+        try:
+            generate_smart_data(output_dir, schema_headers, "links.txt")
+            found_with_gpt = True
+            break
+        except:
+            n_words -= 1
+            print("Trying again with fewer words...")
+            print()
 
-    generate_scraped_urls(topic)
-    generate_smart_data(output_dir, schema_headers, "links.txt")
+    if not found_with_gpt:
+        print("Could not find a match with GPT-4. Trying without GPT-4..\n")
+        topic = get_scraper_topic_no_gpt(schema_headers['non_default_pk'])
+        print("Scraper topic:", topic)
+        print()
+        generate_scraped_urls(topic)
+        generate_smart_data(output_dir, schema_headers, "links.txt")
+
     print("=" * 80 + "\n")
 
 
