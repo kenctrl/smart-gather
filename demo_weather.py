@@ -82,14 +82,19 @@ def get_scraper_topic(table_headers):
 
 
 def main():
+    print("=" * 80 + "\n")
     output_dir, schema_file = create_demo_schema()
     schema_headers = get_schema_headers(schema_file)
     print("Schema headers:", schema_headers)
+    print()
 
     topic = get_scraper_topic(schema_headers['non_default_pk'])
     print("Scraper topic:", topic)
+    print()
+
     generate_scraped_urls(topic)
     generate_smart_data(output_dir, schema_headers, "./data_collection/links.txt")
+    print("=" * 80 + "\n")
 
 
 if __name__ == '__main__':
