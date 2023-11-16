@@ -1,7 +1,7 @@
 from er_types import *
 import json
 from helpers import run
-from demo_weather import get_schema_headers, get_scraper_topic
+from demo_weather import get_schema_headers, get_scraper_topic, get_scraper_topic_no_gpt
 from data_collection.scraper import generate_scraped_urls
 from file_processing.create_er_csv import generate_smart_data
 
@@ -66,13 +66,6 @@ def get_schema_headers(schema_file):
             'non_default_pk': non_default_pk
         }
     
-def get_scraper_topic_no_gpt(table_headers):
-    """
-    Given the column headers from our normalized tables as input, 
-    generate a topic for the scraper to search on
-    """
-
-    return " ".join(table_headers)
 
 def main():
     print("=" * 80 + "\n")

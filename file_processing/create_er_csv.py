@@ -175,7 +175,7 @@ def generate_smart_data(output_dir, schema_headers, scraped_url_file):
         print(all_metrics[url]['column_mapping'])
         print()
     
-    create_er_csv(output_dir, schema_headers, best_url, all_metrics[best_url]['column_mapping'])
+    create_er_csv(output_dir, schema_headers, best_url, all_metrics[best_url]['column_mapping']) # TODO: match types
 
 if __name__ == '__main__':
     scraped_url_file = "scrape_result_subset.txt"
