@@ -1,4 +1,5 @@
 file_processing/glove*.txt
+file_processing/scrape_result_subset.txt
 **/__pycache__/*
 output/*
 links.txt

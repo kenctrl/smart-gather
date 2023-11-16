@@ -1,4 +1,4 @@
-from smartgather.er_types import *
+from er_types import *
 import json
 from helpers import run
 from demo_weather import get_schema_headers, get_scraper_topic
@@ -78,7 +78,7 @@ def main():
     print()
 
     generate_scraped_urls(topic)
-    generate_smart_data(output_dir, schema_headers, "./data_collection/links.txt")
+    generate_smart_data(output_dir, schema_headers, "links.txt")
     print("=" * 80 + "\n")
 
 

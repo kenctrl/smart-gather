@@ -40,6 +40,9 @@ def get_headers(scrape_result_file, timeout=5):
                 continue
 
             csv_data = list(csv.reader(content.splitlines()))
+            if len(csv_data) == 0:
+                print(f"unable to get data at {url}")
+                continue
             headers = csv_data[0]
 
             yield url, headers
