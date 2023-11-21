@@ -7,8 +7,7 @@ def get_glove_embedding_space():
     """
     Load a small set of GloVe word embeddings (https://nlp.stanford.edu/projects/glove/)
     """
-
-    filename = "./file_processing/glove.6B.50d.txt"
+    filename = "../file_processing/glove.6B.50d.txt"
     print("Reading embedding file...")
 
     with open(filename, 'r') as f:
@@ -34,6 +33,7 @@ def get_phrase_embedding(phrase, embedding_space):
     for word in words:
         word = word.lower()
         if word not in embedding_space:
+            print(word, "not in embedding space")
             continue
 
         word_embedding = embedding_space[word]
@@ -43,6 +43,29 @@ def get_phrase_embedding(phrase, embedding_space):
             phrase_embedding += word_embedding
 
     return phrase_embedding
+
+def get_schema_header_match(schema_col, csv_headers, embedding_space):
+    """
+    Given a single schema column name and a file's set of column headers,
+    return the similarity between the schema column name and each column header
+    in the file in descending similarity score order.
+    """
+    
+    res = []
+    schema_embed = get_phrase_embedding(schema_col, embedding_space)
+        
+    for csv_col in csv_headers:
+        csv_embed = get_phrase_embedding(csv_col, embedding_space)
+
+        if schema_embed is None and csv_embed is None:
+            if schema_col == csv_col: # headers can be symbols - if exact match, assign similarity of 1
+                res.append((csv_col, 1.0)) 
+        
+        if schema_embed is not None and csv_embed is not None:
+            similarity = 1 - cosine(schema_embed, csv_embed)
+            res.append((csv_col, similarity))
+
+    return sorted(res, key = lambda tup: -tup[1])
 
 def get_all_matches(schema_headers, csv_headers, embedding_space):
     """
