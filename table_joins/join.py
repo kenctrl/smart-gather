@@ -114,7 +114,7 @@ def get_best_intersection(cols1, cols2, embedding_space):
     return best_col1, best_col2, highest_similarity
 
 
-def find_header_intersection(csv_headers, embedding_space):
+def find_header_intersection(csv_headers, embedding_space, num_files):
     """
     Given the set of files + column headers that we need to join across, find the column most similar
     across each pair that will be the target of the join
@@ -124,15 +124,28 @@ def find_header_intersection(csv_headers, embedding_space):
     """
 
     filenames = [fn for fn in csv_headers.keys()]
-    best_intersection = {}
+    intersections = []
 
     for i in range(len(filenames)):
         cols1 = csv_headers[filenames[i]]
         for j in range(i+1, len(filenames)):
             cols2 = csv_headers[filenames[j]]
-            best_intersection[(filenames[i], filenames[j])] = get_best_intersection(cols1, cols2, embedding_space)
+            col1, col2, similarity_score = get_best_intersection(cols1, cols2, embedding_space)
+            intersections.append([similarity_score, filenames[i], filenames[j], col1, col2])
 
-    return best_intersection
+    intersections.sort(reverse=True)
+    seen_cols = set()
+    final_intersections = {}
+
+    for similarity_score, f1, f2, col1, col2 in intersections:
+        if len(seen_cols) == num_files:
+            break
+        if f1 not in seen_cols or f2 not in seen_cols:
+            seen_cols.add(f1)
+            seen_cols.add(f2)
+            final_intersections[(f1, f2)] = tuple([col1, col2, similarity_score])
+
+    return final_intersections
 
 
 def get_matches(schema_headers, csv_headers):
@@ -171,11 +184,11 @@ def get_matches(schema_headers, csv_headers):
     return cols_to_matches, files_to_matches
 
 if __name__ == '__main__':
-    files = ["./weather.csv", "./states.csv"]
+    files = ["./weather.csv", "./states.csv", "./colors.csv"]
     headers = get_headers(files)
 
     embedding_space = get_glove_embedding_space()
-    schema_headers = ["rain", "temperature", "city"]
+    schema_headers = ["rain", "temperature", "color", "capital"]
     csv_headers = { file: headers[file] for file in files }
     cols_to_matches, files_to_matches = get_matches(schema_headers, csv_headers)
 
@@ -185,7 +198,7 @@ if __name__ == '__main__':
     print()
 
     if len(files_to_matches) > 1: # means that best columns are in different files, must execute a join
-        intersection = find_header_intersection(csv_headers, embedding_space) # assume just 2 files for now
+        intersection = find_header_intersection_new(csv_headers, embedding_space, len(files))
         print("intersection:", intersection)
 
-        join_tables(headers, files_to_matches, intersection, "joined.csv")
+        join_tables(headers, files_to_matches, intersection, "joined_colors.csv")
