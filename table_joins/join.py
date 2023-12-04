@@ -2,6 +2,8 @@ import csv
 import time
 import pandas as pd
 
+from multi_table_join import MultiTableJoin
+
 import sys
 sys.path.append("../")
 from file_processing.utils.glove_col_similarity import *
@@ -19,73 +21,17 @@ def get_headers(filenames):
     return headers_per_file
 
 
-def join_tables(headers, files_to_matches, intersection, result_filename):
+def join_tables(files_to_matches, intersection, schema_headers, result_filename):
     """
     Given the mapping of files to the columns that they are providing information for,
     and the intersection of the two files, join the two tables together
     """
 
-    # create a dictionary {file: {col: schema_col}}
-    projections = {}
-    for file, matches in files_to_matches.items():
-        projections[file] = {}
-        for match in matches:
-            col, schema_col = match
-            projections[file][col] = schema_col
-
-    # create the dataframes
-    file_pair, join_cols = next(iter(intersection.items()))
-    file1, file2 = file_pair
-    df1, df2 = pd.read_csv(file1), pd.read_csv(file2)
-    jc1, jc2, _ = join_cols
-
-    # reformat the dataframes to only contain the columns that we need
-    for col in df1.columns:
-        if col not in projections[file1] and col != jc1:
-            del df1[col]
-    for col in df2.columns:
-        if col not in projections[file2] and col != jc2:
-            del df2[col]
-    df1.rename(columns=projections[file1], inplace=True)
-    df2.rename(columns=projections[file2], inplace=True)
-
-    # create a dictionary {val: [indices]} for the values in the join column of file1
-    join_col_vals1 = {}
-    for i, val in enumerate(df1[jc1]):
-        if val in join_col_vals1:
-            join_col_vals1[val].append(i)
-        else:
-            join_col_vals1[val] = [i]
-
-    # iterate through all the rows of the first file and perform hash join
-    # with the second file
-    with open(result_filename, 'w', newline='') as f:
-        csv_writer = csv.writer(f)
-
-        # write the header
-        columns = list(df1.columns) + list(df2.columns)
-        columns.remove(jc2)
-        csv_writer.writerow(columns)
-
-        # write the rows
-        # TODO: add primary key column?
-        for i, row in df2.iterrows():
-            if row[jc2] in join_col_vals1:
-                for index in join_col_vals1[row[jc2]]:
-                    columns = list(df1.iloc[index]) + list(row.drop(jc2))
-                    csv_writer.writerow(columns)
-
-
-def get_headers(filenames):
-    headers_per_file = {}
-    for filename in filenames:
-        with open(filename, 'r') as file:
-            csv_reader = csv.reader(file, delimiter="\n")
-            header = next(csv_reader)[0].split(',')
-            header = [col.replace('\ufeff', '') for col in header]
-            headers_per_file[filename] = header
-
-    return headers_per_file
+    join = MultiTableJoin(intersection, schema_headers, files_to_matches)
+    print(join)
+    result = join.get_result(result_filename)
+    if result is None:
+        print("Could not join tables")
 
 
 def get_best_intersection(cols1, cols2, embedding_space):
@@ -198,7 +144,8 @@ if __name__ == '__main__':
     print()
 
     if len(files_to_matches) > 1: # means that best columns are in different files, must execute a join
-        intersection = find_header_intersection_new(csv_headers, embedding_space, len(files))
+        intersection = find_header_intersection(csv_headers, embedding_space, len(files))
         print("intersection:", intersection)
+        print()
 
-        join_tables(headers, files_to_matches, intersection, "joined_colors.csv")
+        join_tables(files_to_matches, intersection, schema_headers, "joined_colors_2.csv")
