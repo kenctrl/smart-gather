@@ -130,11 +130,11 @@ def get_matches(schema_headers, csv_headers):
     return cols_to_matches, files_to_matches
 
 if __name__ == '__main__':
-    files = ["./weather.csv", "./states.csv", "./colors.csv"]
+    files = ["./boys_to_girls.csv", "./women_in_parliment.csv"]
     headers = get_headers(files)
 
     embedding_space = get_glove_embedding_space()
-    schema_headers = ["rain", "temperature", "color", "capital"]
+    schema_headers = ["year", "country", "ratio"]
     csv_headers = { file: headers[file] for file in files }
     cols_to_matches, files_to_matches = get_matches(schema_headers, csv_headers)
 
@@ -148,4 +148,4 @@ if __name__ == '__main__':
         print("intersection:", intersection)
         print()
 
-        join_tables(files_to_matches, intersection, schema_headers, "joined_colors_2.csv")
+        join_tables(files_to_matches, intersection, schema_headers, "UN_dataset_join.csv")
