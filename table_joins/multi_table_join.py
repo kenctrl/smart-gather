@@ -75,13 +75,16 @@ class MultiTableJoin:
 			self.column_to_new_name[filename][col] = new_col_name
 			df.rename(columns={col: new_col_name}, inplace=True)
 
-	def get_result(self, write_to_file_name=None) -> pd.DataFrame:
+	def get_result(self, write_to_file_name=None, limit_rows=None) -> pd.DataFrame:
 		if isinstance(self.result, str):
 			print(self.result)
 			return None
 		elif self.result is not None:
 			if write_to_file_name is not None:
-				self.result.to_csv(write_to_file_name, index=False)
+				result = self.result
+				if limit_rows is not None and len(result) > limit_rows:
+					result = result[:limit_rows]
+				result.to_csv(write_to_file_name, index=False)
 			return self.result
 
 		seen_files = set()
@@ -122,9 +125,12 @@ class MultiTableJoin:
 
 				# join the two tables
 				join_cols = self.intersections[file][other_file]
-				join_col = self.get_current_column_name(file, join_cols[0])
-				other_join_col = self.get_current_column_name(other_file, join_cols[1])
-				result = result.merge(other_df, left_on=join_col, right_on=other_join_col, how='inner')
+
+				if isinstance(join_cols, tuple):  # single column join
+					join_cols = [join_cols]
+				left_cols = [self.get_current_column_name(file, col) for col, _, _ in join_cols]
+				right_cols = [self.get_current_column_name(other_file, col) for _, col, _ in join_cols]
+				result = result.merge(other_df, left_on=left_cols, right_on=right_cols, how='inner')
 
 				seen_files.add(other_file)
 
@@ -156,14 +162,16 @@ class MultiTableJoin:
 
 		self.result = result
 
+		if limit_rows is not None and len(result) > limit_rows:
+			result = result[:limit_rows]
+
 		if write_to_file_name is not None:
-			self.result.to_csv(write_to_file_name, index=False)
+			result.to_csv(write_to_file_name, index=False)
 
 		return result
 
 	def __str__(self) -> str:
-		s = f"=====MultiTableJoin=====\n"
+		s = f"MultiTableJoin:\n"
 		s += f"intersections={self.intersections},\n"
 		s += f"projections={self.projections}\n"
-		s += "=========="
 		return s

@@ -9,16 +9,14 @@ sys.path.append("../")
 from file_processing.utils.glove_col_similarity import *
 sys.path.pop()
 
-def get_headers(filenames):
-    headers_per_file = {}
-    for filename in filenames:
-        with open(filename, 'r') as file:
-            csv_reader = csv.reader(file, delimiter="\n")
-            header = next(csv_reader)[0].split(',')
-            header = [col.replace('\ufeff', '') for col in header]
-            headers_per_file[filename] = header
+embedding_space = get_glove_embedding_space()
 
-    return headers_per_file
+
+def get_headers(filename):
+    with open(filename, mode='r', encoding='utf-8-sig') as file:
+        csv_reader = csv.reader(file, delimiter="\n")
+        header = next(csv_reader)[0].split(',')
+        return header
 
 
 def join_tables(files_to_matches, intersection, schema_headers, result_filename):
@@ -156,23 +154,35 @@ def get_matches(schema_headers, csv_headers):
 
     return cols_to_matches, files_to_matches
 
-if __name__ == '__main__':
-    files = ["./boys_to_girls.csv", "./women_in_parliment.csv"]
-    headers = get_headers(files)
 
-    embedding_space = get_glove_embedding_space()
-    schema_headers = ["year", "country", "ratio"]
-    csv_headers = { file: headers[file] for file in files }
+def plan_join(files, schema_headers, print_results=False):
+    """
+    Given the set of files and the schema headers, plan the join by finding the best column match
+    for each schema header across all files
+
+    Return format: dict mapping schema header -> (file best match is found in, name of best column match, similarity score)
+    """
+
+    csv_headers = { file: get_headers(file) for file in files }
     cols_to_matches, files_to_matches = get_matches(schema_headers, csv_headers)
 
-    print("cols to matches:", cols_to_matches)
-    print()
-    print("files to matches:", files_to_matches)
-    print()
-
-    if len(files_to_matches) > 1: # means that best columns are in different files, must execute a join
-        intersection = find_header_intersection(csv_headers, embedding_space, len(files))
-        print("intersection:", intersection)
+    if print_results:
+        print("cols to matches:", cols_to_matches)
+        print()
+        print("files to matches:", files_to_matches)
         print()
 
-        join_tables(files_to_matches, intersection, schema_headers, "UN_dataset_join.csv")
+    plan = {
+        'cols_to_matches': cols_to_matches,
+        'files_to_matches': files_to_matches,
+        'intersections': None
+    }
+
+    if len(files_to_matches) > 1:
+        plan['intersections'] = find_header_intersection(csv_headers, embedding_space, len(files_to_matches))
+
+        if print_results:
+            print("intersections:", plan['intersections'])
+            print()
+
+    return plan
