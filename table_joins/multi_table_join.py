@@ -136,8 +136,7 @@ class MultiTableJoin:
 
 				# rank the join columns by cardinality
 				i = 0
-				left_cols_ranked = []
-				right_cols_ranked = []
+				cols_ranked = []
 				while i < len(left_cols):
 					# skip if column types don't match
 					if result[left_cols[i]].dtype != other_df[right_cols[i]].dtype:
@@ -152,28 +151,28 @@ class MultiTableJoin:
 					card = len(left_df.merge(right_df, left_on=[left_cols[i]], right_on=[right_cols[i]], how='inner'))
 
 					if card > 0:
-						left_cols_ranked.append((card, left_cols[i]))
-						right_cols_ranked.append((card, right_cols[i]))
+						cols_ranked.append((card, i))
 
 					i += 1
 
 				# if no columns on which to join, fail
-				if len(left_cols_ranked) == 0:
+				if len(cols_ranked) == 0:
 					error = f"ERROR: no columns on which to join {file} and {other_file}"
 					print(error)
 					self.result = error
 					return None
 
 				# choose up to 2 columns to join on, ranked by length of resulting dataframe
-				left_cols_ranked = [jc[1] for jc in sorted(left_cols_ranked, reverse=True)]
-				if len(left_cols_ranked) > 2:
-					left_cols_ranked = left_cols_ranked[:2]
-				right_cols_ranked = [jc[1] for jc in sorted(right_cols_ranked, reverse=True)]
-				if len(right_cols_ranked) > 2:
-					right_cols_ranked = right_cols_ranked[:2]
+				cols_ranked = [jc[1] for jc in sorted(
+					cols_ranked,
+					key=lambda col: (col[0], join_cols[col[1]][2]),
+					reverse=True
+				)]
+				if len(cols_ranked) > 2:
+					cols_ranked = cols_ranked[:2]
 
-				left_cols = [jc for jc in left_cols if jc in left_cols_ranked]
-				right_cols = [jc for jc in right_cols if jc in right_cols_ranked]
+				left_cols = [jc for i, jc in enumerate(left_cols) if i in cols_ranked]
+				right_cols = [jc for i, jc in enumerate(right_cols) if i in cols_ranked]
 				print("joining", file, "and", other_file, "on", left_cols, "and", right_cols)
 				print()
 

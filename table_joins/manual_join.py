@@ -49,7 +49,7 @@ def get_best_intersections(cols1, cols2, embedding_space):
         c1_embedding = get_phrase_embedding(c1, embedding_space)
         for c2 in cols2:
             if c1 == '' or c2 == '': # csv file allows for empty header
-                continue 
+                continue
             c2_embedding = get_phrase_embedding(c2, embedding_space)
 
             if c1 == c2: # found perfect match, return early
@@ -65,7 +65,7 @@ def get_best_intersections(cols1, cols2, embedding_space):
 
     for i in range(len(pairwise_similarities)):
         filtered_similarities.append(pairwise_similarities[i])
-        if pairwise_similarities[i][0] != 1: # only get first non-perfect join
+        if pairwise_similarities[i][0] < 0.9: # only get first non-perfect join
             break
 
     return filtered_similarities
@@ -96,8 +96,8 @@ def find_header_intersection(csv_headers, embedding_space, num_files):
 
     # move intersections from list format sorted by similarity to keyed by the file pair
     # allows us to get multiple cols to potentially join on given a file pair
-    file_based_intersections = {} 
-    
+    file_based_intersections = {}
+
     for sim, f1, f2, c1, c2 in intersections:
         if (f1, f2) not in file_based_intersections:
             file_based_intersections[(f1, f2)] = []
@@ -105,7 +105,7 @@ def find_header_intersection(csv_headers, embedding_space, num_files):
 
     # used to make sure we don't do unnecessary joins between files
     # ex: files A, B, C.  if we join A with C and B with C, no need to rejoin A + B
-    seen_cols = set() 
+    seen_cols = set()
     final_intersections = {}
 
     for similarity_score, f1, f2, col1, col2 in intersections:

@@ -1,0 +1,101 @@
+year,country,percentage women,ratio girls
+2005,Northern Africa,10.8,0.93
+2005,Northern Africa,10.8,0.99
+2005,Northern Africa,10.8,1.07
+2010,Northern Africa,13.2,0.95
+2010,Northern Africa,13.2,0.98
+2010,Northern Africa,13.2,1.07
+2015,Northern Africa,24.6,0.97
+2015,Northern Africa,24.6,0.99
+2015,Northern Africa,24.6,1.06
+2018,Northern Africa,22.6,0.97
+2018,Northern Africa,22.6,1.0
+2018,Northern Africa,22.6,1.07
+2019,Northern Africa,22.7,0.98
+2019,Northern Africa,22.7,1.01
+2019,Northern Africa,22.7,1.09
+2020,Northern Africa,20.1,0.98
+2020,Northern Africa,20.1,1.01
+2020,Northern Africa,20.1,1.1
+2005,Sub-Saharan Africa,14.4,0.88
+2005,Sub-Saharan Africa,14.4,0.78
+2005,Sub-Saharan Africa,14.4,0.78
+2010,Sub-Saharan Africa,18.4,0.93
+2010,Sub-Saharan Africa,18.4,0.82
+2010,Sub-Saharan Africa,18.4,0.78
+2015,Sub-Saharan Africa,22.6,0.96
+2015,Sub-Saharan Africa,22.6,0.86
+2015,Sub-Saharan Africa,22.6,0.81
+2018,Sub-Saharan Africa,23.6,0.96
+2018,Sub-Saharan Africa,23.6,0.89
+2018,Sub-Saharan Africa,23.6,0.84
+2019,Sub-Saharan Africa,23.9,0.96
+2019,Sub-Saharan Africa,23.9,0.89
+2019,Sub-Saharan Africa,23.9,0.85
+2020,Sub-Saharan Africa,24.3,0.96
+2020,Sub-Saharan Africa,24.3,0.89
+2020,Sub-Saharan Africa,24.3,0.86
+2005,Northern America,17.5,0.99
+2005,Northern America,17.5,1.01
+2005,Northern America,17.5,1.05
+2010,Northern America,19.0,1.0
+2010,Northern America,19.0,1.01
+2010,Northern America,19.0,1.02
+2015,Northern America,21.8,1.0
+2015,Northern America,21.8,1.01
+2015,Northern America,21.8,1.02
+2018,Northern America,22.8,1.0
+2018,Northern America,22.8,0.99
+2018,Northern America,22.8,0.99
+2019,Northern America,25.0,1.01
+2019,Northern America,25.0,0.99
+2019,Northern America,25.0,0.98
+2020,Northern America,25.9,1.01
+2020,Northern America,25.9,0.99
+2020,Northern America,25.9,0.98
+2005,Latin America & the Caribbean,19.0,0.97
+2005,Latin America & the Caribbean,19.0,1.07
+2005,Latin America & the Caribbean,19.0,1.12
+2010,Latin America & the Caribbean,22.7,0.97
+2010,Latin America & the Caribbean,22.7,1.08
+2010,Latin America & the Caribbean,22.7,1.16
+2015,Latin America & the Caribbean,27.4,0.98
+2015,Latin America & the Caribbean,27.4,1.05
+2015,Latin America & the Caribbean,27.4,1.11
+2018,Latin America & the Caribbean,29.5,0.99
+2018,Latin America & the Caribbean,29.5,1.04
+2018,Latin America & the Caribbean,29.5,1.1
+2019,Latin America & the Caribbean,31.6,0.98
+2019,Latin America & the Caribbean,31.6,1.05
+2019,Latin America & the Caribbean,31.6,1.1
+2020,Latin America & the Caribbean,32.1,0.99
+2020,Latin America & the Caribbean,32.1,1.05
+2020,Latin America & the Caribbean,32.1,1.09
+2005,Central Asia,11.6,0.99
+2005,Central Asia,11.6,0.96
+2005,Central Asia,11.6,0.98
+2010,Central Asia,20.0,0.99
+2010,Central Asia,20.0,0.98
+2010,Central Asia,20.0,1.0
+2015,Central Asia,21.8,0.99
+2015,Central Asia,21.8,0.99
+2015,Central Asia,21.8,1.01
+2018,Central Asia,21.3,0.99
+2018,Central Asia,21.3,0.98
+2018,Central Asia,21.3,0.98
+2019,Central Asia,21.1,0.99
+2019,Central Asia,21.1,0.99
+2019,Central Asia,21.1,1.0
+2020,Central Asia,25.4,0.99
+2020,Central Asia,25.4,0.98
+2020,Central Asia,25.4,0.98
+2005,Eastern Asia,18.1,1.0
+2005,Eastern Asia,18.1,0.98
+2005,Eastern Asia,18.1,0.98
+2010,Eastern Asia,18.7,0.98
+2010,Eastern Asia,18.7,1.0
+2010,Eastern Asia,18.7,0.99
+2015,Eastern Asia,20.4,1.0
+2015,Eastern Asia,20.4,1.02
+2015,Eastern Asia,20.4,1.04
+2018,Eastern Asia,20.9,1.01

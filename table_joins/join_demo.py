@@ -22,8 +22,8 @@ examples = [
 	{
 		'name': '2 real files, exact match',
 		'files': ["boys_to_girls.csv", "women_in_parliment.csv"],
-		'schema_headers': ["year", "region", "name", "ratio"],
-		'output_file': 'UN_dataset_join.csv'
+		'schema_headers': ["year", "country", "percentage women", "ratio girls"],
+		'output_file': 'UN_dataset_join_gpt_headers.csv'
 	},
 ]
 
