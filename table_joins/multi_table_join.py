@@ -43,17 +43,17 @@ class MultiTableJoin:
 		if filename not in self.dfs:
 			if can_create:
 				df = pd.read_csv(filename)
-				# remove unneeded columns
-				if self.projections is not None:
-					for col in df.columns:
-						# check if the column is needed for a join
-						needed_for_join = False
-						for other_file in self.intersections[filename]:
-							if col in self.intersections[filename][other_file]:
-								needed_for_join = True
-								break
-						if col not in self.projections[filename] and not needed_for_join:
-							del df[col]
+				# # remove unneeded columns  NOTE: will break multi column joins in its current form
+				# if self.projections is not None:
+				# 	for col in df.columns:
+				# 		# check if the column is needed for a join
+				# 		needed_for_join = False
+				# 		for other_file in self.intersections[filename]:
+				# 			if col in self.intersections[filename][other_file]:
+				# 				needed_for_join = True
+				# 				break
+				# 		if col not in self.projections[filename] and not needed_for_join:
+				# 			del df[col]
 				self.dfs[filename] = df
 			else:
 				return None
@@ -128,8 +128,33 @@ class MultiTableJoin:
 
 				if isinstance(join_cols, tuple):  # single column join
 					join_cols = [join_cols]
-				left_cols = [self.get_current_column_name(file, col) for col, _, _ in join_cols]
-				right_cols = [self.get_current_column_name(other_file, col) for _, col, _ in join_cols]
+				left_cols = [self.get_current_column_name(file, jc[0]) for jc in join_cols]
+				right_cols = [self.get_current_column_name(other_file, jc[1]) for jc in join_cols]
+
+				# choose up to 2 columns to join on, ranked by length of resulting dataframe
+				i = 0
+				left_cols_ranked = []
+				right_cols_ranked = []
+				while i < len(left_cols):
+					# ignore empty rows in the join columns
+					left_df = result.dropna(axis=0, how="any", subset=[left_cols[i]])
+					right_df = other_df.dropna(axis=0, how="any", subset=[right_cols[i]])
+
+					# find the number of rows in the join
+					card = len(left_df.merge(right_df, left_on=[left_cols[i]], right_on=[right_cols[i]], how='inner'))
+					left_cols_ranked.append((card, left_cols[i]))
+					right_cols_ranked.append((card, right_cols[i]))
+
+					i += 1
+
+				left_cols_ranked.sort(reverse=True)
+				right_cols_ranked.sort(reverse=True)
+				left_cols = [lc[1] for lc in left_cols_ranked[:2]]
+				right_cols = [rc[1] for rc in right_cols_ranked[:2]]
+				print("joining", file, "and", other_file, "on", left_cols, "and", right_cols)
+				print()
+
+				# do the join
 				result = result.merge(other_df, left_on=left_cols, right_on=right_cols, how='inner')
 
 				seen_files.add(other_file)

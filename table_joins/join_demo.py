@@ -22,7 +22,7 @@ examples = [
 	{
 		'name': '2 real files, exact match',
 		'files': ["boys_to_girls.csv", "women_in_parliment.csv"],
-		'schema_headers': ["year", "country", "ratio"],
+		'schema_headers': ["year", "region", "name", "ratio"],
 		'output_file': 'UN_dataset_join.csv'
 	},
 ]
@@ -37,7 +37,7 @@ if __name__== "__main__":
 	run_examples = [
 		# '2 fake files, similar match',
 		'2 real files, exact match',
-		'3 fake files, similar match',
+		# '3 fake files, similar match',
 	]
 
 	VERBOSE = 2
@@ -60,9 +60,7 @@ if __name__== "__main__":
 
 		join = MultiTableJoin(plan["intersections"], schema_headers, plan["files_to_matches"])
 		if VERBOSE >= 2:
-			print()
 			print(join)
-			print()
 
 		result = join.get_result(write_to_file_name=OUTPUT_PATH + output_file, limit_rows=100)
 		if result is None:

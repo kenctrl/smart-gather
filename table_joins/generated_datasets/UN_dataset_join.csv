@@ -1,101 +1,101 @@
-year,country,ratio
-2005,"Total, all countries or areas",0.95
-2005,Northern Africa,0.95
-2005,Sub-Saharan Africa,0.95
-2005,Eastern Africa,0.95
-2005,Middle Africa,0.95
-2005,Southern Africa,0.95
-2005,Western Africa,0.95
-2005,Northern America,0.95
-2005,Latin America & the Caribbean,0.95
-2005,Caribbean,0.95
-2005,Central America,0.95
-2005,South America,0.95
-2005,Asia,0.95
-2005,Central Asia,0.95
-2005,Eastern Asia,0.95
-2005,South-eastern Asia,0.95
-2005,Southern Asia,0.95
-2005,Western Asia,0.95
-2005,Caucasus and Central Asia,0.95
-2005,Europe,0.95
-2005,Eastern Europe,0.95
-2005,Northern Europe,0.95
-2005,Southern Europe,0.95
-2005,Western Europe,0.95
-2005,Oceania,0.95
-2005,Australia and New Zealand,0.95
-2005,Melanesia,0.95
-2005,Micronesia,0.95
-2005,Polynesia,0.95
-2005,Albania,0.95
-2005,Algeria,0.95
-2005,Andorra,0.95
-2005,Angola,0.95
-2005,Antigua and Barbuda,0.95
-2005,Argentina,0.95
-2005,Armenia,0.95
-2005,Australia,0.95
-2005,Austria,0.95
-2005,Azerbaijan,0.95
-2005,Bahamas,0.95
-2005,Bahrain,0.95
-2005,Bangladesh,0.95
-2005,Barbados,0.95
-2005,Belarus,0.95
-2005,Belgium,0.95
-2005,Belize,0.95
-2005,Benin,0.95
-2005,Bhutan,0.95
-2005,Bolivia (Plurin. State of),0.95
-2005,Bosnia and Herzegovina,0.95
-2005,Botswana,0.95
-2005,Brazil,0.95
-2005,Bulgaria,0.95
-2005,Burkina Faso,0.95
-2005,Burundi,0.95
-2005,Cabo Verde,0.95
-2005,Cambodia,0.95
-2005,Cameroon,0.95
-2005,Canada,0.95
-2005,Chad,0.95
-2005,Chile,0.95
-2005,China,0.95
-2005,Colombia,0.95
-2005,Comoros,0.95
-2005,Congo,0.95
-2005,Costa Rica,0.95
-2005,Côte d’Ivoire,0.95
-2005,Croatia,0.95
-2005,Cuba,0.95
-2005,Cyprus,0.95
-2005,Czechia,0.95
-2005,Dem. People's Rep. Korea,0.95
-2005,Dem. Rep. of the Congo,0.95
-2005,Denmark,0.95
-2005,Djibouti,0.95
-2005,Dominica,0.95
-2005,Dominican Republic,0.95
-2005,Ecuador,0.95
-2005,El Salvador,0.95
-2005,Equatorial Guinea,0.95
-2005,Eritrea,0.95
-2005,Estonia,0.95
-2005,Eswatini,0.95
-2005,Ethiopia,0.95
-2005,Fiji,0.95
-2005,Finland,0.95
-2005,France,0.95
-2005,Gabon,0.95
-2005,Gambia,0.95
-2005,Georgia,0.95
-2005,Germany,0.95
-2005,Ghana,0.95
-2005,Greece,0.95
-2005,Grenada,0.95
-2005,Guatemala,0.95
-2005,Guinea,0.95
-2005,Guinea-Bissau,0.95
-2005,Guyana,0.95
-2005,Haiti,0.95
-2005,Honduras,0.95
+year,region,name,ratio
+2005,15,Northern Africa,0.93
+2005,15,Northern Africa,0.99
+2005,15,Northern Africa,1.07
+2010,15,Northern Africa,0.95
+2010,15,Northern Africa,0.98
+2010,15,Northern Africa,1.07
+2015,15,Northern Africa,0.97
+2015,15,Northern Africa,0.99
+2015,15,Northern Africa,1.06
+2018,15,Northern Africa,0.97
+2018,15,Northern Africa,1.0
+2018,15,Northern Africa,1.07
+2019,15,Northern Africa,0.98
+2019,15,Northern Africa,1.01
+2019,15,Northern Africa,1.09
+2020,15,Northern Africa,0.98
+2020,15,Northern Africa,1.01
+2020,15,Northern Africa,1.1
+2005,202,Sub-Saharan Africa,0.88
+2005,202,Sub-Saharan Africa,0.78
+2005,202,Sub-Saharan Africa,0.78
+2010,202,Sub-Saharan Africa,0.93
+2010,202,Sub-Saharan Africa,0.82
+2010,202,Sub-Saharan Africa,0.78
+2015,202,Sub-Saharan Africa,0.96
+2015,202,Sub-Saharan Africa,0.86
+2015,202,Sub-Saharan Africa,0.81
+2018,202,Sub-Saharan Africa,0.96
+2018,202,Sub-Saharan Africa,0.89
+2018,202,Sub-Saharan Africa,0.84
+2019,202,Sub-Saharan Africa,0.96
+2019,202,Sub-Saharan Africa,0.89
+2019,202,Sub-Saharan Africa,0.85
+2020,202,Sub-Saharan Africa,0.96
+2020,202,Sub-Saharan Africa,0.89
+2020,202,Sub-Saharan Africa,0.86
+2005,21,Northern America,0.99
+2005,21,Northern America,1.01
+2005,21,Northern America,1.05
+2010,21,Northern America,1.0
+2010,21,Northern America,1.01
+2010,21,Northern America,1.02
+2015,21,Northern America,1.0
+2015,21,Northern America,1.01
+2015,21,Northern America,1.02
+2018,21,Northern America,1.0
+2018,21,Northern America,0.99
+2018,21,Northern America,0.99
+2019,21,Northern America,1.01
+2019,21,Northern America,0.99
+2019,21,Northern America,0.98
+2020,21,Northern America,1.01
+2020,21,Northern America,0.99
+2020,21,Northern America,0.98
+2005,419,Latin America & the Caribbean,0.97
+2005,419,Latin America & the Caribbean,1.07
+2005,419,Latin America & the Caribbean,1.12
+2010,419,Latin America & the Caribbean,0.97
+2010,419,Latin America & the Caribbean,1.08
+2010,419,Latin America & the Caribbean,1.16
+2015,419,Latin America & the Caribbean,0.98
+2015,419,Latin America & the Caribbean,1.05
+2015,419,Latin America & the Caribbean,1.11
+2018,419,Latin America & the Caribbean,0.99
+2018,419,Latin America & the Caribbean,1.04
+2018,419,Latin America & the Caribbean,1.1
+2019,419,Latin America & the Caribbean,0.98
+2019,419,Latin America & the Caribbean,1.05
+2019,419,Latin America & the Caribbean,1.1
+2020,419,Latin America & the Caribbean,0.99
+2020,419,Latin America & the Caribbean,1.05
+2020,419,Latin America & the Caribbean,1.09
+2005,143,Central Asia,0.99
+2005,143,Central Asia,0.96
+2005,143,Central Asia,0.98
+2010,143,Central Asia,0.99
+2010,143,Central Asia,0.98
+2010,143,Central Asia,1.0
+2015,143,Central Asia,0.99
+2015,143,Central Asia,0.99
+2015,143,Central Asia,1.01
+2018,143,Central Asia,0.99
+2018,143,Central Asia,0.98
+2018,143,Central Asia,0.98
+2019,143,Central Asia,0.99
+2019,143,Central Asia,0.99
+2019,143,Central Asia,1.0
+2020,143,Central Asia,0.99
+2020,143,Central Asia,0.98
+2020,143,Central Asia,0.98
+2005,30,Eastern Asia,1.0
+2005,30,Eastern Asia,0.98
+2005,30,Eastern Asia,0.98
+2010,30,Eastern Asia,0.98
+2010,30,Eastern Asia,1.0
+2010,30,Eastern Asia,0.99
+2015,30,Eastern Asia,1.0
+2015,30,Eastern Asia,1.02
+2015,30,Eastern Asia,1.04
+2018,30,Eastern Asia,1.01
