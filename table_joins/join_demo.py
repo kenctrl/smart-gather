@@ -36,8 +36,8 @@ if __name__== "__main__":
 
 	run_examples = [
 		# '2 fake files, similar match',
-		'2 real files, exact match',
 		# '3 fake files, similar match',
+		'2 real files, exact match',
 	]
 
 	VERBOSE = 2

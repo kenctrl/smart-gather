@@ -19,7 +19,10 @@ class MultiTableJoin:
 			intersections[file1][file2] = join_cols
 			if file2 not in intersections:
 				intersections[file2] = {}
-			intersections[file2][file1] = join_cols
+			if isinstance(join_cols, tuple):
+				intersections[file2][file1] = (join_cols[1], join_cols[0], join_cols[2])
+			else:
+				intersections[file2][file1] = [(jc[1], jc[0], jc[2]) for jc in join_cols]
 		self.intersections = intersections
 
 		# create a dictionary {file: {col: schema_col}}
@@ -136,21 +139,42 @@ class MultiTableJoin:
 				left_cols_ranked = []
 				right_cols_ranked = []
 				while i < len(left_cols):
+					# skip if column types don't match
+					if result[left_cols[i]].dtype != other_df[right_cols[i]].dtype:
+						i += 1
+						continue
+
+					print(left_cols[i], "and", right_cols[i], "are both", result[left_cols[i]].dtype)
+
 					# ignore empty rows in the join columns
 					left_df = result.dropna(axis=0, how="any", subset=[left_cols[i]])
 					right_df = other_df.dropna(axis=0, how="any", subset=[right_cols[i]])
 
 					# find the number of rows in the join
 					card = len(left_df.merge(right_df, left_on=[left_cols[i]], right_on=[right_cols[i]], how='inner'))
-					left_cols_ranked.append((card, left_cols[i]))
-					right_cols_ranked.append((card, right_cols[i]))
+
+					if card > 0:
+						left_cols_ranked.append((card, left_cols[i]))
+						right_cols_ranked.append((card, right_cols[i]))
 
 					i += 1
 
-				left_cols_ranked.sort(reverse=True)
-				right_cols_ranked.sort(reverse=True)
-				left_cols = [lc[1] for lc in left_cols_ranked[:2]]
-				right_cols = [rc[1] for rc in right_cols_ranked[:2]]
+				# if no columns on which to join, fail
+				if len(left_cols_ranked) == 0:
+					error = f"ERROR: no columns on which to join {file} and {other_file}"
+					print(error)
+					self.result = error
+					return None
+
+				left_cols_ranked = [jc[1] for jc in sorted(left_cols_ranked, reverse=True)]
+				if len(left_cols_ranked) > 2:
+					left_cols_ranked = left_cols_ranked[:2]
+				right_cols_ranked = [jc[1] for jc in sorted(right_cols_ranked, reverse=True)]
+				if len(right_cols_ranked) > 2:
+					right_cols_ranked = right_cols_ranked[:2]
+
+				left_cols = [jc for jc in left_cols if jc in left_cols_ranked]
+				right_cols = [jc for jc in right_cols if jc in right_cols_ranked]
 				print("joining", file, "and", other_file, "on", left_cols, "and", right_cols)
 				print()
 
