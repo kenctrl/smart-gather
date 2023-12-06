@@ -134,7 +134,7 @@ class MultiTableJoin:
 				left_cols = [self.get_current_column_name(file, jc[0]) for jc in join_cols]
 				right_cols = [self.get_current_column_name(other_file, jc[1]) for jc in join_cols]
 
-				# choose up to 2 columns to join on, ranked by length of resulting dataframe
+				# rank the join columns by cardinality
 				i = 0
 				left_cols_ranked = []
 				right_cols_ranked = []
@@ -143,8 +143,6 @@ class MultiTableJoin:
 					if result[left_cols[i]].dtype != other_df[right_cols[i]].dtype:
 						i += 1
 						continue
-
-					print(left_cols[i], "and", right_cols[i], "are both", result[left_cols[i]].dtype)
 
 					# ignore empty rows in the join columns
 					left_df = result.dropna(axis=0, how="any", subset=[left_cols[i]])
@@ -166,6 +164,7 @@ class MultiTableJoin:
 					self.result = error
 					return None
 
+				# choose up to 2 columns to join on, ranked by length of resulting dataframe
 				left_cols_ranked = [jc[1] for jc in sorted(left_cols_ranked, reverse=True)]
 				if len(left_cols_ranked) > 2:
 					left_cols_ranked = left_cols_ranked[:2]
