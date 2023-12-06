@@ -34,7 +34,7 @@ def join_tables(files_to_matches, intersection, schema_headers, result_filename)
         print("Could not join tables")
 
 
-def get_best_intersection(cols1, cols2, embedding_space):
+def get_best_intersections(cols1, cols2, embedding_space):
     """
     Given two sets of column headers, determine which pair of column headers are the most similar
 
@@ -43,21 +43,34 @@ def get_best_intersection(cols1, cols2, embedding_space):
 
     best_col1, best_col2, highest_similarity = None, None, -float('inf')
 
-    for c1 in cols1:
+    # if multiple column headers are exact matches, return all of them
+    # if none exactly match, return the single most similar match
+    pairwise_similarities = []
+
+    for c1 in cols1: # find pairwise similarity between each column between two files
         c1_embedding = get_phrase_embedding(c1, embedding_space)
         for c2 in cols2:
+            if c1 == '' or c2 == '': # csv file allows for empty header
+                continue 
             c2_embedding = get_phrase_embedding(c2, embedding_space)
 
             if c1 == c2: # found perfect match, return early
-                print("column names match, returning early:", c1, c2)
-                return c1, c2, 1.0
+                pairwise_similarities.append((1.0, c1, c2))
 
-            if c1_embedding is not None and c2_embedding is not None:
+            elif c1_embedding is not None and c2_embedding is not None:
                 similarity = 1 - cosine(c1_embedding, c2_embedding)
-                if similarity > highest_similarity:
-                    best_col1, best_col2, highest_similarity = c1, c2, similarity
+                pairwise_similarities.append((similarity, c1, c2))
 
-    return best_col1, best_col2, highest_similarity
+    pairwise_similarities.sort(reverse=True)
+
+    filtered_similarities = [] # get all pairs that exactly match + 1 non-exact match if it exists
+
+    for i in range(len(pairwise_similarities)):
+        filtered_similarities.append(pairwise_similarities[i])
+        if pairwise_similarities[i][0] != 1: # only get first non-perfect join
+            break
+
+    return filtered_similarities
 
 
 def find_header_intersection(csv_headers, embedding_space, num_files):
@@ -76,11 +89,25 @@ def find_header_intersection(csv_headers, embedding_space, num_files):
         cols1 = csv_headers[filenames[i]]
         for j in range(i+1, len(filenames)):
             cols2 = csv_headers[filenames[j]]
-            col1, col2, similarity_score = get_best_intersection(cols1, cols2, embedding_space)
-            intersections.append([similarity_score, filenames[i], filenames[j], col1, col2])
+            best_intersections = get_best_intersections(cols1, cols2, embedding_space)
+            new_intersections = [(sim, filenames[i], filenames[j], col1, col2) for sim, col1, col2 in best_intersections]
+
+            intersections.extend(new_intersections)
 
     intersections.sort(reverse=True)
-    seen_cols = set()
+
+    # move intersections from list format sorted by similarity to keyed by the file pair
+    # allows us to get multiple cols to potentially join on given a file pair
+    file_based_intersections = {} 
+    
+    for sim, f1, f2, c1, c2 in intersections:
+        if (f1, f2) not in file_based_intersections:
+            file_based_intersections[(f1, f2)] = []
+        file_based_intersections[(f1, f2)].append((c1, c2, sim))
+
+    # used to make sure we don't do unnecessary joins between files
+    # ex: files A, B, C.  if we join A with C and B with C, no need to rejoin A + B
+    seen_cols = set() 
     final_intersections = {}
 
     for similarity_score, f1, f2, col1, col2 in intersections:
@@ -89,7 +116,7 @@ def find_header_intersection(csv_headers, embedding_space, num_files):
         if f1 not in seen_cols or f2 not in seen_cols:
             seen_cols.add(f1)
             seen_cols.add(f2)
-            final_intersections[(f1, f2)] = tuple([col1, col2, similarity_score])
+            final_intersections[(f1, f2)] = file_based_intersections[(f1, f2)]
 
     return final_intersections
 

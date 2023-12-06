@@ -26,12 +26,14 @@ def get_phrase_embedding(phrase, embedding_space):
     `embedding_space`
     """
 
-    separators = r'[:;,!.\s_\-]+'
+    separators = r'[:;,/!.\s_\-]+'
     words = re.split(separators, phrase)
     phrase_embedding = None
 
     for word in words:
         word = word.lower()
+        if word == '':
+            continue
         if word not in embedding_space:
             print(word, "not in embedding space")
             continue
