@@ -85,7 +85,6 @@ def find_header_intersection(csv_headers, embedding_space, num_files):
     Return format: dict mapping filenames part of the intersection to cols that most resemble each other
     (file1, file2) -> (best col name match in file1, best col name match in file2)
     """
-
     filenames = [fn for fn in csv_headers.keys()]
     intersections = []
 
@@ -185,7 +184,8 @@ def plan_join(files, schema_headers, print_results=False):
     }
 
     if len(files_to_matches) > 1:
-        plan['intersections'] = find_header_intersection(csv_headers, embedding_space, len(files_to_matches))
+        subset = {f: csv_headers[f] for f in files_to_matches} # only find intersection for files that contain schema cols
+        plan['intersections'] = find_header_intersection(subset, embedding_space, len(files_to_matches))
 
         if print_results:
             print("intersections:", plan['intersections'])
