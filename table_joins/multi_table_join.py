@@ -1,6 +1,5 @@
 import csv
 import pandas as pd
-
 class MultiTableJoin:
 	def __init__(self, intersections_to_join_cols, schema_headers, files_to_cols = None):
 		"""Initializes a MultiTableJoin object
@@ -45,7 +44,11 @@ class MultiTableJoin:
 	def get_df(self, filename, can_create = True) -> pd.DataFrame:
 		if filename not in self.dfs:
 			if can_create:
-				df = pd.read_csv(filename)
+				sniffer = csv.Sniffer()
+				with open(filename, 'r') as f:
+					dialect = sniffer.sniff(f.read(1024))
+				f.close()
+				df = pd.read_csv(filename, sep=dialect.delimiter)
 				# # remove unneeded columns  NOTE: will break multi column joins in its current form
 				# if self.projections is not None:
 				# 	for col in df.columns:
@@ -204,7 +207,10 @@ class MultiTableJoin:
 			for file in self.projections:
 				for col in self.projections[file]:
 					projections[self.get_current_column_name(file, col)] = self.projections[file][col]
+			print("projecting to", projections)
 			result.rename(columns=projections, inplace=True)
+			print("result columns:", result.columns)
+			print("and we want:", self.schema_headers)
 			result = result[self.schema_headers]
 
 		self.result = result

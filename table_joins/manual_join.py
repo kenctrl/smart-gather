@@ -13,10 +13,16 @@ embedding_space = get_glove_embedding_space()
 
 
 def get_headers(filename):
-    with open(filename, mode='r', encoding='utf-8-sig') as file:
-        csv_reader = csv.reader(file, delimiter="\n")
-        header = next(csv_reader)[0].split(',')
-        return header
+    sniffer = csv.Sniffer()
+    with open(filename, mode='r') as f:
+        dialect = sniffer.sniff(f.read(1024))
+        f.seek(0)
+        csv_reader = csv.reader(f, delimiter=dialect.delimiter)
+        a = next(csv_reader)
+        f.close()
+        return a
+        # header = next(csv_reader)[0].split(';')
+        # return header
 
 
 def join_tables(files_to_matches, intersection, schema_headers, result_filename):

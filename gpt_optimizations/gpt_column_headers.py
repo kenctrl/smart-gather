@@ -15,7 +15,7 @@ def get_data_sample(filepath, num_lines=20):
             if line is None:
                 break
             data += line
-    
+
     return header, data
 
 
@@ -62,7 +62,7 @@ def main():
     header, data = get_data_sample(filepath)
     filename = os.path.basename(filepath)
     gpt_headers = get_chat_topic(filename, header, data)
-    
+
     generate_csv(gpt_headers, filepath)
 
 

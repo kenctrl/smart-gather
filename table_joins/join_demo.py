@@ -11,7 +11,10 @@ examples = [
 		'name': '2 fake files, similar match',
 		'files': ["weather.csv", "states.csv"],
 		'schema_headers': ["rain", "temperature", "city"],
-		'output_file': 'joined_weather.csv'
+		'output_file': 'joined_weather.csv',
+		'expected_matches': {
+			"weather.csv": [()]
+		}
 	},
 	{
 		'name': '3 fake files, similar match',
@@ -25,19 +28,26 @@ examples = [
 		'schema_headers': ["year", "country", "percentage women", "ratio girls"],
 		'output_file': 'UN_dataset_join_gpt_headers.csv'
 	},
+	{
+		'name': '3 real files, exact match, include unneeded files',
+		'files': ['target_components.csv', 'target_dictionary.csv', 'target_relations.csv', 'target_type.csv'],
+		'schema_headers': ['name', 'target type', 'desc', 'component id'],
+		'output_file': 'chem_targets.csv',
+		'expected_matches': {
+			'target_components.csv': [('component_id', 'component id')],
+			'target_dictionary.csv': [('pref_name', 'name')],
+			'target_type.csv': [('target_desc', 'desc'), ('target_type', 'target type')]
+		}
+	}
 ]
 
 
 if __name__== "__main__":
-	# df1 = pd.read_csv(INPUT_PATH + "women_in_parliment.csv")
-	# df2 = pd.read_csv(INPUT_PATH + "boys_to_girls.csv")
-	# df3 = df1.merge(df2, left_on=["Country", "Year"], right_on=["Region/Country/Area", "Year"])
-	# df3[:100][["Country", "Year", "Value_y"]].to_csv(OUTPUT_PATH + "test.csv", index=False)
-
 	run_examples = [
 		# '2 fake files, similar match',
 		# '3 fake files, similar match',
-		'2 real files, exact match',
+		# '2 real files, exact match',
+		'3 real files, exact match, include unneeded files'
 	]
 
 	VERBOSE = 2
