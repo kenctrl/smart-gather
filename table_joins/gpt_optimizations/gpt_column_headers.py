@@ -49,8 +49,7 @@ def generate_csv(gpt_headers, filepath):
     df = pd.read_csv(filepath)
     df.columns = new_headers
 
-    gpt_filepath = os.path.splitext(filepath)[0] + "_gpt_headers.csv"
-    print('new filename:', gpt_filepath)
+    gpt_filepath = os.path.splitext(filepath)[0] + "_gpt.csv"
 
     # Save the DataFrame back to a new CSV file or overwrite the existing one
     df.to_csv(gpt_filepath, index=False)

@@ -88,6 +88,7 @@ def find_header_intersection(csv_headers, embedding_space, num_files):
         for j in range(i+1, len(filenames)):
             cols2 = csv_headers[filenames[j]]
             best_intersections = get_best_intersections(cols1, cols2, embedding_space)
+            print(i, j, best_intersections)
             new_intersections = [(sim, filenames[i], filenames[j], col1, col2) for sim, col1, col2 in best_intersections]
 
             intersections.extend(new_intersections)
@@ -164,6 +165,11 @@ def plan_join(files, schema_headers, print_results=False):
     """
 
     csv_headers = { file: get_headers(file) for file in files }
+    gpt_input = ""
+    for idx, headers in enumerate(csv_headers.values()):
+        # Remove empty string headers
+        headers = [header for header in headers if header != '']
+        gpt_input += f"Schema {idx}:\n" + ", ".join(headers) + "\n\n"
     cols_to_matches, files_to_matches = get_matches(schema_headers, csv_headers)
 
     if print_results:

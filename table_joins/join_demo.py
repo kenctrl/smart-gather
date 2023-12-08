@@ -1,6 +1,7 @@
 import csv
 import pandas as pd
 import manual_join
+import gpt_join
 from multi_table_join import MultiTableJoin
 
 INPUT_PATH = "./available_datasets/"
@@ -23,7 +24,7 @@ examples = [
 		'name': '2 real files, exact match',
 		'files': ["boys_to_girls.csv", "women_in_parliment.csv"],
 		'schema_headers': ["year", "country", "percentage women", "ratio girls"],
-		'output_file': 'UN_dataset_join_gpt_headers.csv'
+		'output_file': 'UN_dataset_join_gpt.csv'
 	},
 ]
 
@@ -41,6 +42,7 @@ if __name__== "__main__":
 	]
 
 	VERBOSE = 2
+	GPT = 1
 
 	for example in examples:
 		if example['name'] not in run_examples:
@@ -53,10 +55,15 @@ if __name__== "__main__":
 		schema_headers = example['schema_headers']
 		output_file = example['output_file']
 
-		plan = manual_join.plan_join(files, schema_headers, print_results=VERBOSE >= 1)
+		if GPT:
+			plan = gpt_join.plan_join(files, schema_headers, print_results=VERBOSE >= 1)
+		else:
+			plan = manual_join.plan_join(files, schema_headers, print_results=VERBOSE >= 1)
+		
 		if plan["intersections"] is None:  # no join needed
 			print("No join needed")
 			continue
+		print("Plan:", plan)
 
 		join = MultiTableJoin(plan["intersections"], schema_headers, plan["files_to_matches"])
 		if VERBOSE >= 2:

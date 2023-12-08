@@ -205,6 +205,17 @@ class MultiTableJoin:
 				for col in self.projections[file]:
 					projections[self.get_current_column_name(file, col)] = self.projections[file][col]
 			result.rename(columns=projections, inplace=True)
+			# print("result:", result.keys())
+			# print("schema headers:", self.schema_headers)
+			# # Find space-agnostic keys in result that match schema headers
+			# # If there are any, rename them to match the schema headers
+			# new_cols = {}
+			# for col in result.keys():
+			# 	for schema_header in self.schema_headers:
+			# 		if col.replace(" ", "") == schema_header.replace(" ", ""):
+			# 			new_cols[col] = schema_header
+			# 			break
+			# result = result.rename(columns=new_cols)
 			result = result[self.schema_headers]
 
 		self.result = result
