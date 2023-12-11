@@ -3,6 +3,7 @@ import pandas as pd
 import manual_join
 import gpt_join
 from gpt_optimizations.gpt_column_headers import generate_gpt_header
+from single_table_filter import SingleTableFilter
 from multi_table_join import MultiTableJoin
 
 INPUT_PATH = "./available_datasets/"
@@ -192,20 +193,20 @@ if __name__ == "__main__":
             )
 
         if plan["intersections"] is None:  # no join needed
-            print("No join needed")
-            continue
+            join = SingleTableFilter(plan["files_to_matches"])
+        else:
+            join = MultiTableJoin(
+                plan["intersections"], schema_headers, plan["files_to_matches"]
+            )
+
         if VERBOSE >= 2:
             print("Plan:", plan)
-
-        join = MultiTableJoin(
-            plan["intersections"], schema_headers, plan["files_to_matches"]
-        )
-        if VERBOSE >= 2:
             print(join)
 
         result = join.get_result(
             write_to_file_name=OUTPUT_PATH + output_file, limit_rows=100
         )
+        
         if result is None:
             print("Could not join tables")
             continue
