@@ -1,0 +1,101 @@
+year,region,name,ratio
+2005,15,Northern Africa,0.93
+2005,15,Northern Africa,0.99
+2005,15,Northern Africa,1.07
+2010,15,Northern Africa,0.95
+2010,15,Northern Africa,0.98
+2010,15,Northern Africa,1.07
+2015,15,Northern Africa,0.97
+2015,15,Northern Africa,0.99
+2015,15,Northern Africa,1.06
+2018,15,Northern Africa,0.97
+2018,15,Northern Africa,1.0
+2018,15,Northern Africa,1.07
+2019,15,Northern Africa,0.98
+2019,15,Northern Africa,1.01
+2019,15,Northern Africa,1.09
+2020,15,Northern Africa,0.98
+2020,15,Northern Africa,1.01
+2020,15,Northern Africa,1.1
+2005,202,Sub-Saharan Africa,0.88
+2005,202,Sub-Saharan Africa,0.78
+2010,202,Sub-Saharan Africa,0.93
+2010,202,Sub-Saharan Africa,0.82
+2010,202,Sub-Saharan Africa,0.78
+2015,202,Sub-Saharan Africa,0.96
+2015,202,Sub-Saharan Africa,0.86
+2015,202,Sub-Saharan Africa,0.81
+2018,202,Sub-Saharan Africa,0.96
+2018,202,Sub-Saharan Africa,0.89
+2018,202,Sub-Saharan Africa,0.84
+2019,202,Sub-Saharan Africa,0.96
+2019,202,Sub-Saharan Africa,0.89
+2019,202,Sub-Saharan Africa,0.85
+2020,202,Sub-Saharan Africa,0.96
+2020,202,Sub-Saharan Africa,0.89
+2020,202,Sub-Saharan Africa,0.86
+2005,21,Northern America,0.99
+2005,21,Northern America,1.01
+2005,21,Northern America,1.05
+2010,21,Northern America,1.0
+2010,21,Northern America,1.01
+2010,21,Northern America,1.02
+2015,21,Northern America,1.0
+2015,21,Northern America,1.01
+2015,21,Northern America,1.02
+2018,21,Northern America,1.0
+2018,21,Northern America,0.99
+2019,21,Northern America,1.01
+2019,21,Northern America,0.99
+2019,21,Northern America,0.98
+2020,21,Northern America,1.01
+2020,21,Northern America,0.99
+2020,21,Northern America,0.98
+2005,419,Latin America & the Caribbean,0.97
+2005,419,Latin America & the Caribbean,1.07
+2005,419,Latin America & the Caribbean,1.12
+2010,419,Latin America & the Caribbean,0.97
+2010,419,Latin America & the Caribbean,1.08
+2010,419,Latin America & the Caribbean,1.16
+2015,419,Latin America & the Caribbean,0.98
+2015,419,Latin America & the Caribbean,1.05
+2015,419,Latin America & the Caribbean,1.11
+2018,419,Latin America & the Caribbean,0.99
+2018,419,Latin America & the Caribbean,1.04
+2018,419,Latin America & the Caribbean,1.1
+2019,419,Latin America & the Caribbean,0.98
+2019,419,Latin America & the Caribbean,1.05
+2019,419,Latin America & the Caribbean,1.1
+2020,419,Latin America & the Caribbean,0.99
+2020,419,Latin America & the Caribbean,1.05
+2020,419,Latin America & the Caribbean,1.09
+2005,143,Central Asia,0.99
+2005,143,Central Asia,0.96
+2005,143,Central Asia,0.98
+2010,143,Central Asia,0.99
+2010,143,Central Asia,0.98
+2010,143,Central Asia,1.0
+2015,143,Central Asia,0.99
+2015,143,Central Asia,1.01
+2018,143,Central Asia,0.99
+2018,143,Central Asia,0.98
+2019,143,Central Asia,0.99
+2019,143,Central Asia,1.0
+2020,143,Central Asia,0.99
+2020,143,Central Asia,0.98
+2005,30,Eastern Asia,1.0
+2005,30,Eastern Asia,0.98
+2010,30,Eastern Asia,0.98
+2010,30,Eastern Asia,1.0
+2010,30,Eastern Asia,0.99
+2015,30,Eastern Asia,1.0
+2015,30,Eastern Asia,1.02
+2015,30,Eastern Asia,1.04
+2018,30,Eastern Asia,1.01
+2018,30,Eastern Asia,1.02
+2018,30,Eastern Asia,1.04
+2019,30,Eastern Asia,1.01
+2019,30,Eastern Asia,1.02
+2019,30,Eastern Asia,1.03
+2020,30,Eastern Asia,1.01
+2020,30,Eastern Asia,1.02

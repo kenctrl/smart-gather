@@ -2,16 +2,17 @@ import openai
 from manual_join import get_headers, get_matches
 from gpt_optimizations.gpt_column_headers import get_data_sample
 
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "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"
+client = openai.OpenAI(api_key = OPENAI_API_KEY)
 
-def get_gpt_input(schema_headers, csv_headers):
+def get_gpt_input(schema_headers, csv_headers, filename_1, filename_2):
     """
     Given a set of csv headers, return the set of headers that are common across all csv files
     """
     gpt_input = ""
-    for idx, (file_name, headers) in enumerate(csv_headers.items()):
+    for idx, (file_name, headers) in enumerate([(filename_1, csv_headers[filename_1]), (filename_2, csv_headers[filename_2])]):
         headers = [header for header in headers if header != ''] # remove empty string headers
-        header, data = get_data_sample(file_name)
+        header, data = get_data_sample(file_name, random_sample=True)
         # Get schema headers ", ".join(headers)
         gpt_input += f"Schema {idx}:\n" + header + "\n\n"
         # Get sample rows from file name
@@ -21,7 +22,7 @@ def get_gpt_input(schema_headers, csv_headers):
 
     return gpt_input
 
-def find_header_intersection_gpt(schema_headers, csv_headers, num_files, print_results=False):
+def find_header_intersection_gpt(schema_headers, csv_headers, files_to_matches, print_results=False):
     """
     Given the set of files + column headers that we need to join across, find the column most similar
     across each pair that will be the target of the join
@@ -29,8 +30,7 @@ def find_header_intersection_gpt(schema_headers, csv_headers, num_files, print_r
     Return format: dict mapping filenames part of the intersection to cols that most resemble each other
     (file1, file2) -> (best col name match in file1, best col name match in file2)
     """
-    client = openai.OpenAI(api_key = OPENAI_API_KEY)
-    filenames = [fn for fn in csv_headers.keys()]
+    filenames = [fn for fn in files_to_matches.keys()]
     intersections = []
 
     for i in range(len(filenames)):
@@ -38,8 +38,20 @@ def find_header_intersection_gpt(schema_headers, csv_headers, num_files, print_r
         for j in range(i+1, len(filenames)):
             cols2 = csv_headers[filenames[j]]
 
-            gpt_input = get_gpt_input(schema_headers, csv_headers)
-            prompt = "Match each column from Schema 0 to a column from Schema 1 only if they represent the same data. Output the answer only as a list of length-two tuples that contain the corresponding columns from Schema 0 and Schema 1, with no other output.\n\n"
+            gpt_input = get_gpt_input(schema_headers, csv_headers, filenames[i], filenames[j])
+            prompt = "Match each column from Schema 0 to a column from Schema 1 only if they represent the " + \
+                    "same data. Output the answer only as a list of length-two tuples that contain the corresponding " + \
+                    "columns from Schema 0 and Schema 1, with no other output.\n"
+            # prompt = "Match each column from each schema to a column from each other schema only if they represent the " + \
+            #         "same data. Output the answer only as a list of length-three tuples that contain the corresponding " + \
+            #         "columns from Schema 0 and Schema 1 as the first two values, and a comma-separated string representing " + \
+            #         "which two schemas the tuple represents, with no other output. For example, a join on Schema 0 and Schema 1 " + \
+            #         "whould have tuples of the form ('column from schema 0', 'column from schema 1', '0,1').\n\n"
+            if print_results:
+                print("gpt input:", gpt_input)
+                print()
+                print("gpt prompt:", prompt)
+                print()
 
             response = client.chat.completions.create(
                 model="gpt-4",
@@ -48,7 +60,7 @@ def find_header_intersection_gpt(schema_headers, csv_headers, num_files, print_r
                 "content": gpt_input + prompt}
                 ],
                 temperature=0,
-                max_tokens=256
+                max_tokens=1024
             )
             if print_results:
                 print("gpt output:", response.choices[0].message.content)
@@ -59,7 +71,7 @@ def find_header_intersection_gpt(schema_headers, csv_headers, num_files, print_r
             str_response = str_response.replace("[", "").replace("]", "").replace("(", "").replace(")", "").replace("'", "").replace('"', "").replace("\n", "")
             str_response = str_response.split(", ")
             lis_response = []
-            for s in range(0, len(str_response), num_files):
+            for s in range(0, len(str_response)-1, len(files_to_matches)):
                 schema_0_col = str_response[s]
                 schema_1_col = str_response[s+1]
                 # Find col in schema 0 and schema 1 that matches the col name (agnostic of spaces)
@@ -97,7 +109,7 @@ def find_header_intersection_gpt(schema_headers, csv_headers, num_files, print_r
     final_intersections = {}
 
     for similarity_score, f1, f2, col1, col2 in intersections:
-        if len(seen_cols) == num_files:
+        if len(seen_cols) == len(files_to_matches):
             break
         if f1 not in seen_cols or f2 not in seen_cols:
             seen_cols.add(f1)
@@ -135,9 +147,9 @@ def plan_join(files, schema_headers, verbose=False):
 
     # csv_headers = { file: get_headers(file) for file in files }
     # gpt_input = get_gpt_input(schema_headers, csv_headers)
-    # if print_results:
-    #   print("gpt input:", gpt_input)
-    #   print()
+    # if verbose:
+    #     print("gpt input:", gpt_input)
+    #     print()
 
     # prompt = "Given Schema 0 and Schema 1, sample rows for each schema, and the final schema headers, generate a mapping from each final schema header to the one best column match in Schema 0 or Schema 1. The output format is a list of length-three tuples that contain the corresponding final schema header, the schema it came from, and the column name from that schema that it matches to.\n"
     # # match each column from Schema 0 to a column from Schema 2 only if they represent the same data. Output the answer only as a list of length-three tuples that contain the corresponding columns from Schema 0 and Schema 1 as the first two elements and a name representing both columns as the third element, with no other output."
@@ -193,7 +205,7 @@ def plan_join(files, schema_headers, verbose=False):
     # }
 
     if len(files_to_matches) > 1:
-        plan['intersections'] = find_header_intersection_gpt(schema_headers, csv_headers, len(files_to_matches), print_results=verbose)
+        plan['intersections'] = find_header_intersection_gpt(schema_headers, csv_headers, files_to_matches, print_results=verbose)
 
         if verbose:
             print("intersections:", plan['intersections'])

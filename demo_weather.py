@@ -1,6 +1,6 @@
 import json
 import openai
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "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"
 
 from er_types import *
 from helpers import run

@@ -138,7 +138,7 @@ def create_er_csv(output_dir, schema_headers, best_url, column_mapping, max_rows
             row_info[pk] = pk_id
         for pk in schema_headers['default_pk'][1:]:
             for row_info in er_rows:
-                row_info[pk] = "NULL" # TODO: joins
+                row_info[pk] = "NULL"
 
     # Write the selected rows to the output CSV file
     with open(output_dir + "/" + output_filename, "w", newline="") as output_file:

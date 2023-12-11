@@ -150,6 +150,10 @@ class MultiTableJoin:
 				i = 0
 				cols_ranked = []
 				while i < len(left_cols):
+					# switch result and other_df if the join is backwards
+					if left_cols[i] not in result.columns:
+						result, other_df = other_df, result
+
 					# skip if column types don't match
 					if result[left_cols[i]].dtype != other_df[right_cols[i]].dtype:
 						i += 1
@@ -190,6 +194,9 @@ class MultiTableJoin:
 					print("joining", file, "and", other_file, "on", left_cols, "and", right_cols)
 					print()
 
+				# switch result and other_df if the join is backwards
+				if left_cols[0] not in result.columns:
+					result, other_df = other_df, result
 				# do the join
 				result = result.merge(other_df, left_on=left_cols, right_on=right_cols, how='inner')
 

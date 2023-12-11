@@ -4,7 +4,7 @@ import openai
 import pandas as pd
 import random
 
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "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"
 
 def get_data_sample(filepath, num_lines=20, random_sample=False):
     """
@@ -19,7 +19,7 @@ def get_data_sample(filepath, num_lines=20, random_sample=False):
 
     if random_sample:
         num_lines = min(num_lines, len(lines))
-        indices = random.sample(range(1, len(lines)), num_lines)
+        indices = random.sample(range(1, len(lines)), num_lines-1)
         data = "".join([lines[i] for i in indices])
     else:
         end = min(num_lines+1, len(lines))
