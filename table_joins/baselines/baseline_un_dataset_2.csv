@@ -1,0 +1,2338 @@
+year,country,ratio girls,decade
+2005,Northern Africa,0.93,2005
+2005,Northern Africa,0.99,2005
+2005,Northern Africa,1.07,2005
+2010,Northern Africa,0.95,2010
+2010,Northern Africa,0.98,2010
+2010,Northern Africa,1.07,2010
+2015,Northern Africa,0.97,2015
+2015,Northern Africa,0.99,2015
+2015,Northern Africa,1.06,2015
+2018,Northern Africa,0.97,2018
+2018,Northern Africa,1.0,2018
+2018,Northern Africa,1.07,2018
+2019,Northern Africa,0.98,2019
+2019,Northern Africa,1.01,2019
+2019,Northern Africa,1.09,2019
+2020,Northern Africa,0.98,2020
+2020,Northern Africa,1.01,2020
+2020,Northern Africa,1.1,2020
+2005,Sub-Saharan Africa,0.88,2005
+2005,Sub-Saharan Africa,0.78,2005
+2005,Sub-Saharan Africa,0.78,2005
+2010,Sub-Saharan Africa,0.93,2010
+2010,Sub-Saharan Africa,0.82,2010
+2010,Sub-Saharan Africa,0.78,2010
+2015,Sub-Saharan Africa,0.96,2015
+2015,Sub-Saharan Africa,0.86,2015
+2015,Sub-Saharan Africa,0.81,2015
+2018,Sub-Saharan Africa,0.96,2018
+2018,Sub-Saharan Africa,0.89,2018
+2018,Sub-Saharan Africa,0.84,2018
+2019,Sub-Saharan Africa,0.96,2019
+2019,Sub-Saharan Africa,0.89,2019
+2019,Sub-Saharan Africa,0.85,2019
+2020,Sub-Saharan Africa,0.96,2020
+2020,Sub-Saharan Africa,0.89,2020
+2020,Sub-Saharan Africa,0.86,2020
+2005,Northern America,0.99,2005
+2005,Northern America,1.01,2005
+2005,Northern America,1.05,2005
+2010,Northern America,1.0,2010
+2010,Northern America,1.01,2010
+2010,Northern America,1.02,2010
+2015,Northern America,1.0,2015
+2015,Northern America,1.01,2015
+2015,Northern America,1.02,2015
+2018,Northern America,1.0,2018
+2018,Northern America,0.99,2018
+2018,Northern America,0.99,2018
+2019,Northern America,1.01,2019
+2019,Northern America,0.99,2019
+2019,Northern America,0.98,2019
+2020,Northern America,1.01,2020
+2020,Northern America,0.99,2020
+2020,Northern America,0.98,2020
+2005,Latin America & the Caribbean,0.97,2005
+2005,Latin America & the Caribbean,1.07,2005
+2005,Latin America & the Caribbean,1.12,2005
+2010,Latin America & the Caribbean,0.97,2010
+2010,Latin America & the Caribbean,1.08,2010
+2010,Latin America & the Caribbean,1.16,2010
+2015,Latin America & the Caribbean,0.98,2015
+2015,Latin America & the Caribbean,1.05,2015
+2015,Latin America & the Caribbean,1.11,2015
+2018,Latin America & the Caribbean,0.99,2018
+2018,Latin America & the Caribbean,1.04,2018
+2018,Latin America & the Caribbean,1.1,2018
+2019,Latin America & the Caribbean,0.98,2019
+2019,Latin America & the Caribbean,1.05,2019
+2019,Latin America & the Caribbean,1.1,2019
+2020,Latin America & the Caribbean,0.99,2020
+2020,Latin America & the Caribbean,1.05,2020
+2020,Latin America & the Caribbean,1.09,2020
+2005,Central Asia,0.99,2005
+2005,Central Asia,0.96,2005
+2005,Central Asia,0.98,2005
+2010,Central Asia,0.99,2010
+2010,Central Asia,0.98,2010
+2010,Central Asia,1.0,2010
+2015,Central Asia,0.99,2015
+2015,Central Asia,0.99,2015
+2015,Central Asia,1.01,2015
+2018,Central Asia,0.99,2018
+2018,Central Asia,0.98,2018
+2018,Central Asia,0.98,2018
+2019,Central Asia,0.99,2019
+2019,Central Asia,0.99,2019
+2019,Central Asia,1.0,2019
+2020,Central Asia,0.99,2020
+2020,Central Asia,0.98,2020
+2020,Central Asia,0.98,2020
+2005,Eastern Asia,1.0,2005
+2005,Eastern Asia,0.98,2005
+2005,Eastern Asia,0.98,2005
+2010,Eastern Asia,0.98,2010
+2010,Eastern Asia,1.0,2010
+2010,Eastern Asia,0.99,2010
+2015,Eastern Asia,1.0,2015
+2015,Eastern Asia,1.02,2015
+2015,Eastern Asia,1.04,2015
+2018,Eastern Asia,1.01,2018
+2018,Eastern Asia,1.02,2018
+2018,Eastern Asia,1.04,2018
+2019,Eastern Asia,1.01,2019
+2019,Eastern Asia,1.02,2019
+2019,Eastern Asia,1.03,2019
+2020,Eastern Asia,1.01,2020
+2020,Eastern Asia,1.02,2020
+2020,Eastern Asia,1.03,2020
+2005,South-eastern Asia,0.97,2005
+2005,South-eastern Asia,1.0,2005
+2005,South-eastern Asia,0.98,2005
+2010,South-eastern Asia,1.0,2010
+2010,South-eastern Asia,1.01,2010
+2010,South-eastern Asia,0.98,2010
+2015,South-eastern Asia,0.97,2015
+2015,South-eastern Asia,1.01,2015
+2015,South-eastern Asia,0.97,2015
+2018,South-eastern Asia,0.98,2018
+2018,South-eastern Asia,1.03,2018
+2018,South-eastern Asia,1.05,2018
+2019,South-eastern Asia,0.98,2019
+2019,South-eastern Asia,1.03,2019
+2019,South-eastern Asia,1.05,2019
+2020,South-eastern Asia,0.98,2020
+2020,South-eastern Asia,1.03,2020
+2020,South-eastern Asia,1.05,2020
+2005,Southern Asia,0.96,2005
+2005,Southern Asia,0.86,2005
+2005,Southern Asia,0.81,2005
+2010,Southern Asia,1.0,2010
+2010,Southern Asia,0.93,2010
+2010,Southern Asia,0.9,2010
+2015,Southern Asia,1.06,2015
+2015,Southern Asia,1.0,2015
+2015,Southern Asia,0.95,2015
+2018,Southern Asia,0.99,2018
+2018,Southern Asia,1.0,2018
+2018,Southern Asia,0.97,2018
+2019,Southern Asia,0.99,2019
+2019,Southern Asia,1.01,2019
+2019,Southern Asia,0.98,2019
+2020,Southern Asia,1.0,2020
+2020,Southern Asia,0.99,2020
+2020,Southern Asia,0.95,2020
+2005,Western Asia,0.91,2005
+2005,Western Asia,0.86,2005
+2005,Western Asia,0.84,2005
+2010,Western Asia,0.93,2010
+2010,Western Asia,0.91,2010
+2010,Western Asia,0.9,2010
+2015,Western Asia,0.94,2015
+2015,Western Asia,0.94,2015
+2015,Western Asia,0.93,2015
+2018,Western Asia,0.94,2018
+2018,Western Asia,0.94,2018
+2018,Western Asia,0.93,2018
+2019,Western Asia,0.94,2019
+2019,Western Asia,0.92,2019
+2019,Western Asia,0.9,2019
+2020,Western Asia,0.94,2020
+2020,Western Asia,0.93,2020
+2020,Western Asia,0.91,2020
+2005,Europe,0.99,2005
+2005,Europe,1.0,2005
+2005,Europe,1.01,2005
+2010,Europe,0.99,2010
+2010,Europe,0.99,2010
+2010,Europe,0.99,2010
+2015,Europe,1.0,2015
+2015,Europe,1.0,2015
+2015,Europe,1.0,2015
+2018,Europe,1.0,2018
+2018,Europe,0.99,2018
+2018,Europe,1.0,2018
+2019,Europe,1.0,2019
+2019,Europe,1.0,2019
+2019,Europe,1.0,2019
+2020,Europe,1.0,2020
+2020,Europe,1.0,2020
+2020,Europe,1.0,2020
+2005,Oceania,0.98,2005
+2005,Oceania,0.97,2005
+2005,Oceania,0.95,2005
+2010,Oceania,0.97,2010
+2010,Oceania,0.93,2010
+2010,Oceania,0.92,2010
+2015,Oceania,0.97,2015
+2015,Oceania,0.89,2015
+2015,Oceania,0.88,2015
+2018,Oceania,0.98,2018
+2018,Oceania,0.94,2018
+2018,Oceania,0.99,2018
+2019,Oceania,0.97,2019
+2019,Oceania,0.94,2019
+2019,Oceania,0.96,2019
+2020,Oceania,0.98,2020
+2020,Oceania,0.94,2020
+2020,Oceania,0.96,2020
+2010,Afghanistan,0.68,2010
+2010,Afghanistan,0.5,2010
+2010,Afghanistan,0.42,2010
+2015,Afghanistan,0.68,2015
+2015,Afghanistan,0.56,2015
+2015,Afghanistan,0.52,2015
+2018,Afghanistan,0.67,2018
+2018,Afghanistan,0.57,2018
+2018,Afghanistan,0.54,2018
+2005,Albania,1.01,2005
+2005,Albania,0.97,2005
+2005,Albania,0.91,2005
+2010,Albania,1.01,2010
+2010,Albania,1.01,2010
+2010,Albania,0.97,2010
+2015,Albania,1.03,2015
+2015,Albania,0.96,2015
+2015,Albania,0.9,2015
+2018,Albania,1.04,2018
+2018,Albania,1.01,2018
+2018,Albania,0.97,2018
+2019,Albania,1.03,2019
+2019,Albania,1.01,2019
+2019,Albania,0.98,2019
+2020,Albania,1.03,2020
+2020,Albania,1.02,2020
+2020,Albania,1.01,2020
+2005,Algeria,0.93,2005
+2005,Algeria,1.1,2005
+2005,Algeria,1.48,2005
+2010,Algeria,0.94,2010
+2010,Algeria,1.04,2010
+2010,Algeria,1.42,2010
+2015,Algeria,0.95,2015
+2018,Algeria,0.96,2018
+2019,Algeria,0.96,2019
+2020,Algeria,0.97,2020
+2010,Angola,0.8,2010
+2010,Angola,0.68,2010
+2010,Angola,0.56,2010
+2015,Angola,0.87,2015
+2010,Antigua and Barbuda,0.92,2010
+2010,Antigua and Barbuda,1.05,2010
+2010,Antigua and Barbuda,1.53,2010
+2015,Antigua and Barbuda,0.97,2015
+2015,Antigua and Barbuda,1.02,2015
+2015,Antigua and Barbuda,1.15,2015
+2018,Antigua and Barbuda,0.99,2018
+2018,Antigua and Barbuda,0.96,2018
+2018,Antigua and Barbuda,1.13,2018
+2005,Argentina,0.99,2005
+2005,Argentina,1.09,2005
+2005,Argentina,1.16,2005
+2010,Argentina,0.99,2010
+2010,Argentina,1.1,2010
+2010,Argentina,1.2,2010
+2015,Argentina,1.0,2015
+2015,Argentina,1.06,2015
+2015,Argentina,1.15,2015
+2018,Argentina,1.0,2018
+2018,Argentina,1.04,2018
+2018,Argentina,1.12,2018
+2019,Argentina,1.0,2019
+2019,Argentina,1.04,2019
+2019,Argentina,1.1,2019
+2005,Armenia,1.02,2005
+2010,Armenia,1.03,2010
+2010,Armenia,0.98,2010
+2010,Armenia,0.96,2010
+2015,Armenia,1.02,2015
+2015,Armenia,1.05,2015
+2015,Armenia,1.11,2015
+2018,Armenia,1.0,2018
+2018,Armenia,1.04,2018
+2018,Armenia,1.08,2018
+2019,Armenia,1.01,2019
+2019,Armenia,1.05,2019
+2019,Armenia,1.12,2019
+2020,Armenia,1.01,2020
+2020,Armenia,1.04,2020
+2020,Armenia,1.1,2020
+2005,Australia,1.02,2005
+2010,Australia,1.0,2010
+2015,Australia,1.0,2015
+2015,Australia,0.87,2015
+2015,Australia,0.85,2015
+2018,Australia,1.0,2018
+2018,Australia,0.94,2018
+2018,Australia,0.96,2018
+2019,Australia,1.0,2019
+2019,Australia,0.93,2019
+2019,Australia,0.93,2019
+2005,Austria,1.0,2005
+2005,Austria,0.95,2005
+2005,Austria,0.91,2005
+2010,Austria,0.99,2010
+2010,Austria,0.96,2010
+2010,Austria,0.93,2010
+2015,Austria,0.99,2015
+2015,Austria,0.96,2015
+2015,Austria,0.94,2015
+2018,Austria,0.99,2018
+2018,Austria,0.96,2018
+2018,Austria,0.93,2018
+2019,Austria,0.99,2019
+2019,Austria,0.97,2019
+2019,Austria,0.95,2019
+2005,Azerbaijan,0.95,2005
+2010,Azerbaijan,0.99,2010
+2015,Azerbaijan,0.98,2015
+2018,Azerbaijan,1.01,2018
+2018,Azerbaijan,1.0,2018
+2018,Azerbaijan,1.03,2018
+2019,Azerbaijan,1.03,2019
+2019,Azerbaijan,1.0,2019
+2019,Azerbaijan,1.01,2019
+2020,Azerbaijan,1.04,2020
+2020,Azerbaijan,0.98,2020
+2020,Azerbaijan,0.95,2020
+2005,Bahamas,0.97,2005
+2005,Bahamas,0.99,2005
+2005,Bahamas,1.05,2005
+2010,Bahamas,1.04,2010
+2010,Bahamas,1.07,2010
+2005,Bahrain,1.04,2005
+2005,Bahrain,1.11,2005
+2005,Bahrain,1.19,2005
+2015,Bahrain,1.01,2015
+2015,Bahrain,0.99,2015
+2015,Bahrain,1.03,2015
+2018,Bahrain,0.99,2018
+2018,Bahrain,1.06,2018
+2018,Bahrain,1.05,2018
+2019,Bahrain,0.99,2019
+2019,Bahrain,1.09,2019
+2019,Bahrain,1.12,2019
+2010,Bahrain,1.01,2010
+2010,Bahrain,1.05,2010
+2005,Bangladesh,1.05,2005
+2005,Bangladesh,1.07,2005
+2005,Bangladesh,0.97,2005
+2010,Bangladesh,1.06,2010
+2010,Bangladesh,1.12,2010
+2010,Bangladesh,0.97,2010
+2018,Bangladesh,1.07,2018
+2018,Bangladesh,1.16,2018
+2018,Bangladesh,1.04,2018
+2020,Bangladesh,1.09,2020
+2020,Bangladesh,1.21,2020
+2020,Bangladesh,1.12,2020
+2015,Bangladesh,1.13,2015
+2015,Bangladesh,0.99,2015
+2019,Bangladesh,1.17,2019
+2019,Bangladesh,1.06,2019
+2005,Barbados,1.0,2005
+2005,Barbados,0.99,2005
+2005,Barbados,1.03,2005
+2010,Barbados,1.02,2010
+2010,Barbados,1.0,2010
+2010,Barbados,1.08,2010
+2015,Barbados,0.99,2015
+2015,Barbados,1.04,2015
+2015,Barbados,1.05,2015
+2018,Barbados,0.96,2018
+2018,Barbados,1.04,2018
+2018,Barbados,1.09,2018
+2019,Barbados,0.96,2019
+2019,Barbados,1.04,2019
+2019,Barbados,1.08,2019
+2020,Barbados,0.97,2020
+2020,Barbados,1.03,2020
+2020,Barbados,1.13,2020
+2005,Belarus,0.97,2005
+2010,Belarus,1.0,2010
+2010,Belarus,0.97,2010
+2010,Belarus,0.93,2010
+2015,Belarus,1.0,2015
+2015,Belarus,0.98,2015
+2015,Belarus,0.95,2015
+2018,Belarus,1.0,2018
+2018,Belarus,0.99,2018
+2018,Belarus,0.94,2018
+2005,Belgium,1.0,2005
+2005,Belgium,1.12,2005
+2005,Belgium,1.1,2005
+2010,Belgium,1.0,2010
+2010,Belgium,1.14,2010
+2010,Belgium,1.18,2010
+2015,Belgium,1.0,2015
+2015,Belgium,1.14,2015
+2015,Belgium,1.18,2015
+2018,Belgium,1.0,2018
+2018,Belgium,1.12,2018
+2018,Belgium,1.17,2018
+2019,Belgium,1.01,2019
+2019,Belgium,1.13,2019
+2019,Belgium,1.17,2019
+2005,Belize,0.96,2005
+2005,Belize,1.03,2005
+2005,Belize,1.16,2005
+2010,Belize,0.96,2010
+2010,Belize,1.08,2010
+2010,Belize,1.2,2010
+2015,Belize,0.95,2015
+2015,Belize,1.03,2015
+2015,Belize,1.13,2015
+2018,Belize,0.95,2018
+2018,Belize,1.04,2018
+2018,Belize,1.22,2018
+2019,Belize,0.97,2019
+2019,Belize,1.02,2019
+2019,Belize,1.17,2019
+2020,Belize,0.95,2020
+2020,Belize,1.04,2020
+2020,Belize,1.17,2020
+2005,Benin,0.79,2005
+2005,Benin,0.51,2005
+2010,Benin,0.89,2010
+2015,Benin,0.93,2015
+2015,Benin,0.71,2015
+2015,Benin,0.5,2015
+2018,Benin,0.94,2018
+2019,Benin,0.93,2019
+2020,Benin,0.93,2020
+2020,Benin,0.81,2020
+2020,Benin,0.65,2020
+2005,Bhutan,0.97,2005
+2005,Bhutan,0.92,2005
+2005,Bhutan,0.69,2005
+2010,Bhutan,1.02,2010
+2010,Bhutan,1.04,2010
+2010,Bhutan,0.91,2010
+2015,Bhutan,1.01,2015
+2015,Bhutan,1.07,2015
+2015,Bhutan,0.98,2015
+2018,Bhutan,1.0,2018
+2018,Bhutan,1.13,2018
+2018,Bhutan,1.06,2018
+2020,Bhutan,1.02,2020
+2005,Bolivia (Plurin. State of),1.0,2005
+2005,Bolivia (Plurin. State of),0.95,2005
+2005,Bolivia (Plurin. State of),0.95,2005
+2010,Bolivia (Plurin. State of),0.99,2010
+2010,Bolivia (Plurin. State of),1.0,2010
+2010,Bolivia (Plurin. State of),1.01,2010
+2015,Bolivia (Plurin. State of),0.98,2015
+2015,Bolivia (Plurin. State of),0.99,2015
+2015,Bolivia (Plurin. State of),1.0,2015
+2018,Bolivia (Plurin. State of),0.99,2018
+2018,Bolivia (Plurin. State of),0.98,2018
+2018,Bolivia (Plurin. State of),1.0,2018
+2019,Bolivia (Plurin. State of),0.99,2019
+2019,Bolivia (Plurin. State of),0.98,2019
+2019,Bolivia (Plurin. State of),1.01,2019
+2019,Bosnia and Herzegovina,1.04,2019
+2020,Bosnia and Herzegovina,1.04,2020
+2005,Botswana,0.99,2005
+2005,Botswana,1.03,2005
+2005,Botswana,0.97,2005
+2015,Botswana,0.98,2015
+2005,Brazil,0.94,2005
+2005,Brazil,1.1,2005
+2005,Brazil,1.17,2005
+2015,Brazil,0.96,2015
+2015,Brazil,1.06,2015
+2015,Brazil,1.17,2015
+2018,Brazil,0.97,2018
+2018,Brazil,1.03,2018
+2018,Brazil,1.13,2018
+2019,Brazil,0.96,2019
+2019,Brazil,1.05,2019
+2019,Brazil,1.13,2019
+2018,Brunei Darussalam,1.01,2018
+2018,Brunei Darussalam,1.02,2018
+2018,Brunei Darussalam,1.04,2018
+2019,Brunei Darussalam,1.01,2019
+2019,Brunei Darussalam,1.03,2019
+2019,Brunei Darussalam,1.05,2019
+2020,Brunei Darussalam,1.0,2020
+2020,Brunei Darussalam,1.03,2020
+2020,Brunei Darussalam,1.05,2020
+2005,Bulgaria,0.99,2005
+2005,Bulgaria,0.96,2005
+2005,Bulgaria,0.98,2005
+2010,Bulgaria,1.0,2010
+2010,Bulgaria,0.96,2010
+2010,Bulgaria,0.97,2010
+2015,Bulgaria,0.99,2015
+2015,Bulgaria,0.97,2015
+2015,Bulgaria,0.98,2015
+2018,Bulgaria,0.99,2018
+2018,Bulgaria,0.97,2018
+2018,Bulgaria,0.96,2018
+2019,Bulgaria,0.99,2019
+2019,Bulgaria,0.98,2019
+2019,Bulgaria,0.98,2019
+2005,Burkina Faso,0.8,2005
+2005,Burkina Faso,0.71,2005
+2005,Burkina Faso,0.6,2005
+2010,Burkina Faso,0.91,2010
+2010,Burkina Faso,0.76,2010
+2010,Burkina Faso,0.61,2010
+2015,Burkina Faso,0.97,2015
+2015,Burkina Faso,0.92,2015
+2015,Burkina Faso,0.66,2015
+2018,Burkina Faso,0.98,2018
+2018,Burkina Faso,1.0,2018
+2018,Burkina Faso,0.72,2018
+2019,Burkina Faso,0.99,2019
+2019,Burkina Faso,1.03,2019
+2019,Burkina Faso,0.79,2019
+2020,Burkina Faso,1.01,2020
+2020,Burkina Faso,1.06,2020
+2020,Burkina Faso,0.83,2020
+2005,Burundi,0.86,2005
+2005,Burundi,0.74,2005
+2005,Burundi,0.66,2005
+2010,Burundi,0.99,2010
+2010,Burundi,0.72,2010
+2010,Burundi,0.59,2010
+2015,Burundi,1.03,2015
+2015,Burundi,0.94,2015
+2015,Burundi,0.74,2015
+2018,Burundi,1.01,2018
+2018,Burundi,1.11,2018
+2018,Burundi,0.96,2018
+2019,Burundi,1.01,2019
+2019,Burundi,1.15,2019
+2019,Burundi,1.02,2019
+2005,Cabo Verde,0.96,2005
+2005,Cabo Verde,1.13,2005
+2005,Cabo Verde,1.14,2005
+2010,Cabo Verde,0.93,2010
+2010,Cabo Verde,1.19,2010
+2010,Cabo Verde,1.32,2010
+2015,Cabo Verde,0.93,2015
+2015,Cabo Verde,1.12,2015
+2015,Cabo Verde,1.28,2015
+2018,Cabo Verde,0.93,2018
+2018,Cabo Verde,1.1,2018
+2018,Cabo Verde,1.27,2018
+2019,Cabo Verde,0.94,2019
+2019,Cabo Verde,1.09,2019
+2019,Cabo Verde,1.24,2019
+2005,Cambodia,0.93,2005
+2010,Cambodia,0.94,2010
+2015,Cambodia,0.99,2015
+2018,Cambodia,0.98,2018
+2019,Cambodia,0.97,2019
+2020,Cambodia,0.97,2020
+2020,Cambodia,1.08,2020
+2020,Cambodia,0.99,2020
+2005,Cameroon,0.84,2005
+2005,Cameroon,0.79,2005
+2005,Cameroon,0.77,2005
+2010,Cameroon,0.86,2010
+2015,Cameroon,0.9,2015
+2015,Cameroon,0.86,2015
+2015,Cameroon,0.81,2015
+2018,Cameroon,0.9,2018
+2019,Cameroon,0.9,2019
+2020,Cameroon,0.87,2020
+2005,Canada,0.99,2005
+2005,Canada,0.98,2005
+2005,Canada,0.98,2005
+2010,Canada,1.01,2010
+2010,Canada,0.98,2010
+2010,Canada,0.97,2010
+2015,Canada,1.01,2015
+2015,Canada,1.01,2015
+2015,Canada,1.01,2015
+2018,Canada,1.0,2018
+2018,Canada,1.01,2018
+2018,Canada,1.01,2018
+2019,Canada,0.99,2019
+2019,Canada,1.01,2019
+2019,Canada,1.01,2019
+2010,Central African Republic,0.73,2010
+2005,Chad,0.68,2005
+2005,Chad,0.35,2005
+2005,Chad,0.28,2005
+2010,Chad,0.73,2010
+2010,Chad,0.42,2010
+2010,Chad,0.36,2010
+2015,Chad,0.77,2015
+2015,Chad,0.45,2015
+2015,Chad,0.35,2015
+2018,Chad,0.78,2018
+2018,Chad,0.52,2018
+2018,Chad,0.44,2018
+2019,Chad,0.78,2019
+2019,Chad,0.53,2019
+2019,Chad,0.44,2019
+2005,Chile,0.96,2005
+2005,Chile,1.01,2005
+2005,Chile,1.03,2005
+2010,Chile,0.97,2010
+2010,Chile,1.03,2010
+2010,Chile,1.05,2010
+2015,Chile,0.97,2015
+2015,Chile,1.01,2015
+2015,Chile,1.02,2015
+2019,Chile,0.97,2019
+2019,Chile,0.99,2019
+2019,Chile,1.0,2019
+2010,China,0.98,2010
+2010,China,1.0,2010
+2010,China,0.98,2010
+2015,China,1.0,2015
+2015,China,1.05,2015
+2018,China,1.01,2018
+2018,China,1.04,2018
+2019,China,1.01,2019
+2019,China,1.04,2019
+2020,China,1.01,2020
+2020,China,1.03,2020
+2005,Colombia,0.98,2005
+2005,Colombia,1.11,2005
+2005,Colombia,1.19,2005
+2010,Colombia,0.98,2010
+2010,Colombia,1.1,2010
+2010,Colombia,1.2,2010
+2015,Colombia,0.97,2015
+2015,Colombia,1.07,2015
+2015,Colombia,1.18,2015
+2018,Colombia,0.97,2018
+2018,Colombia,1.05,2018
+2018,Colombia,1.15,2018
+2019,Colombia,0.97,2019
+2019,Colombia,1.05,2019
+2019,Colombia,1.14,2019
+2018,Comoros,1.0,2018
+2018,Comoros,1.07,2018
+2018,Comoros,1.11,2018
+2005,Congo,0.93,2005
+2010,Congo,0.95,2010
+2018,Congo,0.97,2018
+2005,Costa Rica,0.97,2005
+2005,Costa Rica,1.04,2005
+2005,Costa Rica,1.14,2005
+2010,Costa Rica,0.98,2010
+2010,Costa Rica,1.04,2010
+2010,Costa Rica,1.16,2010
+2015,Costa Rica,0.99,2015
+2015,Costa Rica,1.04,2015
+2015,Costa Rica,1.18,2015
+2018,Costa Rica,1.01,2018
+2018,Costa Rica,1.08,2018
+2018,Costa Rica,1.2,2018
+2019,Costa Rica,1.01,2019
+2019,Costa Rica,1.08,2019
+2019,Costa Rica,1.17,2019
+2020,Costa Rica,1.02,2020
+2020,Costa Rica,1.09,2020
+2020,Costa Rica,1.18,2020
+2015,Côte d’Ivoire,0.88,2015
+2015,Côte d’Ivoire,0.7,2015
+2015,Côte d’Ivoire,0.66,2015
+2018,Côte d’Ivoire,0.93,2018
+2018,Côte d’Ivoire,0.77,2018
+2018,Côte d’Ivoire,0.7,2018
+2019,Côte d’Ivoire,0.94,2019
+2019,Côte d’Ivoire,0.79,2019
+2019,Côte d’Ivoire,0.71,2019
+2020,Côte d’Ivoire,0.94,2020
+2020,Côte d’Ivoire,0.83,2020
+2020,Côte d’Ivoire,0.75,2020
+2005,Croatia,1.0,2005
+2005,Croatia,1.03,2005
+2005,Croatia,1.05,2005
+2010,Croatia,1.0,2010
+2010,Croatia,1.07,2010
+2010,Croatia,1.12,2010
+2015,Croatia,1.0,2015
+2015,Croatia,1.05,2015
+2015,Croatia,1.05,2015
+2018,Croatia,1.0,2018
+2018,Croatia,1.05,2018
+2018,Croatia,1.05,2018
+2019,Croatia,1.01,2019
+2019,Croatia,1.05,2019
+2019,Croatia,1.05,2019
+2005,Cuba,0.97,2005
+2005,Cuba,1.02,2005
+2005,Cuba,1.06,2005
+2010,Cuba,0.98,2010
+2010,Cuba,1.0,2010
+2010,Cuba,1.03,2010
+2015,Cuba,0.94,2015
+2015,Cuba,1.02,2015
+2015,Cuba,1.11,2015
+2018,Cuba,0.96,2018
+2018,Cuba,1.02,2018
+2018,Cuba,1.09,2018
+2019,Cuba,0.97,2019
+2019,Cuba,1.01,2019
+2019,Cuba,1.08,2019
+2020,Cuba,0.97,2020
+2020,Cuba,1.01,2020
+2020,Cuba,1.07,2020
+2005,Cyprus,1.0,2005
+2005,Cyprus,1.02,2005
+2005,Cyprus,1.03,2005
+2010,Cyprus,1.0,2010
+2010,Cyprus,1.01,2010
+2010,Cyprus,1.02,2010
+2015,Cyprus,1.0,2015
+2015,Cyprus,0.99,2015
+2015,Cyprus,0.99,2015
+2018,Cyprus,0.99,2018
+2018,Cyprus,0.98,2018
+2018,Cyprus,0.96,2018
+2019,Cyprus,0.99,2019
+2019,Cyprus,0.97,2019
+2019,Cyprus,0.96,2019
+2005,Czechia,0.99,2005
+2005,Czechia,1.02,2005
+2005,Czechia,1.03,2005
+2010,Czechia,1.0,2010
+2010,Czechia,1.01,2010
+2010,Czechia,1.01,2010
+2015,Czechia,1.0,2015
+2015,Czechia,1.01,2015
+2015,Czechia,1.02,2015
+2018,Czechia,1.01,2018
+2018,Czechia,1.0,2018
+2018,Czechia,1.01,2018
+2019,Czechia,1.0,2019
+2019,Czechia,1.01,2019
+2019,Czechia,1.02,2019
+2018,Dem. People's Rep. Korea,1.0,2018
+2018,Dem. People's Rep. Korea,1.02,2018
+2015,Dem. People's Rep. Korea,1.01,2015
+2015,Dem. People's Rep. Korea,1.02,2015
+2010,Dem. Rep. of the Congo,0.87,2010
+2010,Dem. Rep. of the Congo,0.58,2010
+2010,Dem. Rep. of the Congo,0.52,2010
+2015,Dem. Rep. of the Congo,0.99,2015
+2015,Dem. Rep. of the Congo,0.64,2015
+2015,Dem. Rep. of the Congo,0.62,2015
+2018,Dem. Rep. of the Congo,0.94,2018
+2005,Denmark,1.0,2005
+2005,Denmark,1.04,2005
+2005,Denmark,1.05,2005
+2010,Denmark,1.0,2010
+2010,Denmark,1.01,2010
+2010,Denmark,1.0,2010
+2015,Denmark,0.99,2015
+2015,Denmark,1.05,2015
+2015,Denmark,1.08,2015
+2018,Denmark,1.0,2018
+2018,Denmark,1.0,2018
+2018,Denmark,1.02,2018
+2019,Denmark,1.0,2019
+2019,Denmark,0.99,2019
+2019,Denmark,1.01,2019
+2005,Djibouti,0.82,2005
+2005,Djibouti,0.66,2005
+2005,Djibouti,0.63,2005
+2015,Djibouti,1.07,2015
+2015,Djibouti,0.95,2015
+2015,Djibouti,0.89,2015
+2018,Djibouti,1.02,2018
+2018,Djibouti,1.0,2018
+2018,Djibouti,0.99,2018
+2019,Djibouti,1.0,2019
+2019,Djibouti,1.03,2019
+2019,Djibouti,0.99,2019
+2020,Djibouti,0.96,2020
+2020,Djibouti,1.03,2020
+2020,Djibouti,1.01,2020
+2005,Dominica,1.0,2005
+2005,Dominica,1.08,2005
+2005,Dominica,1.36,2005
+2010,Dominica,0.98,2010
+2010,Dominica,1.09,2010
+2010,Dominica,1.38,2010
+2015,Dominica,0.98,2015
+2015,Dominica,0.99,2015
+2015,Dominica,1.12,2015
+2019,Dominica,0.97,2019
+2019,Dominica,1.02,2019
+2019,Dominica,1.2,2019
+2020,Dominica,0.93,2020
+2020,Dominica,1.03,2020
+2020,Dominica,1.15,2020
+2005,Dominican Republic,0.95,2005
+2005,Dominican Republic,1.19,2005
+2005,Dominican Republic,1.24,2005
+2010,Dominican Republic,0.88,2010
+2010,Dominican Republic,1.12,2010
+2010,Dominican Republic,1.19,2010
+2015,Dominican Republic,0.91,2015
+2015,Dominican Republic,1.1,2015
+2015,Dominican Republic,1.15,2015
+2018,Dominican Republic,0.94,2018
+2018,Dominican Republic,1.08,2018
+2018,Dominican Republic,1.2,2018
+2019,Dominican Republic,0.95,2019
+2019,Dominican Republic,1.09,2019
+2019,Dominican Republic,1.19,2019
+2020,Dominican Republic,0.96,2020
+2020,Dominican Republic,1.09,2020
+2020,Dominican Republic,1.18,2020
+2005,Ecuador,1.0,2005
+2005,Ecuador,1.01,2005
+2005,Ecuador,1.07,2005
+2010,Ecuador,1.0,2010
+2010,Ecuador,1.05,2010
+2010,Ecuador,1.08,2010
+2015,Ecuador,1.0,2015
+2015,Ecuador,1.04,2015
+2015,Ecuador,1.06,2015
+2018,Ecuador,1.02,2018
+2018,Ecuador,1.03,2018
+2018,Ecuador,1.04,2018
+2019,Ecuador,1.02,2019
+2019,Ecuador,1.03,2019
+2019,Ecuador,1.04,2019
+2020,Ecuador,1.02,2020
+2020,Ecuador,1.02,2020
+2020,Ecuador,1.04,2020
+2018,Egypt,1.0,2018
+2018,Egypt,0.99,2018
+2018,Egypt,0.97,2018
+2019,Egypt,1.01,2019
+2019,Egypt,0.99,2019
+2019,Egypt,0.98,2019
+2005,El Salvador,0.97,2005
+2005,El Salvador,1.0,2005
+2005,El Salvador,1.04,2005
+2010,El Salvador,0.95,2010
+2010,El Salvador,0.99,2010
+2010,El Salvador,1.02,2010
+2015,El Salvador,0.96,2015
+2015,El Salvador,1.01,2015
+2015,El Salvador,1.05,2015
+2018,El Salvador,0.97,2018
+2018,El Salvador,0.99,2018
+2018,El Salvador,1.02,2018
+2019,El Salvador,0.98,2019
+2019,El Salvador,1.01,2019
+2019,El Salvador,1.04,2019
+2005,Equatorial Guinea,0.97,2005
+2005,Equatorial Guinea,0.74,2005
+2005,Equatorial Guinea,0.42,2005
+2010,Equatorial Guinea,0.99,2010
+2015,Equatorial Guinea,0.99,2015
+2005,Eritrea,0.81,2005
+2005,Eritrea,0.6,2005
+2005,Eritrea,0.53,2005
+2010,Eritrea,0.85,2010
+2010,Eritrea,0.77,2010
+2010,Eritrea,0.71,2010
+2015,Eritrea,0.86,2015
+2015,Eritrea,0.85,2015
+2015,Eritrea,0.85,2015
+2018,Eritrea,0.86,2018
+2018,Eritrea,0.91,2018
+2018,Eritrea,0.95,2018
+2005,Estonia,0.97,2005
+2005,Estonia,1.04,2005
+2005,Estonia,1.12,2005
+2010,Estonia,0.99,2010
+2010,Estonia,1.0,2010
+2010,Estonia,1.03,2010
+2015,Estonia,1.0,2015
+2015,Estonia,1.0,2015
+2015,Estonia,1.03,2015
+2018,Estonia,1.0,2018
+2018,Estonia,1.03,2018
+2018,Estonia,1.05,2018
+2019,Estonia,1.01,2019
+2019,Estonia,1.04,2019
+2019,Estonia,1.08,2019
+2005,Eswatini,0.93,2005
+2005,Eswatini,0.96,2005
+2005,Eswatini,0.88,2005
+2010,Eswatini,0.91,2010
+2010,Eswatini,0.95,2010
+2010,Eswatini,0.92,2010
+2015,Eswatini,0.91,2015
+2015,Eswatini,1.0,2015
+2015,Eswatini,0.99,2015
+2018,Eswatini,0.92,2018
+2019,Eswatini,0.92,2019
+2005,Ethiopia,0.84,2005
+2005,Ethiopia,0.6,2005
+2005,Ethiopia,0.67,2005
+2010,Ethiopia,0.92,2010
+2010,Ethiopia,0.83,2010
+2010,Ethiopia,0.7,2010
+2015,Ethiopia,0.91,2015
+2015,Ethiopia,0.96,2015
+2015,Ethiopia,0.98,2015
+2020,Ethiopia,0.91,2020
+2015,Fiji,0.98,2015
+2019,Fiji,0.96,2019
+2005,Finland,0.99,2005
+2005,Finland,1.05,2005
+2005,Finland,1.09,2005
+2010,Finland,0.99,2010
+2010,Finland,1.05,2010
+2010,Finland,1.09,2010
+2015,Finland,0.99,2015
+2015,Finland,1.1,2015
+2015,Finland,1.16,2015
+2018,Finland,0.99,2018
+2018,Finland,1.1,2018
+2018,Finland,1.17,2018
+2019,Finland,0.99,2019
+2019,Finland,1.1,2019
+2019,Finland,1.16,2019
+2005,France,0.99,2005
+2005,France,1.0,2005
+2005,France,1.02,2005
+2010,France,0.99,2010
+2010,France,1.01,2010
+2010,France,1.03,2010
+2015,France,0.99,2015
+2015,France,1.01,2015
+2015,France,1.03,2015
+2018,France,0.99,2018
+2018,France,1.01,2018
+2018,France,1.02,2018
+2019,France,0.99,2019
+2019,France,1.0,2019
+2019,France,1.01,2019
+2005,Gambia,1.03,2005
+2010,Gambia,1.03,2010
+2010,Gambia,0.96,2010
+2010,Gambia,0.87,2010
+2015,Gambia,1.07,2015
+2018,Gambia,1.09,2018
+2019,Gambia,1.11,2019
+2020,Gambia,1.12,2020
+2005,Georgia,1.04,2005
+2005,Georgia,1.04,2005
+2005,Georgia,1.05,2005
+2010,Georgia,1.01,2010
+2015,Georgia,1.0,2015
+2015,Georgia,1.03,2015
+2015,Georgia,1.05,2015
+2018,Georgia,1.01,2018
+2018,Georgia,1.01,2018
+2018,Georgia,1.03,2018
+2019,Georgia,1.01,2019
+2019,Georgia,1.01,2019
+2019,Georgia,1.01,2019
+2020,Georgia,1.01,2020
+2020,Georgia,1.01,2020
+2020,Georgia,1.01,2020
+2005,Germany,1.0,2005
+2005,Germany,0.97,2005
+2005,Germany,0.94,2005
+2010,Germany,0.99,2010
+2010,Germany,0.95,2010
+2010,Germany,0.89,2010
+2015,Germany,1.0,2015
+2015,Germany,0.95,2015
+2015,Germany,0.9,2015
+2018,Germany,1.01,2018
+2018,Germany,0.94,2018
+2018,Germany,0.89,2018
+2019,Germany,1.01,2019
+2019,Germany,0.95,2019
+2019,Germany,0.88,2019
+2005,Ghana,0.96,2005
+2005,Ghana,0.84,2005
+2005,Ghana,0.73,2005
+2015,Ghana,1.0,2015
+2015,Ghana,0.95,2015
+2015,Ghana,0.9,2015
+2018,Ghana,1.01,2018
+2018,Ghana,0.99,2018
+2018,Ghana,0.95,2018
+2019,Ghana,1.01,2019
+2019,Ghana,1.0,2019
+2019,Ghana,0.96,2019
+2020,Ghana,1.02,2020
+2020,Ghana,1.0,2020
+2020,Ghana,0.97,2020
+2005,Greece,0.98,2005
+2005,Greece,0.95,2005
+2005,Greece,0.96,2005
+2010,Greece,0.98,2010
+2010,Greece,0.97,2010
+2010,Greece,0.99,2010
+2015,Greece,0.99,2015
+2015,Greece,0.93,2015
+2015,Greece,0.91,2015
+2018,Greece,1.0,2018
+2018,Greece,0.95,2018
+2018,Greece,0.94,2018
+2019,Greece,1.01,2019
+2019,Greece,0.95,2019
+2019,Greece,0.94,2019
+2005,Grenada,0.97,2005
+2005,Grenada,1.03,2005
+2005,Grenada,1.15,2005
+2010,Grenada,0.96,2010
+2010,Grenada,1.03,2010
+2010,Grenada,1.26,2010
+2015,Grenada,0.96,2015
+2015,Grenada,0.98,2015
+2015,Grenada,1.1,2015
+2018,Grenada,0.98,2018
+2018,Grenada,1.03,2018
+2018,Grenada,1.08,2018
+2005,Guatemala,0.94,2005
+2005,Guatemala,0.92,2005
+2005,Guatemala,1.02,2005
+2010,Guatemala,0.98,2010
+2010,Guatemala,0.94,2010
+2010,Guatemala,1.01,2010
+2015,Guatemala,0.97,2015
+2015,Guatemala,0.94,2015
+2015,Guatemala,1.03,2015
+2018,Guatemala,0.97,2018
+2018,Guatemala,0.95,2018
+2018,Guatemala,1.05,2018
+2019,Guatemala,0.98,2019
+2019,Guatemala,0.96,2019
+2019,Guatemala,1.07,2019
+2020,Guatemala,0.98,2020
+2020,Guatemala,0.98,2020
+2020,Guatemala,1.08,2020
+2005,Guinea,0.8,2005
+2005,Guinea,0.49,2005
+2005,Guinea,0.44,2005
+2020,Guinea,0.85,2020
+2010,Guinea-Bissau,0.93,2010
+2005,Guyana,1.0,2005
+2005,Guyana,1.02,2005
+2005,Guyana,1.05,2005
+2010,Guyana,0.97,2010
+2010,Guyana,1.04,2010
+2010,Guyana,1.06,2010
+2005,Honduras,1.0,2005
+2010,Honduras,1.0,2010
+2010,Honduras,1.23,2010
+2010,Honduras,1.39,2010
+2015,Honduras,0.99,2015
+2015,Honduras,1.2,2015
+2015,Honduras,1.35,2015
+2019,Honduras,1.0,2019
+2019,Honduras,1.12,2019
+2019,Honduras,1.26,2019
+2020,Honduras,1.01,2020
+2020,Honduras,1.15,2020
+2020,Honduras,1.26,2020
+2005,Hungary,0.98,2005
+2005,Hungary,0.99,2005
+2005,Hungary,1.0,2005
+2010,Hungary,0.99,2010
+2010,Hungary,0.99,2010
+2010,Hungary,1.0,2010
+2015,Hungary,1.0,2015
+2015,Hungary,1.01,2015
+2015,Hungary,1.02,2015
+2018,Hungary,0.99,2018
+2018,Hungary,1.0,2018
+2018,Hungary,1.0,2018
+2019,Hungary,0.99,2019
+2019,Hungary,1.16,2019
+2019,Hungary,1.0,2019
+2005,Iceland,0.98,2005
+2005,Iceland,1.01,2005
+2005,Iceland,1.03,2005
+2010,Iceland,1.01,2010
+2010,Iceland,1.02,2010
+2010,Iceland,1.03,2010
+2015,Iceland,1.0,2015
+2015,Iceland,1.01,2015
+2015,Iceland,1.01,2015
+2018,Iceland,1.0,2018
+2018,Iceland,0.99,2018
+2018,Iceland,0.98,2018
+2019,Iceland,1.0,2019
+2019,Iceland,0.97,2019
+2019,Iceland,0.96,2019
+2010,India,1.03,2010
+2010,India,0.94,2010
+2010,India,0.9,2010
+2015,India,1.12,2015
+2015,India,1.02,2015
+2015,India,0.98,2015
+2019,India,1.02,2019
+2019,India,1.02,2019
+2019,India,0.99,2019
+2020,India,1.02,2020
+2020,India,1.0,2020
+2020,India,0.95,2020
+2005,India,0.84,2005
+2005,India,0.77,2005
+2018,India,1.01,2018
+2018,India,0.98,2018
+2005,Indonesia,0.97,2005
+2005,Indonesia,0.99,2005
+2005,Indonesia,0.95,2005
+2010,Indonesia,1.03,2010
+2010,Indonesia,1.01,2010
+2010,Indonesia,0.98,2010
+2015,Indonesia,0.97,2015
+2015,Indonesia,1.0,2015
+2015,Indonesia,0.96,2015
+2018,Indonesia,0.97,2018
+2018,Indonesia,1.03,2018
+2018,Indonesia,1.04,2018
+2005,Iran (Islamic Republic of),0.97,2005
+2005,Iran (Islamic Republic of),0.96,2005
+2005,Iran (Islamic Republic of),1.03,2005
+2010,Iran (Islamic Republic of),0.98,2010
+2010,Iran (Islamic Republic of),0.94,2010
+2010,Iran (Islamic Republic of),0.94,2010
+2015,Iran (Islamic Republic of),1.06,2015
+2015,Iran (Islamic Republic of),0.94,2015
+2005,Ireland,1.0,2005
+2005,Ireland,1.09,2005
+2005,Ireland,1.15,2005
+2010,Ireland,1.0,2010
+2010,Ireland,1.06,2010
+2010,Ireland,1.12,2010
+2015,Ireland,1.0,2015
+2015,Ireland,1.03,2015
+2015,Ireland,1.06,2015
+2018,Ireland,0.99,2018
+2018,Ireland,1.14,2018
+2018,Ireland,1.22,2018
+2019,Ireland,1.0,2019
+2019,Ireland,1.1,2019
+2019,Ireland,1.16,2019
+2005,Israel,1.01,2005
+2005,Israel,0.99,2005
+2005,Israel,0.98,2005
+2010,Israel,1.0,2010
+2010,Israel,1.02,2010
+2010,Israel,1.02,2010
+2015,Israel,1.01,2015
+2015,Israel,1.01,2015
+2015,Israel,1.02,2015
+2018,Israel,1.01,2018
+2018,Israel,1.02,2018
+2018,Israel,1.02,2018
+2019,Israel,1.01,2019
+2019,Israel,1.02,2019
+2019,Israel,1.02,2019
+2005,Italy,0.99,2005
+2005,Italy,0.99,2005
+2005,Italy,1.01,2005
+2010,Italy,0.99,2010
+2010,Italy,0.99,2010
+2010,Italy,1.0,2010
+2015,Italy,1.0,2015
+2015,Italy,1.0,2015
+2015,Italy,1.01,2015
+2018,Italy,0.97,2018
+2018,Italy,0.99,2018
+2018,Italy,1.0,2018
+2019,Italy,0.98,2019
+2019,Italy,0.98,2019
+2019,Italy,1.0,2019
+2005,Jamaica,1.0,2005
+2005,Jamaica,1.06,2005
+2005,Jamaica,1.16,2005
+2010,Jamaica,1.08,2010
+2010,Jamaica,1.2,2010
+2015,Jamaica,1.07,2015
+2015,Jamaica,1.06,2015
+2018,Jamaica,1.03,2018
+2018,Jamaica,1.05,2018
+2019,Jamaica,1.02,2019
+2019,Jamaica,1.03,2019
+2020,Jamaica,1.01,2020
+2020,Jamaica,1.03,2020
+2018,Japan,1.0,2018
+2005,Jordan,1.01,2005
+2005,Jordan,1.03,2005
+2005,Jordan,1.06,2005
+2010,Jordan,0.98,2010
+2010,Jordan,1.04,2010
+2010,Jordan,1.14,2010
+2018,Jordan,0.98,2018
+2018,Jordan,1.03,2018
+2018,Jordan,1.16,2018
+2019,Jordan,0.98,2019
+2019,Jordan,1.02,2019
+2019,Jordan,1.11,2019
+2020,Jordan,0.99,2020
+2020,Jordan,1.03,2020
+2020,Jordan,1.11,2020
+2005,Kazakhstan,1.0,2005
+2010,Kazakhstan,1.01,2010
+2010,Kazakhstan,1.01,2010
+2010,Kazakhstan,1.03,2010
+2015,Kazakhstan,1.0,2015
+2015,Kazakhstan,1.03,2015
+2015,Kazakhstan,1.09,2015
+2018,Kazakhstan,1.02,2018
+2018,Kazakhstan,1.01,2018
+2018,Kazakhstan,1.01,2018
+2019,Kazakhstan,1.02,2019
+2019,Kazakhstan,1.01,2019
+2019,Kazakhstan,1.01,2019
+2020,Kazakhstan,1.0,2020
+2020,Kazakhstan,1.0,2020
+2020,Kazakhstan,1.0,2020
+2005,Kenya,0.96,2005
+2005,Kenya,0.94,2005
+2005,Kenya,0.89,2005
+2015,Kenya,1.0,2015
+2005,Kiribati,1.01,2005
+2005,Kiribati,1.15,2005
+2005,Kiribati,1.26,2005
+2015,Kiribati,1.02,2015
+2020,Kiribati,1.06,2020
+2005,Kuwait,1.04,2005
+2005,Kuwait,1.09,2005
+2005,Kuwait,1.1,2005
+2010,Kuwait,0.98,2010
+2010,Kuwait,1.02,2010
+2010,Kuwait,1.08,2010
+2015,Kuwait,1.03,2015
+2015,Kuwait,1.06,2015
+2018,Kuwait,1.1,2018
+2019,Kuwait,1.15,2019
+2020,Kuwait,1.13,2020
+2005,Kyrgyzstan,0.98,2005
+2005,Kyrgyzstan,1.0,2005
+2005,Kyrgyzstan,1.03,2005
+2010,Kyrgyzstan,0.99,2010
+2010,Kyrgyzstan,1.0,2010
+2010,Kyrgyzstan,1.01,2010
+2015,Kyrgyzstan,0.99,2015
+2015,Kyrgyzstan,1.01,2015
+2015,Kyrgyzstan,1.06,2015
+2018,Kyrgyzstan,0.99,2018
+2018,Kyrgyzstan,1.0,2018
+2018,Kyrgyzstan,1.02,2018
+2019,Kyrgyzstan,0.99,2019
+2019,Kyrgyzstan,1.0,2019
+2019,Kyrgyzstan,1.03,2019
+2020,Kyrgyzstan,1.0,2020
+2020,Kyrgyzstan,1.0,2020
+2020,Kyrgyzstan,1.03,2020
+2005,Lao People's Dem. Rep.,0.87,2005
+2005,Lao People's Dem. Rep.,0.75,2005
+2005,Lao People's Dem. Rep.,0.71,2005
+2010,Lao People's Dem. Rep.,0.91,2010
+2010,Lao People's Dem. Rep.,0.82,2010
+2010,Lao People's Dem. Rep.,0.81,2010
+2015,Lao People's Dem. Rep.,0.95,2015
+2015,Lao People's Dem. Rep.,0.92,2015
+2015,Lao People's Dem. Rep.,0.89,2015
+2018,Lao People's Dem. Rep.,0.96,2018
+2018,Lao People's Dem. Rep.,0.93,2018
+2018,Lao People's Dem. Rep.,0.9,2018
+2019,Lao People's Dem. Rep.,0.97,2019
+2019,Lao People's Dem. Rep.,0.94,2019
+2019,Lao People's Dem. Rep.,0.89,2019
+2020,Lao People's Dem. Rep.,0.97,2020
+2020,Lao People's Dem. Rep.,0.95,2020
+2020,Lao People's Dem. Rep.,0.89,2020
+2005,Latvia,0.98,2005
+2005,Latvia,0.99,2005
+2005,Latvia,1.04,2005
+2010,Latvia,0.98,2010
+2010,Latvia,0.99,2010
+2010,Latvia,1.01,2010
+2015,Latvia,1.0,2015
+2015,Latvia,0.98,2015
+2015,Latvia,0.99,2015
+2018,Latvia,1.0,2018
+2018,Latvia,0.99,2018
+2018,Latvia,0.99,2018
+2019,Latvia,1.0,2019
+2019,Latvia,1.0,2019
+2019,Latvia,1.01,2019
+2005,Lesotho,0.99,2005
+2005,Lesotho,1.26,2005
+2005,Lesotho,1.16,2005
+2010,Lesotho,0.96,2010
+2010,Lesotho,1.39,2010
+2010,Lesotho,1.35,2010
+2015,Lesotho,0.95,2015
+2015,Lesotho,1.35,2015
+2015,Lesotho,1.34,2015
+2015,Liberia,0.9,2015
+2015,Liberia,0.77,2015
+2015,Liberia,0.74,2015
+2005,Liechtenstein,0.92,2005
+2005,Liechtenstein,0.87,2005
+2005,Liechtenstein,0.74,2005
+2010,Liechtenstein,0.94,2010
+2010,Liechtenstein,0.85,2010
+2010,Liechtenstein,0.7,2010
+2015,Liechtenstein,0.98,2015
+2015,Liechtenstein,0.78,2015
+2015,Liechtenstein,0.66,2015
+2018,Liechtenstein,1.01,2018
+2018,Liechtenstein,0.83,2018
+2018,Liechtenstein,0.76,2018
+2019,Liechtenstein,1.0,2019
+2019,Liechtenstein,0.86,2019
+2019,Liechtenstein,0.77,2019
+2005,Lithuania,0.99,2005
+2005,Lithuania,0.99,2005
+2005,Lithuania,1.05,2005
+2010,Lithuania,0.99,2010
+2010,Lithuania,0.98,2010
+2010,Lithuania,1.01,2010
+2015,Lithuania,1.0,2015
+2015,Lithuania,0.96,2015
+2015,Lithuania,0.95,2015
+2018,Lithuania,1.0,2018
+2018,Lithuania,0.96,2018
+2018,Lithuania,0.95,2018
+2019,Lithuania,1.0,2019
+2019,Lithuania,0.97,2019
+2019,Lithuania,0.95,2019
+2005,Luxembourg,1.0,2005
+2005,Luxembourg,1.05,2005
+2005,Luxembourg,1.09,2005
+2010,Luxembourg,1.01,2010
+2010,Luxembourg,1.03,2010
+2010,Luxembourg,1.04,2010
+2015,Luxembourg,1.0,2015
+2015,Luxembourg,1.04,2015
+2015,Luxembourg,1.06,2015
+2018,Luxembourg,0.98,2018
+2018,Luxembourg,1.02,2018
+2018,Luxembourg,1.07,2018
+2019,Luxembourg,0.99,2019
+2019,Luxembourg,1.0,2019
+2019,Luxembourg,1.06,2019
+2005,Madagascar,0.96,2005
+2005,Madagascar,0.96,2005
+2005,Madagascar,0.89,2005
+2015,Madagascar,1.0,2015
+2015,Madagascar,0.99,2015
+2015,Madagascar,0.93,2015
+2018,Madagascar,1.01,2018
+2018,Madagascar,1.03,2018
+2018,Madagascar,0.97,2018
+2019,Madagascar,1.02,2019
+2019,Madagascar,1.04,2019
+2019,Madagascar,0.99,2019
+2005,Malawi,1.01,2005
+2005,Malawi,0.79,2005
+2005,Malawi,0.67,2005
+2010,Malawi,1.02,2010
+2010,Malawi,0.88,2010
+2010,Malawi,0.72,2010
+2015,Malawi,1.02,2015
+2015,Malawi,0.91,2015
+2015,Malawi,0.83,2015
+2018,Malawi,1.01,2018
+2018,Malawi,0.98,2018
+2018,Malawi,0.89,2018
+2019,Malawi,1.03,2019
+2019,Malawi,0.83,2019
+2019,Malawi,0.9,2019
+2005,Malaysia,1.0,2005
+2005,Malaysia,1.1,2005
+2005,Malaysia,1.22,2005
+2010,Malaysia,1.01,2010
+2010,Malaysia,1.08,2010
+2010,Malaysia,1.16,2010
+2015,Malaysia,1.01,2015
+2015,Malaysia,1.09,2015
+2015,Malaysia,1.14,2015
+2018,Malaysia,1.02,2018
+2018,Malaysia,1.08,2018
+2018,Malaysia,1.15,2018
+2019,Malaysia,1.01,2019
+2019,Malaysia,1.08,2019
+2019,Malaysia,1.14,2019
+2005,Maldives,0.98,2005
+2015,Maldives,0.97,2015
+2018,Maldives,1.04,2018
+2018,Maldives,1.01,2018
+2018,Maldives,1.56,2018
+2019,Maldives,1.03,2019
+2019,Maldives,0.93,2019
+2019,Maldives,1.26,2019
+2005,Mali,0.79,2005
+2005,Mali,0.62,2005
+2005,Mali,0.58,2005
+2010,Mali,0.86,2010
+2010,Mali,0.69,2010
+2010,Mali,0.61,2010
+2015,Mali,0.9,2015
+2015,Mali,0.79,2015
+2015,Mali,0.69,2015
+2018,Mali,0.9,2018
+2018,Mali,0.82,2018
+2018,Mali,0.7,2018
+2005,Malta,0.98,2005
+2005,Malta,0.96,2005
+2005,Malta,0.83,2005
+2010,Malta,1.0,2010
+2010,Malta,0.89,2010
+2010,Malta,0.76,2010
+2015,Malta,1.01,2015
+2015,Malta,1.06,2015
+2015,Malta,1.12,2015
+2018,Malta,1.01,2018
+2018,Malta,1.0,2018
+2018,Malta,1.03,2018
+2019,Malta,1.01,2019
+2019,Malta,1.0,2019
+2019,Malta,1.03,2019
+2005,Marshall Islands,1.25,2005
+2005,Marshall Islands,1.02,2005
+2005,Marshall Islands,1.05,2005
+2015,Marshall Islands,0.98,2015
+2015,Marshall Islands,1.07,2015
+2015,Marshall Islands,1.14,2015
+2019,Marshall Islands,0.96,2019
+2019,Marshall Islands,1.08,2019
+2019,Marshall Islands,1.11,2019
+2020,Marshall Islands,0.96,2020
+2020,Marshall Islands,1.11,2020
+2020,Marshall Islands,1.12,2020
+2005,Mauritania,1.03,2005
+2005,Mauritania,0.88,2005
+2005,Mauritania,0.86,2005
+2010,Mauritania,1.05,2010
+2010,Mauritania,0.85,2010
+2010,Mauritania,0.78,2010
+2015,Mauritania,1.05,2015
+2015,Mauritania,0.93,2015
+2015,Mauritania,0.87,2015
+2018,Mauritania,1.06,2018
+2018,Mauritania,1.02,2018
+2018,Mauritania,1.04,2018
+2019,Mauritania,1.06,2019
+2019,Mauritania,1.05,2019
+2019,Mauritania,1.05,2019
+2005,Mauritius,1.0,2005
+2005,Mauritius,0.98,2005
+2005,Mauritius,0.94,2005
+2010,Mauritius,1.01,2010
+2010,Mauritius,1.05,2010
+2010,Mauritius,1.07,2010
+2015,Mauritius,1.02,2015
+2015,Mauritius,1.04,2015
+2015,Mauritius,1.11,2015
+2018,Mauritius,1.03,2018
+2018,Mauritius,1.06,2018
+2018,Mauritius,1.14,2018
+2019,Mauritius,1.03,2019
+2019,Mauritius,1.02,2019
+2019,Mauritius,1.08,2019
+2005,Mexico,0.98,2005
+2005,Mexico,1.04,2005
+2005,Mexico,1.03,2005
+2010,Mexico,0.99,2010
+2010,Mexico,1.08,2010
+2010,Mexico,1.06,2010
+2015,Mexico,1.0,2015
+2015,Mexico,1.07,2015
+2015,Mexico,1.02,2015
+2018,Mexico,1.01,2018
+2018,Mexico,1.09,2018
+2018,Mexico,1.06,2018
+2019,Mexico,1.01,2019
+2019,Mexico,1.1,2019
+2019,Mexico,1.07,2019
+2005,Micronesia (Fed. States of),0.97,2005
+2005,Micronesia (Fed. States of),1.08,2005
+2005,Micronesia (Fed. States of),1.07,2005
+2015,Micronesia (Fed. States of),0.98,2015
+2019,Micronesia (Fed. States of),0.96,2019
+2020,Micronesia (Fed. States of),1.0,2020
+2005,Mongolia,1.0,2005
+2005,Mongolia,1.11,2005
+2005,Mongolia,1.22,2005
+2010,Mongolia,0.98,2010
+2010,Mongolia,1.07,2010
+2010,Mongolia,1.13,2010
+2015,Mongolia,0.98,2015
+2015,Mongolia,1.06,2015
+2018,Mongolia,0.98,2018
+2019,Mongolia,0.98,2019
+2019,Mongolia,1.01,2019
+2019,Mongolia,1.0,2019
+2010,Montenegro,1.0,2010
+2010,Montenegro,1.03,2010
+2010,Montenegro,1.06,2010
+2015,Montenegro,1.0,2015
+2015,Montenegro,1.02,2015
+2015,Montenegro,1.01,2015
+2018,Montenegro,0.95,2018
+2018,Montenegro,1.01,2018
+2018,Montenegro,1.01,2018
+2019,Montenegro,1.0,2019
+2019,Montenegro,1.02,2019
+2019,Montenegro,1.02,2019
+2020,Montenegro,1.0,2020
+2020,Montenegro,1.02,2020
+2020,Montenegro,1.04,2020
+2005,Morocco,0.91,2005
+2005,Morocco,0.85,2005
+2005,Morocco,0.88,2005
+2010,Morocco,0.94,2010
+2010,Morocco,0.87,2010
+2010,Morocco,0.95,2010
+2015,Morocco,0.95,2015
+2018,Morocco,0.96,2018
+2018,Morocco,0.92,2018
+2018,Morocco,0.98,2018
+2019,Morocco,0.97,2019
+2019,Morocco,0.93,2019
+2019,Morocco,1.0,2019
+2020,Morocco,0.97,2020
+2020,Morocco,0.95,2020
+2020,Morocco,1.04,2020
+2005,Mozambique,0.83,2005
+2005,Mozambique,0.68,2005
+2005,Mozambique,0.62,2005
+2010,Mozambique,0.89,2010
+2010,Mozambique,0.8,2010
+2010,Mozambique,0.74,2010
+2015,Mozambique,0.91,2015
+2015,Mozambique,0.91,2015
+2015,Mozambique,0.91,2015
+2018,Mozambique,0.93,2018
+2019,Mozambique,0.93,2019
+2020,Mozambique,0.94,2020
+2018,Myanmar,0.96,2018
+2018,Myanmar,1.09,2018
+2018,Myanmar,1.19,2018
+2005,Namibia,0.98,2005
+2005,Namibia,1.11,2005
+2005,Namibia,1.03,2005
+2010,Namibia,0.96,2010
+2018,Namibia,0.97,2018
+2005,Nauru,0.94,2005
+2005,Nauru,1.03,2005
+2019,Nauru,0.99,2019
+2019,Nauru,1.04,2019
+2019,Nauru,0.86,2019
+2020,Nauru,1.03,2020
+2010,Nepal,1.08,2010
+2010,Nepal,0.98,2010
+2010,Nepal,0.95,2010
+2015,Nepal,1.06,2015
+2015,Nepal,1.05,2015
+2015,Nepal,1.02,2015
+2019,Nepal,1.02,2019
+2019,Nepal,1.07,2019
+2019,Nepal,1.13,2019
+2020,Nepal,1.03,2020
+2020,Nepal,1.06,2020
+2005,Netherlands,0.98,2005
+2005,Netherlands,0.98,2005
+2005,Netherlands,1.01,2005
+2010,Netherlands,1.0,2010
+2010,Netherlands,0.99,2010
+2010,Netherlands,1.03,2010
+2015,Netherlands,1.0,2015
+2015,Netherlands,1.02,2015
+2015,Netherlands,1.07,2015
+2018,Netherlands,1.0,2018
+2018,Netherlands,1.01,2018
+2018,Netherlands,1.06,2018
+2019,Netherlands,1.0,2019
+2019,Netherlands,1.01,2019
+2019,Netherlands,1.07,2019
+2005,New Zealand,0.99,2005
+2005,New Zealand,1.06,2005
+2005,New Zealand,1.12,2005
+2010,New Zealand,1.0,2010
+2010,New Zealand,1.05,2010
+2010,New Zealand,1.11,2010
+2015,New Zealand,1.01,2015
+2015,New Zealand,1.06,2015
+2015,New Zealand,1.13,2015
+2018,New Zealand,1.01,2018
+2018,New Zealand,1.06,2018
+2018,New Zealand,1.14,2018
+2019,New Zealand,1.0,2019
+2019,New Zealand,1.05,2019
+2019,New Zealand,1.11,2019
+2005,Nicaragua,0.99,2005
+2005,Nicaragua,1.16,2005
+2005,Nicaragua,1.33,2005
+2010,Nicaragua,0.99,2010
+2010,Nicaragua,1.13,2010
+2010,Nicaragua,1.27,2010
+2005,Niger,0.72,2005
+2005,Niger,0.63,2005
+2005,Niger,0.55,2005
+2010,Niger,0.81,2010
+2010,Niger,0.7,2010
+2010,Niger,0.57,2010
+2015,Niger,0.85,2015
+2015,Niger,0.74,2015
+2015,Niger,0.79,2015
+2019,Niger,0.88,2019
+2005,Nigeria,0.84,2005
+2005,Nigeria,0.83,2005
+2005,Nigeria,0.8,2005
+2010,Nigeria,0.91,2010
+2010,Nigeria,0.87,2010
+2010,Nigeria,0.86,2010
+2018,Nigeria,0.98,2018
+2018,Nigeria,0.95,2018
+2018,Nigeria,0.92,2018
+2015,Nigeria,0.92,2015
+2015,Nigeria,0.9,2015
+2005,North Macedonia,0.98,2005
+2005,North Macedonia,0.97,2005
+2005,North Macedonia,0.94,2005
+2010,North Macedonia,0.99,2010
+2010,North Macedonia,0.97,2010
+2010,North Macedonia,0.97,2010
+2015,North Macedonia,1.0,2015
+2015,North Macedonia,0.98,2015
+2015,North Macedonia,0.98,2015
+2018,North Macedonia,1.0,2018
+2018,North Macedonia,0.98,2018
+2018,North Macedonia,0.96,2018
+2005,Norway,1.0,2005
+2005,Norway,1.01,2005
+2005,Norway,1.01,2005
+2010,Norway,1.0,2010
+2010,Norway,0.98,2010
+2010,Norway,0.97,2010
+2015,Norway,1.0,2015
+2015,Norway,0.98,2015
+2015,Norway,0.94,2015
+2018,Norway,1.0,2018
+2018,Norway,0.96,2018
+2018,Norway,0.94,2018
+2019,Norway,1.0,2019
+2019,Norway,0.95,2019
+2019,Norway,0.92,2019
+2005,Oman,0.99,2005
+2005,Oman,0.96,2005
+2005,Oman,1.02,2005
+2015,Oman,1.04,2015
+2015,Oman,0.98,2015
+2015,Oman,1.0,2015
+2018,Oman,1.1,2018
+2018,Oman,0.92,2018
+2018,Oman,0.93,2018
+2019,Oman,1.09,2019
+2019,Oman,0.91,2019
+2019,Oman,0.85,2019
+2020,Oman,1.06,2020
+2020,Oman,0.92,2020
+2020,Oman,0.74,2020
+2005,Pakistan,0.77,2005
+2010,Pakistan,0.85,2010
+2010,Pakistan,0.77,2010
+2010,Pakistan,0.75,2010
+2015,Pakistan,0.86,2015
+2015,Pakistan,0.79,2015
+2015,Pakistan,0.76,2015
+2018,Pakistan,0.84,2018
+2018,Pakistan,0.85,2018
+2018,Pakistan,0.84,2018
+2019,Pakistan,0.88,2019
+2019,Pakistan,0.87,2019
+2019,Pakistan,0.86,2019
+2020,Palau,1.07,2020
+2020,Palau,1.0,2020
+2020,Palau,0.99,2020
+2005,Palau,1.2,2005
+2005,Panama,0.97,2005
+2005,Panama,1.07,2005
+2005,Panama,1.15,2005
+2010,Panama,0.96,2010
+2010,Panama,1.06,2010
+2010,Panama,1.17,2010
+2015,Panama,0.98,2015
+2015,Panama,1.05,2015
+2015,Panama,1.13,2015
+2020,Panama,1.0,2020
+2020,Panama,1.03,2020
+2020,Panama,1.08,2020
+2005,Papua New Guinea,0.85,2005
+2018,Papua New Guinea,0.93,2018
+2018,Papua New Guinea,0.8,2018
+2018,Papua New Guinea,0.67,2018
+2005,Paraguay,0.98,2005
+2005,Paraguay,1.04,2005
+2005,Paraguay,1.06,2005
+2010,Paraguay,0.97,2010
+2010,Paraguay,1.06,2010
+2010,Paraguay,1.09,2010
+2020,Paraguay,0.98,2020
+2020,Paraguay,1.07,2020
+2020,Paraguay,1.13,2020
+2005,Peru,1.0,2005
+2005,Peru,0.99,2005
+2005,Peru,0.98,2005
+2010,Peru,1.0,2010
+2010,Peru,1.03,2010
+2010,Peru,1.09,2010
+2015,Peru,1.0,2015
+2015,Peru,1.0,2015
+2015,Peru,1.01,2015
+2018,Peru,0.97,2018
+2018,Peru,0.95,2018
+2018,Peru,0.95,2018
+2019,Peru,0.96,2019
+2019,Peru,0.94,2019
+2019,Peru,0.95,2019
+2020,Peru,0.96,2020
+2020,Peru,0.93,2020
+2020,Peru,0.95,2020
+2005,Philippines,0.99,2005
+2005,Philippines,1.12,2005
+2005,Philippines,1.22,2005
+2015,Philippines,0.97,2015
+2015,Philippines,1.08,2015
+2015,Philippines,1.12,2015
+2018,Philippines,0.96,2018
+2018,Philippines,1.11,2018
+2018,Philippines,1.2,2018
+2019,Philippines,0.97,2019
+2019,Philippines,1.09,2019
+2019,Philippines,1.18,2019
+2010,Philippines,1.15,2010
+2005,Poland,0.99,2005
+2005,Poland,0.99,2005
+2005,Poland,1.01,2005
+2010,Poland,0.99,2010
+2010,Poland,0.99,2010
+2010,Poland,1.01,2010
+2018,Poland,0.99,2018
+2018,Poland,0.97,2018
+2018,Poland,0.96,2018
+2019,Poland,0.99,2019
+2019,Poland,0.97,2019
+2019,Poland,0.96,2019
+2015,Poland,0.96,2015
+2015,Poland,0.96,2015
+2005,Portugal,0.95,2005
+2005,Portugal,1.1,2005
+2005,Portugal,1.19,2005
+2010,Portugal,0.97,2010
+2010,Portugal,1.03,2010
+2010,Portugal,1.09,2010
+2015,Portugal,0.96,2015
+2015,Portugal,0.97,2015
+2015,Portugal,0.98,2015
+2018,Portugal,0.97,2018
+2018,Portugal,1.0,2018
+2018,Portugal,1.01,2018
+2019,Portugal,0.98,2019
+2019,Portugal,1.0,2019
+2019,Portugal,1.03,2019
+2010,Qatar,1.03,2010
+2010,Qatar,0.95,2010
+2010,Qatar,1.01,2010
+2015,Qatar,1.01,2015
+2018,Qatar,1.01,2018
+2019,Qatar,1.03,2019
+2020,Qatar,1.03,2020
+2005,Republic of Korea,0.99,2005
+2005,Republic of Korea,1.02,2005
+2005,Republic of Korea,1.03,2005
+2010,Republic of Korea,1.0,2010
+2010,Republic of Korea,0.99,2010
+2010,Republic of Korea,0.99,2010
+2015,Republic of Korea,1.0,2015
+2015,Republic of Korea,0.99,2015
+2015,Republic of Korea,1.0,2015
+2018,Republic of Korea,1.0,2018
+2018,Republic of Korea,0.99,2018
+2018,Republic of Korea,0.99,2018
+2019,Republic of Korea,1.0,2019
+2019,Republic of Korea,0.99,2019
+2019,Republic of Korea,0.99,2019
+2015,Republic of Moldova,0.99,2015
+2015,Republic of Moldova,1.01,2015
+2015,Republic of Moldova,1.04,2015
+2018,Republic of Moldova,0.98,2018
+2018,Republic of Moldova,0.99,2018
+2018,Republic of Moldova,1.0,2018
+2019,Republic of Moldova,0.95,2019
+2019,Republic of Moldova,0.99,2019
+2019,Republic of Moldova,1.0,2019
+2020,Republic of Moldova,0.98,2020
+2020,Republic of Moldova,0.99,2020
+2020,Republic of Moldova,1.03,2020
+2005,Romania,0.99,2005
+2005,Romania,1.02,2005
+2005,Romania,1.05,2005
+2010,Romania,0.98,2010
+2010,Romania,0.99,2010
+2010,Romania,0.99,2010
+2015,Romania,0.99,2015
+2015,Romania,1.0,2015
+2015,Romania,1.02,2015
+2018,Romania,0.99,2018
+2018,Romania,1.0,2018
+2018,Romania,1.03,2018
+2019,Romania,0.99,2019
+2019,Romania,1.0,2019
+2019,Romania,1.03,2019
+2005,Russian Federation,1.0,2005
+2005,Russian Federation,0.99,2005
+2005,Russian Federation,0.96,2005
+2015,Russian Federation,1.01,2015
+2015,Russian Federation,0.98,2015
+2015,Russian Federation,0.9,2015
+2018,Russian Federation,0.99,2018
+2018,Russian Federation,0.97,2018
+2018,Russian Federation,0.92,2018
+2019,Russian Federation,0.99,2019
+2019,Russian Federation,0.97,2019
+2019,Russian Federation,0.93,2019
+2005,Rwanda,1.01,2005
+2005,Rwanda,0.89,2005
+2005,Rwanda,0.92,2005
+2010,Rwanda,1.03,2010
+2010,Rwanda,1.0,2010
+2010,Rwanda,0.89,2010
+2015,Rwanda,1.01,2015
+2015,Rwanda,1.09,2015
+2015,Rwanda,1.01,2015
+2018,Rwanda,0.99,2018
+2018,Rwanda,1.12,2018
+2018,Rwanda,1.06,2018
+2019,Rwanda,0.98,2019
+2019,Rwanda,1.13,2019
+2019,Rwanda,1.05,2019
+2005,Saint Kitts and Nevis,0.99,2005
+2005,Saint Kitts and Nevis,1.11,2005
+2005,Saint Kitts and Nevis,1.35,2005
+2010,Saint Kitts and Nevis,0.95,2010
+2010,Saint Kitts and Nevis,0.98,2010
+2010,Saint Kitts and Nevis,1.08,2010
+2015,Saint Kitts and Nevis,0.99,2015
+2015,Saint Kitts and Nevis,0.99,2015
+2015,Saint Kitts and Nevis,1.0,2015
+2005,Saint Lucia,0.96,2005
+2005,Saint Lucia,1.18,2005
+2005,Saint Lucia,1.2,2005
+2015,Saint Lucia,0.97,2015
+2015,Saint Lucia,0.99,2015
+2015,Saint Lucia,1.02,2015
+2018,Saint Lucia,1.01,2018
+2018,Saint Lucia,1.0,2018
+2018,Saint Lucia,1.03,2018
+2019,Saint Lucia,1.02,2019
+2019,Saint Lucia,0.97,2019
+2019,Saint Lucia,0.99,2019
+2020,Saint Lucia,1.03,2020
+2020,Saint Lucia,0.98,2020
+2020,Saint Lucia,0.94,2020
+2010,Saint Lucia,0.99,2010
+2010,Saint Lucia,1.05,2010
+2005,Saint Vincent & Grenadines,0.9,2005
+2005,Saint Vincent & Grenadines,1.25,2005
+2005,Saint Vincent & Grenadines,1.47,2005
+2010,Saint Vincent & Grenadines,0.95,2010
+2010,Saint Vincent & Grenadines,1.05,2010
+2010,Saint Vincent & Grenadines,1.26,2010
+2015,Saint Vincent & Grenadines,0.99,2015
+2015,Saint Vincent & Grenadines,1.01,2015
+2015,Saint Vincent & Grenadines,1.16,2015
+2018,Saint Vincent & Grenadines,0.99,2018
+2018,Saint Vincent & Grenadines,1.03,2018
+2018,Saint Vincent & Grenadines,1.21,2018
+2005,Samoa,1.01,2005
+2005,Samoa,1.13,2005
+2005,Samoa,1.18,2005
+2010,Samoa,0.99,2010
+2010,Samoa,1.14,2010
+2010,Samoa,1.24,2010
+2015,Samoa,1.0,2015
+2015,Samoa,1.11,2015
+2015,Samoa,1.2,2015
+2018,Samoa,1.0,2018
+2019,Samoa,1.01,2019
+2020,Samoa,0.99,2020
+2018,San Marino,1.05,2018
+2018,San Marino,0.9,2018
+2018,San Marino,0.86,2018
+2019,San Marino,1.08,2019
+2019,San Marino,0.94,2019
+2019,San Marino,0.96,2019
+2020,San Marino,0.98,2020
+2020,San Marino,0.96,2020
+2020,San Marino,0.81,2020
+2005,Sao Tome and Principe,0.96,2005
+2005,Sao Tome and Principe,1.06,2005
+2005,Sao Tome and Principe,0.96,2005
+2010,Sao Tome and Principe,0.99,2010
+2010,Sao Tome and Principe,1.02,2010
+2010,Sao Tome and Principe,0.78,2010
+2015,Sao Tome and Principe,0.96,2015
+2015,Sao Tome and Principe,1.11,2015
+2015,Sao Tome and Principe,1.14,2015
+2005,Saudi Arabia,0.98,2005
+2005,Saudi Arabia,0.94,2005
+2005,Saudi Arabia,0.91,2005
+2010,Saudi Arabia,0.99,2010
+2015,Saudi Arabia,1.03,2015
+2015,Saudi Arabia,0.98,2015
+2015,Saudi Arabia,0.95,2015
+2018,Saudi Arabia,1.01,2018
+2018,Saudi Arabia,0.94,2018
+2018,Saudi Arabia,0.92,2018
+2019,Saudi Arabia,1.02,2019
+2019,Saudi Arabia,0.91,2019
+2019,Saudi Arabia,0.84,2019
+2020,Saudi Arabia,1.02,2020
+2020,Saudi Arabia,0.93,2020
+2020,Saudi Arabia,0.87,2020
+2005,Senegal,0.96,2005
+2005,Senegal,0.75,2005
+2005,Senegal,0.66,2005
+2010,Senegal,1.06,2010
+2010,Senegal,0.87,2010
+2015,Senegal,1.12,2015
+2019,Senegal,1.14,2019
+2019,Senegal,1.13,2019
+2019,Senegal,1.04,2019
+2020,Senegal,1.15,2020
+2020,Senegal,1.16,2020
+2020,Senegal,1.07,2020
+2010,Serbia,1.0,2010
+2010,Serbia,1.02,2010
+2010,Serbia,1.05,2010
+2015,Serbia,1.0,2015
+2015,Serbia,1.01,2015
+2015,Serbia,1.04,2015
+2018,Serbia,1.0,2018
+2018,Serbia,1.01,2018
+2018,Serbia,1.03,2018
+2019,Serbia,1.0,2019
+2019,Serbia,1.01,2019
+2019,Serbia,1.03,2019
+2020,Serbia,1.0,2020
+2020,Serbia,1.01,2020
+2020,Serbia,1.03,2020
+2005,Seychelles,0.98,2005
+2005,Seychelles,1.07,2005
+2005,Seychelles,1.16,2005
+2010,Seychelles,1.03,2010
+2010,Seychelles,1.06,2010
+2010,Seychelles,1.18,2010
+2015,Seychelles,1.03,2015
+2015,Seychelles,1.07,2015
+2015,Seychelles,1.13,2015
+2018,Seychelles,1.06,2018
+2018,Seychelles,1.07,2018
+2018,Seychelles,1.15,2018
+2019,Seychelles,1.05,2019
+2019,Seychelles,1.06,2019
+2019,Seychelles,1.15,2019
+2020,Seychelles,1.04,2020
+2020,Seychelles,1.09,2020
+2020,Seychelles,1.16,2020
+2015,Sierra Leone,1.01,2015
+2015,Sierra Leone,0.88,2015
+2015,Sierra Leone,0.78,2015
+2018,Sierra Leone,1.03,2018
+2019,Sierra Leone,1.03,2019
+2020,Sierra Leone,1.03,2020
+2018,Singapore,1.0,2018
+2018,Singapore,0.99,2018
+2018,Singapore,0.99,2018
+2019,Singapore,1.0,2019
+2019,Singapore,0.99,2019
+2019,Singapore,0.98,2019
+2005,Slovakia,0.99,2005
+2005,Slovakia,1.01,2005
+2005,Slovakia,1.03,2005
+2010,Slovakia,0.99,2010
+2010,Slovakia,1.01,2010
+2010,Slovakia,1.04,2010
+2015,Slovakia,0.99,2015
+2015,Slovakia,1.01,2015
+2015,Slovakia,1.04,2015
+2018,Slovakia,1.0,2018
+2018,Slovakia,1.01,2018
+2018,Slovakia,1.04,2018
+2019,Slovakia,1.0,2019
+2019,Slovakia,1.01,2019
+2019,Slovakia,1.04,2019
+2005,Slovenia,0.99,2005
+2005,Slovenia,1.0,2005
+2005,Slovenia,1.0,2005
+2010,Slovenia,1.0,2010
+2010,Slovenia,0.99,2010
+2010,Slovenia,0.99,2010
+2015,Slovenia,1.01,2015
+2015,Slovenia,1.01,2015
+2015,Slovenia,1.02,2015
+2018,Slovenia,1.0,2018
+2018,Slovenia,1.02,2018
+2018,Slovenia,1.04,2018
+2019,Slovenia,1.0,2019
+2019,Slovenia,1.02,2019
+2019,Slovenia,1.03,2019
+2005,Solomon Islands,0.95,2005
+2005,Solomon Islands,0.83,2005
+2005,Solomon Islands,0.72,2005
+2010,Solomon Islands,0.98,2010
+2010,Solomon Islands,0.86,2010
+2010,Solomon Islands,0.72,2010
+2015,Solomon Islands,0.99,2015
+2018,Solomon Islands,1.0,2018
+2019,Solomon Islands,0.99,2019
+2005,South Africa,0.97,2005
+2005,South Africa,1.07,2005
+2005,South Africa,1.1,2005
+2010,South Africa,0.96,2010
+2010,South Africa,1.06,2010
+2010,South Africa,1.1,2010
+2015,South Africa,0.93,2015
+2015,South Africa,0.99,2015
+2015,South Africa,0.97,2015
+2018,South Africa,0.96,2018
+2018,South Africa,1.07,2018
+2018,South Africa,1.09,2018
+2019,South Africa,0.97,2019
+2019,South Africa,1.06,2019
+2019,South Africa,1.1,2019
+2015,South Sudan,0.71,2015
+2015,South Sudan,0.54,2015
+2015,South Sudan,0.45,2015
+2005,Spain,0.99,2005
+2005,Spain,1.07,2005
+2005,Spain,1.18,2005
+2010,Spain,0.99,2010
+2010,Spain,1.03,2010
+2010,Spain,1.09,2010
+2015,Spain,1.02,2015
+2015,Spain,0.99,2015
+2015,Spain,1.03,2015
+2018,Spain,1.01,2018
+2018,Spain,1.02,2018
+2018,Spain,1.05,2018
+2019,Spain,1.01,2019
+2019,Spain,1.03,2019
+2019,Spain,1.07,2019
+2005,Sri Lanka,0.99,2005
+2010,Sri Lanka,0.98,2010
+2010,Sri Lanka,1.01,2010
+2010,Sri Lanka,1.07,2010
+2015,Sri Lanka,0.98,2015
+2018,Sri Lanka,0.99,2018
+2018,Sri Lanka,1.05,2018
+2018,Sri Lanka,1.11,2018
+2019,Sri Lanka,1.0,2019
+2015,Sudan,0.91,2015
+2015,Sudan,0.98,2015
+2015,Sudan,1.06,2015
+2018,Sudan,0.93,2018
+2018,Sudan,1.02,2018
+2018,Sudan,1.08,2018
+2005,Suriname,0.98,2005
+2005,Suriname,1.34,2005
+2005,Suriname,1.75,2005
+2010,Suriname,1.0,2010
+2010,Suriname,1.29,2010
+2010,Suriname,1.79,2010
+2015,Suriname,1.01,2015
+2015,Suriname,1.32,2015
+2015,Suriname,1.82,2015
+2018,Suriname,1.0,2018
+2019,Suriname,1.0,2019
+2005,Sweden,1.0,2005
+2005,Sweden,1.0,2005
+2005,Sweden,1.0,2005
+2010,Sweden,0.99,2010
+2010,Sweden,0.99,2010
+2010,Sweden,0.99,2010
+2015,Sweden,1.04,2015
+2015,Sweden,1.14,2015
+2015,Sweden,1.2,2015
+2018,Sweden,1.02,2018
+2018,Sweden,1.07,2018
+2018,Sweden,1.11,2018
+2019,Sweden,1.04,2019
+2019,Sweden,1.07,2019
+2019,Sweden,1.1,2019
+2005,Switzerland,1.0,2005
+2005,Switzerland,0.94,2005
+2005,Switzerland,0.86,2005
+2010,Switzerland,1.0,2010
+2010,Switzerland,0.97,2010
+2010,Switzerland,0.92,2010
+2015,Switzerland,1.0,2015
+2015,Switzerland,0.97,2015
+2015,Switzerland,0.94,2015
+2018,Switzerland,0.99,2018
+2018,Switzerland,0.95,2018
+2018,Switzerland,0.92,2018
+2019,Switzerland,1.0,2019
+2019,Switzerland,0.95,2019
+2019,Switzerland,0.91,2019
+2005,Syrian Arab Republic,0.97,2005
+2005,Syrian Arab Republic,0.96,2005
+2005,Syrian Arab Republic,0.99,2005
+2010,Syrian Arab Republic,0.97,2010
+2010,Syrian Arab Republic,1.0,2010
+2010,Syrian Arab Republic,1.08,2010
+2005,Tajikistan,0.97,2005
+2005,Tajikistan,0.84,2005
+2005,Tajikistan,0.62,2005
+2010,Tajikistan,0.98,2010
+2010,Tajikistan,0.87,2010
+2010,Tajikistan,0.67,2010
+2015,Tajikistan,0.99,2015
+2005,Thailand,0.97,2005
+2005,Thailand,1.05,2005
+2005,Thailand,1.12,2005
+2010,Thailand,0.99,2010
+2010,Thailand,1.07,2010
+2010,Thailand,1.18,2010
+2015,Thailand,0.94,2015
+2015,Thailand,0.96,2015
+2015,Thailand,1.0,2015
+2018,Thailand,1.0,2018
+2018,Thailand,0.98,2018
+2018,Thailand,1.06,2018
+2019,Thailand,1.0,2019
+2019,Thailand,0.97,2019
+2019,Thailand,1.02,2019
+2020,Thailand,1.0,2020
+2020,Thailand,0.98,2020
+2020,Thailand,1.02,2020
+2005,Timor-Leste,0.91,2005
+2005,Timor-Leste,0.97,2005
+2010,Timor-Leste,0.95,2010
+2010,Timor-Leste,0.99,2010
+2010,Timor-Leste,0.96,2010
+2015,Timor-Leste,0.98,2015
+2015,Timor-Leste,1.06,2015
+2015,Timor-Leste,1.06,2015
+2018,Timor-Leste,0.96,2018
+2018,Timor-Leste,1.08,2018
+2018,Timor-Leste,1.1,2018
+2019,Timor-Leste,0.98,2019
+2019,Timor-Leste,1.1,2019
+2019,Timor-Leste,1.13,2019
+2005,Togo,0.85,2005
+2005,Togo,0.53,2005
+2005,Togo,0.41,2005
+2010,Togo,0.9,2010
+2015,Togo,0.95,2015
+2018,Togo,0.96,2018
+2019,Togo,0.97,2019
+2020,Togo,0.97,2020
+2020,Togo,0.64,2020
+2005,Tonga,0.97,2005
+2010,Tonga,0.98,2010
+2010,Tonga,1.07,2010
+2015,Tonga,0.99,2015
+2015,Tonga,1.03,2015
+2015,Tonga,1.19,2015
+2018,Tonga,0.99,2018
+2019,Tonga,0.97,2019
+2019,Tonga,1.14,2019
+2019,Tonga,1.25,2019
+2020,Tonga,0.95,2020
+2020,Tonga,1.18,2020
+2020,Tonga,1.21,2020
+2005,Trinidad and Tobago,0.97,2005
+2010,Trinidad and Tobago,0.97,2010
+2005,Tunisia,0.99,2005
+2005,Tunisia,1.1,2005
+2005,Tunisia,1.22,2005
+2010,Tunisia,1.0,2010
+2010,Tunisia,1.1,2010
+2010,Tunisia,1.25,2010
+2015,Tunisia,1.0,2015
+2018,Tunisia,0.99,2018
+2020,Tunisia,0.98,2020
+2005,Türkiye,0.95,2005
+2005,Türkiye,0.83,2005
+2005,Türkiye,0.78,2005
+2010,Türkiye,0.99,2010
+2010,Türkiye,0.92,2010
+2010,Türkiye,0.87,2010
+2015,Türkiye,0.99,2015
+2015,Türkiye,0.97,2015
+2015,Türkiye,0.94,2015
+2018,Türkiye,0.99,2018
+2018,Türkiye,0.98,2018
+2018,Türkiye,0.94,2018
+2019,Türkiye,0.99,2019
+2019,Türkiye,0.96,2019
+2019,Türkiye,0.91,2019
+2019,Turkmenistan,0.98,2019
+2019,Turkmenistan,0.98,2019
+2019,Turkmenistan,0.99,2019
+2020,Turkmenistan,0.98,2020
+2020,Turkmenistan,0.98,2020
+2020,Turkmenistan,0.98,2020
+2005,Tuvalu,0.97,2005
+2015,Tuvalu,0.96,2015
+2015,Tuvalu,1.21,2015
+2018,Tuvalu,0.92,2018
+2018,Tuvalu,1.14,2018
+2018,Tuvalu,1.48,2018
+2019,Tuvalu,0.96,2019
+2019,Tuvalu,1.09,2019
+2019,Tuvalu,1.43,2019
+2020,Tuvalu,1.01,2020
+2020,Tuvalu,1.01,2020
+2020,Tuvalu,1.18,2020
+2005,Uganda,0.99,2005
+2010,Uganda,1.01,2010
+2015,Uganda,1.02,2015
+2005,Ukraine,1.0,2005
+2005,Ukraine,0.93,2005
+2005,Ukraine,0.96,2005
+2010,Ukraine,1.01,2010
+2010,Ukraine,0.98,2010
+2010,Ukraine,0.91,2010
+2015,United Arab Emirates,1.0,2015
+2019,United Arab Emirates,1.0,2019
+2019,United Arab Emirates,0.99,2019
+2019,United Arab Emirates,0.98,2019
+2020,United Arab Emirates,1.01,2020
+2020,United Arab Emirates,1.01,2020
+2020,United Arab Emirates,1.02,2020
+2005,United Kingdom,1.0,2005
+2005,United Kingdom,1.03,2005
+2005,United Kingdom,1.05,2005
+2010,United Kingdom,0.99,2010
+2010,United Kingdom,1.0,2010
+2010,United Kingdom,1.04,2010
+2015,United Kingdom,1.0,2015
+2015,United Kingdom,1.03,2015
+2015,United Kingdom,1.06,2015
+2018,United Kingdom,1.0,2018
+2018,United Kingdom,1.03,2018
+2018,United Kingdom,1.06,2018
+2019,United Kingdom,1.0,2019
+2019,United Kingdom,1.02,2019
+2019,United Kingdom,1.05,2019
+2005,United Rep. of Tanzania,0.97,2005
+2010,United Rep. of Tanzania,1.02,2010
+2010,United Rep. of Tanzania,0.82,2010
+2010,United Rep. of Tanzania,0.76,2010
+2015,United Rep. of Tanzania,1.05,2015
+2015,United Rep. of Tanzania,0.99,2015
+2015,United Rep. of Tanzania,0.67,2015
+2018,United Rep. of Tanzania,1.03,2018
+2018,United Rep. of Tanzania,1.05,2018
+2018,United Rep. of Tanzania,0.73,2018
+2019,United Rep. of Tanzania,1.02,2019
+2019,United Rep. of Tanzania,1.08,2019
+2019,United Rep. of Tanzania,0.76,2019
+2020,United Rep. of Tanzania,1.03,2020
+2020,United Rep. of Tanzania,1.1,2020
+2020,United Rep. of Tanzania,0.78,2020
+2005,United States of America,0.99,2005
+2005,United States of America,1.02,2005
+2005,United States of America,1.06,2005
+2015,United States of America,1.0,2015
+2015,United States of America,1.01,2015
+2015,United States of America,1.02,2015
+2018,United States of America,1.0,2018
+2018,United States of America,0.99,2018
+2018,United States of America,0.99,2018
+2019,United States of America,1.01,2019
+2019,United States of America,0.98,2019
+2019,United States of America,0.97,2019
+2005,Uruguay,0.97,2005
+2005,Uruguay,1.15,2005
+2005,Uruguay,1.22,2005
+2010,Uruguay,0.97,2010
+2010,Uruguay,1.17,2010
+2010,Uruguay,1.32,2010
+2015,Uruguay,0.98,2015
+2018,Uruguay,0.99,2018
+2018,Uruguay,1.11,2018
+2018,Uruguay,1.22,2018
+2019,Uruguay,0.99,2019
+2019,Uruguay,1.11,2019
+2019,Uruguay,1.22,2019
+2005,Uzbekistan,1.0,2005
+2005,Uzbekistan,0.97,2005
+2005,Uzbekistan,0.92,2005
+2010,Uzbekistan,0.98,2010
+2010,Uzbekistan,1.0,2010
+2010,Uzbekistan,1.01,2010
+2015,Uzbekistan,0.99,2015
+2015,Uzbekistan,0.99,2015
+2015,Uzbekistan,0.99,2015
+2018,Uzbekistan,0.99,2018
+2018,Uzbekistan,0.99,2018
+2018,Uzbekistan,1.0,2018
+2019,Uzbekistan,0.99,2019
+2019,Uzbekistan,0.99,2019
+2019,Uzbekistan,1.03,2019
+2020,Uzbekistan,0.98,2020
+2005,Vanuatu,0.97,2005
+2010,Vanuatu,0.99,2010
+2010,Vanuatu,1.0,2010
+2010,Vanuatu,0.84,2010
+2015,Vanuatu,0.97,2015
+2015,Vanuatu,1.03,2015
+2015,Vanuatu,1.05,2015
+2019,Vanuatu,0.96,2019
+2020,Vanuatu,0.98,2020
+2020,Vanuatu,1.14,2020
+2020,Vanuatu,1.3,2020
+2005,Venezuela (Boliv. Rep. of),0.98,2005
+2005,Venezuela (Boliv. Rep. of),1.13,2005
+2005,Venezuela (Boliv. Rep. of),1.25,2005
+2010,Venezuela (Boliv. Rep. of),0.97,2010
+2010,Venezuela (Boliv. Rep. of),1.1,2010
+2010,Venezuela (Boliv. Rep. of),1.18,2010
+2015,Venezuela (Boliv. Rep. of),0.98,2015
+2015,Venezuela (Boliv. Rep. of),1.08,2015
+2015,Venezuela (Boliv. Rep. of),1.15,2015
+2005,Viet Nam,0.95,2005
+2010,Viet Nam,0.95,2010
+2015,Viet Nam,1.0,2015
+2018,Viet Nam,1.02,2018
+2019,Viet Nam,1.02,2019
+2020,Viet Nam,1.02,2020
+2005,Yemen,0.74,2005
+2005,Yemen,0.49,2005
+2005,Yemen,0.45,2005
+2010,Yemen,0.82,2010
+2010,Yemen,0.62,2010
+2010,Yemen,0.59,2010
+2005,Zambia,0.94,2005
+2010,Zambia,1.01,2010
+2015,Zambia,1.0,2015
+2015,Zimbabwe,0.98,2015
+2018,Zimbabwe,1.0,2018
+2019,Zimbabwe,1.0,2019
+2020,Zimbabwe,1.01,2020

@@ -8,12 +8,14 @@ from multi_table_join import MultiTableJoin
 
 INPUT_PATH = "./available_datasets/"
 OUTPUT_PATH = "./generated_datasets/"
+BASELINE_OUTPUT_PATH = "./baselines/"
 
 examples = [
     {
         "name": "2 fake files, similar match",
         "files": ["weather.csv", "states.csv"],
         "schema_headers": ["rain", "temperature", "city"],
+        "baseline_file": "baseline_weather.csv",
         "output_file": "joined_weather.csv",
         "expected_mapping": [
             ("precipitation", "rain"),
@@ -30,6 +32,7 @@ examples = [
         "name": "3 fake files, similar match",
         "files": ["weather.csv", "states.csv", "colors.csv"],
         "schema_headers": ["rain", "temperature", "color", "capital"],
+        "baseline_file": "baseline_colors.csv",
         "output_file": "joined_colors.csv",
         "expected_mapping": [
             ("precipitation", "rain"),
@@ -51,6 +54,7 @@ examples = [
         "name": "2 modified files, exact match",
         "files": ["boys_to_girls.csv", "women_in_parliament.csv"],
         "schema_headers": ["year", "region", "name", "ratio"],
+        "baseline_file": "baseline_un_dataset.csv",
         "output_file": "UN_dataset_join.csv",
         "expected_mapping": [
             ("Year", "year"),
@@ -80,6 +84,7 @@ examples = [
             "women_in_parliament_gpt_headers.csv",
         ],
         "schema_headers": ["year", "country", "ratio girls", "decade"],
+        "baseline_file": "baseline_un_dataset_2.csv",
         "output_file": "UN_dataset_join_2.csv",
         "expected_mapping": [
             ("Year", "year"),
@@ -111,6 +116,7 @@ examples = [
             "target_type.csv",
         ],
         "schema_headers": ["name", "target type", "desc", "component id"],
+        "baseline_file": "baseline_chem_targets.csv",
         "output_file": "chem_targets.csv",
         "expected_mapping": [
             ("pref_name", "name"),
@@ -128,7 +134,7 @@ examples = [
         },
         "expected_joins": {
             ("target_components.csv", "target_dictionary.csv"): [("tid", "tid")],
-            ("target_type.csv", "target_dictionary.csv"): [
+            ("target_dictionary.csv", "target_type.csv"): [
                 ("target_type", "target_type")
             ],
         },
@@ -149,6 +155,7 @@ examples = [
             "street suffix",
             "rooms",
         ],
+        "baseline_file": "baseline_fac_building.csv",
         "output_file": "joined_fac_building.csv",
         "expected_mapping": [
             ("Building Name", "building name"),
@@ -170,7 +177,7 @@ examples = [
         },
         "expected_joins": {
             ("Fac_building_address.csv", "Fac_building.csv"): [
-                ("Fac Building Key", "Building Key")
+                ("Building Key", "Fac Building Key")
             ]
         },
     },
@@ -219,6 +226,8 @@ if __name__ == "__main__":
         # "2 real files, specificity + similarity match, GPT header",
     ]
 
+
+
     VERBOSE = 1
     GPT = 0
 
@@ -226,8 +235,35 @@ if __name__ == "__main__":
         if example["name"] not in run_examples:
             continue
 
-        print("=== Running", example["name"])
+        print("\n=== Running", example["name"])
         print()
+
+        result = None
+        # perform each of the joins in example["expected_joins"]
+        for (f1, f2), cols in example["expected_joins"].items():
+            if result is None:
+                result = pd.read_csv(INPUT_PATH + f1)
+            df2 = pd.read_csv(INPUT_PATH + f2)
+
+            left_on = [col[0] for col in cols]
+            right_on = [col[1] for col in cols]
+            result = result.merge(df2, left_on=left_on, right_on=right_on, how="inner")
+
+        # project the result
+        print("result.columns:", result.columns)
+        if "expected_mapping" in example:
+            for col, schema_header in example["expected_mapping"]:
+                result[schema_header] = result[col]
+
+            print("projected result.columns:", result.columns)
+
+            result = result[example["schema_headers"]]
+
+        # write to baseline file
+        if "baseline_file" in example:
+            result.to_csv(BASELINE_OUTPUT_PATH + example["baseline_file"], index=False)
+
+        continue
 
         files = [INPUT_PATH + filename for filename in example["files"]]
         schema_headers = example["schema_headers"]
