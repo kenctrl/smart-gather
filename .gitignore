@@ -5,3 +5,4 @@ output/*
 links.txt
 schema*.csv
 **/.DS_Store
+.vscode/*
