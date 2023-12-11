@@ -221,15 +221,16 @@ class MultiTableJoin:
 
 			result = result[self.schema_headers]
 
-		self.result = result
+		self.result = result.drop_duplicates()
 
 		if limit_rows is not None and len(result) > limit_rows:
-			result = result[:limit_rows]
+			self.result = self.result[:limit_rows]
+
 
 		if write_to_file_name is not None:
-			result.to_csv(write_to_file_name, index=False)
+			self.result.to_csv(write_to_file_name, index=False)
 
-		return result
+		return self.result
 
 	def __str__(self) -> str:
 		s = f"MultiTableJoin:\n"

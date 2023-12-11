@@ -19,7 +19,6 @@ year,region,name,ratio
 2020,15,Northern Africa,1.1
 2005,202,Sub-Saharan Africa,0.88
 2005,202,Sub-Saharan Africa,0.78
-2005,202,Sub-Saharan Africa,0.78
 2010,202,Sub-Saharan Africa,0.93
 2010,202,Sub-Saharan Africa,0.82
 2010,202,Sub-Saharan Africa,0.78
@@ -45,7 +44,6 @@ year,region,name,ratio
 2015,21,Northern America,1.01
 2015,21,Northern America,1.02
 2018,21,Northern America,1.0
-2018,21,Northern America,0.99
 2018,21,Northern America,0.99
 2019,21,Northern America,1.01
 2019,21,Northern America,0.99
@@ -78,19 +76,14 @@ year,region,name,ratio
 2010,143,Central Asia,0.98
 2010,143,Central Asia,1.0
 2015,143,Central Asia,0.99
-2015,143,Central Asia,0.99
 2015,143,Central Asia,1.01
 2018,143,Central Asia,0.99
 2018,143,Central Asia,0.98
-2018,143,Central Asia,0.98
-2019,143,Central Asia,0.99
 2019,143,Central Asia,0.99
 2019,143,Central Asia,1.0
 2020,143,Central Asia,0.99
 2020,143,Central Asia,0.98
-2020,143,Central Asia,0.98
 2005,30,Eastern Asia,1.0
-2005,30,Eastern Asia,0.98
 2005,30,Eastern Asia,0.98
 2010,30,Eastern Asia,0.98
 2010,30,Eastern Asia,1.0
@@ -99,3 +92,10 @@ year,region,name,ratio
 2015,30,Eastern Asia,1.02
 2015,30,Eastern Asia,1.04
 2018,30,Eastern Asia,1.01
+2018,30,Eastern Asia,1.02
+2018,30,Eastern Asia,1.04
+2019,30,Eastern Asia,1.01
+2019,30,Eastern Asia,1.02
+2019,30,Eastern Asia,1.03
+2020,30,Eastern Asia,1.01
+2020,30,Eastern Asia,1.02
