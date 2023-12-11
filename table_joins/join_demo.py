@@ -52,6 +52,29 @@ examples = [
             ],
         },
     },
+    {
+        "name": "2 real files, similar match",
+        "files": ["Fac_building_address.csv", "Fac_building.csv"],
+        "schema_headers": [
+            "building name",
+            "street number",
+            "street name",
+            "street suffix",
+            "rooms",
+        ],
+        "output_file": "joined_fac_building.csv",
+        "expected_matches": {
+            "Fac_building_address.csv": [
+                ("Street Number", "street number"),
+                ("Street Name", "street name"),
+                ("Street Suffix", "street suffix"),
+            ],
+            "Fac_building.csv": [
+                ("Building Name", "building name"),
+                ("Num Of Rooms", "rooms"),
+            ],
+        },
+    },
 ]
 
 
@@ -59,9 +82,10 @@ if __name__ == "__main__":
     run_examples = [
         # "2 fake files, similar match",
         # "3 fake files, similar match",
-        "2 real files, exact match",
+        # "2 real files, exact match",
         # "exp",
         # "3 real files, exact match, include unneeded files",
+		"2 real files, similar match",
     ]
 
     VERBOSE = 2
