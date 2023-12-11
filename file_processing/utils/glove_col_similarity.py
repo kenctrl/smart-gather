@@ -43,7 +43,7 @@ def get_phrase_embedding(phrase, embedding_space):
         word_embedding = embedding_space[word]
         phrase_embedding += word_embedding
 
-    return phrase_embedding
+    return phrase_embedding if np.count_nonzero(phrase_embedding) > 0 else None
 
 def get_schema_header_match(schema_col, csv_headers, embedding_space):
     """

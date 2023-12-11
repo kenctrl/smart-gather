@@ -2,6 +2,7 @@ import csv
 import pandas as pd
 import manual_join
 import gpt_join
+from gpt_optimizations.gpt_column_headers import generate_gpt_header
 from multi_table_join import MultiTableJoin
 
 INPUT_PATH = "./available_datasets/"
@@ -35,7 +36,7 @@ examples = [
         },
     },
     {
-        "name": "2 real files, exact match",
+        "name": "2 modified files, exact match",
         "files": ["boys_to_girls.csv", "women_in_parliament.csv"],
         "schema_headers": ["year", "region", "name", "ratio"],
         "output_file": "UN_dataset_join.csv",
@@ -55,7 +56,7 @@ examples = [
         },
     },
     {
-        "name": "2 real files, similar match, 1 to n column mapping",
+        "name": "2 modified files, similar match, 1 to n column mapping",
         "files": [
             "boys_to_girls_gpt_headers.csv",
             "women_in_parliament_gpt_headers.csv",
@@ -130,6 +131,30 @@ examples = [
             ]
         },
     },
+	{
+        "name": "2 real files, specificity + similarity match",
+        "files": ["Ratio of girls to boys in education.csv", "Seats held by women in Parliament.csv"],
+        "schema_headers": [
+            "Year",
+            "Country",
+			"Education level",
+            "Gender ratio",
+            "Percentage women",
+        ],
+        "output_file": "joined_women_un_metrics.csv",
+    },
+	{
+        "name": "2 real files, specificity + similarity match, GPT header",
+        "files": ["GPT Header Ratio of girls to boys in education.csv", "GPT Header Seats held by women in Parliament.csv"],
+        "schema_headers": [
+            "Year",
+            "Country",
+			"Education level",
+            "Gender ratio",
+            "Percentage women",
+        ],
+        "output_file": "joined_women_un_metrics_gpt_header.csv",
+    },
 ]
 
 
@@ -137,10 +162,12 @@ if __name__ == "__main__":
     run_examples = [
         "2 fake files, similar match",
         "3 fake files, similar match",
-        "2 real files, exact match",
-        "2 real files, similar match, 1 to n column mapping",
+        "2 modified files, exact match",
+        "2 modified files, similar match, 1 to n column mapping",
         "3 real files, exact match, include unneeded files",
         "2 real files, similar match",
+		"2 real files, specificity + similarity match",
+		"2 real files, specificity + similarity match, GPT header",
     ]
 
     VERBOSE = 1
