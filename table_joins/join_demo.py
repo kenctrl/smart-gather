@@ -238,33 +238,6 @@ if __name__ == "__main__":
         print("\n=== Running", example["name"])
         print()
 
-        result = None
-        # perform each of the joins in example["expected_joins"]
-        for (f1, f2), cols in example["expected_joins"].items():
-            if result is None:
-                result = pd.read_csv(INPUT_PATH + f1)
-            df2 = pd.read_csv(INPUT_PATH + f2)
-
-            left_on = [col[0] for col in cols]
-            right_on = [col[1] for col in cols]
-            result = result.merge(df2, left_on=left_on, right_on=right_on, how="inner")
-
-        # project the result
-        print("result.columns:", result.columns)
-        if "expected_mapping" in example:
-            for col, schema_header in example["expected_mapping"]:
-                result[schema_header] = result[col]
-
-            print("projected result.columns:", result.columns)
-
-            result = result[example["schema_headers"]]
-
-        # write to baseline file
-        if "baseline_file" in example:
-            result.to_csv(BASELINE_OUTPUT_PATH + example["baseline_file"], index=False)
-
-        continue
-
         files = [INPUT_PATH + filename for filename in example["files"]]
         schema_headers = example["schema_headers"]
         output_file = example["output_file"]
