@@ -96,7 +96,6 @@ def find_header_intersection(csv_headers, embedding_space, num_files):
         for j in range(i+1, len(filenames)):
             cols2 = csv_headers[filenames[j]]
             best_intersections = get_best_intersections(cols1, cols2, embedding_space)
-            print(i, j, best_intersections)
             new_intersections = [(sim, filenames[i], filenames[j], col1, col2) for sim, col1, col2 in best_intersections]
 
             intersections.extend(new_intersections)
@@ -164,7 +163,7 @@ def get_matches(schema_headers, csv_headers):
     return cols_to_matches, files_to_matches
 
 
-def plan_join(files, schema_headers, print_results=False):
+def plan_join(files, schema_headers, verbose=False):
     """
     Given the set of files and the schema headers, plan the join by finding the best column match
     for each schema header across all files
@@ -180,7 +179,7 @@ def plan_join(files, schema_headers, print_results=False):
         gpt_input += f"Schema {idx}:\n" + ", ".join(headers) + "\n\n"
     cols_to_matches, files_to_matches = get_matches(schema_headers, csv_headers)
 
-    if print_results:
+    if verbose:
         print("cols to matches:", cols_to_matches)
         print()
         print("files to matches:", files_to_matches)
@@ -196,7 +195,7 @@ def plan_join(files, schema_headers, print_results=False):
         subset = {f: csv_headers[f] for f in files_to_matches} # only find intersection for files that contain schema cols
         plan['intersections'] = find_header_intersection(subset, embedding_space, len(files_to_matches))
 
-        if print_results:
+        if verbose:
             print("intersections:", plan['intersections'])
             print()
 

@@ -13,25 +13,69 @@ examples = [
         "files": ["weather.csv", "states.csv"],
         "schema_headers": ["rain", "temperature", "city"],
         "output_file": "joined_weather.csv",
-        "expected_matches": {"weather.csv": [()]},
+        "expected_matches": {
+            "weather.csv": [("precipitation", "rain"), ("temperature", "temperature")],
+            "states.csv": [("capital", "city")],
+        },
+        "expected_joins": {("weather.csv", "states.csv"): [("state_name", "name")]},
     },
     {
         "name": "3 fake files, similar match",
         "files": ["weather.csv", "states.csv", "colors.csv"],
         "schema_headers": ["rain", "temperature", "color", "capital"],
         "output_file": "joined_colors.csv",
+        "expected_matches": {
+            "weather.csv": [("precipitation", "rain"), ("temperature", "temperature")],
+            "states.csv": [("capital", "capital")],
+            "colors.csv": [("color", "color")],
+        },
+        "expected_joins": {
+            ("weather.csv", "states.csv"): [("state_name", "name")],
+            ("weather.csv", "colors.csv"): [("state_name", "state")],
+        },
     },
     {
         "name": "2 real files, exact match",
-        "files": ["boys_to_girls.csv", "women_in_parliment.csv"],
-        "schema_headers": ["year", "country", "percentage women", "ratio girls"],
-        "output_file": "UN_dataset_join_gpt_headers.csv",
+        "files": ["boys_to_girls.csv", "women_in_parliament.csv"],
+        "schema_headers": ["year", "region", "name", "ratio"],
+        "output_file": "UN_dataset_join.csv",
+        "expected_matches": {
+            "boys_to_girls.csv": [
+                ("Year", "year"),
+                ("Region/Country/Area", "region"),
+                ("Value", "ratio"),
+            ],
+            "women_in_parliament.csv": [("Name", "name")],
+        },
+        "expected_joins": {
+            ("boys_to_girls.csv", "women_in_parliament.csv"): [
+                ("Region/Country/Area", "Region/Country/Area"),
+                ("Year", "Year"),
+            ]
+        },
     },
     {
-        "name": "exp",
-        "files": ["boys_to_girls.csv", "women_in_parliment.csv"],
+        "name": "2 real files, similar match, 1 to n column mapping",
+        "files": [
+            "boys_to_girls_gpt_headers.csv",
+            "women_in_parliament_gpt_headers.csv",
+        ],
         "schema_headers": ["year", "country", "ratio girls", "decade"],
-        "output_file": "exp.csv",
+        "output_file": "UN_dataset_join_2.csv",
+        "expected_matches": {
+            "boys_to_girls_gpt_headers.csv": [
+                ("Year", "year"),
+                ("Ratio of Girls to Boys", "ratio girls"),
+                ("Year", "decade"),
+            ],
+            "women_in_parliament_gpt_headers.csv": [("Country or Area", "country")],
+        },
+        "expected_joins": {
+            ("boys_to_girls_gpt_headers.csv", "women_in_parliament_gpt_headers.csv"): [
+                ("Region/Country/Area", "Country or Area"),
+                ("Year", "Year"),
+            ]
+        },
     },
     {
         "name": "3 real files, exact match, include unneeded files",
@@ -49,6 +93,12 @@ examples = [
             "target_type.csv": [
                 ("target_desc", "desc"),
                 ("target_type", "target type"),
+            ],
+        },
+        "expected_joins": {
+            ("target_components.csv", "target_dictionary.csv"): [("tid", "tid")],
+            ("target_type.csv", "target_dictionary.csv"): [
+                ("target_type", "target_type")
             ],
         },
     },
@@ -74,22 +124,27 @@ examples = [
                 ("Num Of Rooms", "rooms"),
             ],
         },
+        "expected_joins": {
+            ("Fac_building_address.csv", "Fac_building.csv"): [
+                ("Fac Building Key", "Building Key")
+            ]
+        },
     },
 ]
 
 
 if __name__ == "__main__":
     run_examples = [
-        # "2 fake files, similar match",
-        # "3 fake files, similar match",
-        # "2 real files, exact match",
-        # "exp",
-        # "3 real files, exact match, include unneeded files",
-		"2 real files, similar match",
+        "2 fake files, similar match",
+        "3 fake files, similar match",
+        "2 real files, exact match",
+        "2 real files, similar match, 1 to n column mapping",
+        "3 real files, exact match, include unneeded files",
+        "2 real files, similar match",
     ]
 
-    VERBOSE = 2
-    GPT = 1
+    VERBOSE = 1
+    GPT = 0
 
     for example in examples:
         if example["name"] not in run_examples:
@@ -103,16 +158,17 @@ if __name__ == "__main__":
         output_file = example["output_file"]
 
         if GPT:
-            plan = gpt_join.plan_join(files, schema_headers, print_results=VERBOSE >= 1)
+            plan = gpt_join.plan_join(files, schema_headers, verbose=VERBOSE >= 1)
         else:
             plan = manual_join.plan_join(
-                files, schema_headers, print_results=VERBOSE >= 1
+                files, schema_headers, verbose=VERBOSE >= 1
             )
 
         if plan["intersections"] is None:  # no join needed
             print("No join needed")
             continue
-        print("Plan:", plan)
+        if VERBOSE >= 2:
+            print("Plan:", plan)
 
         join = MultiTableJoin(
             plan["intersections"], schema_headers, plan["files_to_matches"]

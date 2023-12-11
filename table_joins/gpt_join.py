@@ -32,7 +32,7 @@ def find_header_intersection_gpt(schema_headers, csv_headers, num_files, print_r
     client = openai.OpenAI(api_key = OPENAI_API_KEY)
     filenames = [fn for fn in csv_headers.keys()]
     intersections = []
-    
+
     for i in range(len(filenames)):
         cols1 = csv_headers[filenames[i]]
         for j in range(i+1, len(filenames)):
@@ -106,7 +106,7 @@ def find_header_intersection_gpt(schema_headers, csv_headers, num_files, print_r
 
     return final_intersections
 
-def plan_join(files, schema_headers, print_results=False):
+def plan_join(files, schema_headers, verbose=False):
     """
     Given the set of files and the schema headers, plan the join by finding the best column match
     for each schema header across all files
@@ -121,7 +121,7 @@ def plan_join(files, schema_headers, print_results=False):
         gpt_input += f"Schema {idx}:\n" + ", ".join(headers) + "\n\n"
     cols_to_matches, files_to_matches = get_matches(schema_headers, csv_headers)
 
-    if print_results:
+    if verbose:
         print("cols to matches:", cols_to_matches)
         print()
         print("files to matches:", files_to_matches)
@@ -160,7 +160,7 @@ def plan_join(files, schema_headers, print_results=False):
     # if print_results:
     #     print("gpt output:\n", response.choices[0].message.content)
     #     print()
-    
+
     # str_response = response.choices[0].message.content
 
     # # Convert string into list of tuples
@@ -175,12 +175,12 @@ def plan_join(files, schema_headers, print_results=False):
     # for col, schema_name, schema_col_name in lis_response:
     #     schema_idx = int(schema_name.split(" ")[1])
     #     cols_to_matches[col] = (files[schema_idx], schema_col_name, 1)
-    
+
     # files_to_matches = {}
     # for schema_col, match_info in cols_to_matches.items():
     #     filename, col, score = match_info
     #     files_to_matches[filename] = files_to_matches.get(filename, []) + [(col, schema_col)]
-      
+
     # print("cols to matches:", cols_to_matches)
     # print()
     # print("files to matches:", files_to_matches)
@@ -193,9 +193,9 @@ def plan_join(files, schema_headers, print_results=False):
     # }
 
     if len(files_to_matches) > 1:
-        plan['intersections'] = find_header_intersection_gpt(schema_headers, csv_headers, len(files_to_matches), print_results=print_results)
+        plan['intersections'] = find_header_intersection_gpt(schema_headers, csv_headers, len(files_to_matches), print_results=verbose)
 
-        if print_results:
+        if verbose:
             print("intersections:", plan['intersections'])
             print()
 

@@ -90,7 +90,7 @@ class MultiTableJoin:
 			self.column_to_new_name[filename][col] = new_col_name
 			df.rename(columns={col: new_col_name}, inplace=True)
 
-	def get_result(self, write_to_file_name=None, limit_rows=None) -> pd.DataFrame:
+	def get_result(self, write_to_file_name=None, limit_rows=None, verbose=False) -> pd.DataFrame:
 		if isinstance(self.result, str):
 			print(self.result)
 			return None
@@ -185,8 +185,10 @@ class MultiTableJoin:
 
 				left_cols = [jc for i, jc in enumerate(left_cols) if i in cols_ranked]
 				right_cols = [jc for i, jc in enumerate(right_cols) if i in cols_ranked]
-				print("joining", file, "and", other_file, "on", left_cols, "and", right_cols)
-				print()
+
+				if verbose:
+					print("joining", file, "and", other_file, "on", left_cols, "and", right_cols)
+					print()
 
 				# do the join
 				result = result.merge(other_df, left_on=left_cols, right_on=right_cols, how='inner')
