@@ -6,7 +6,7 @@ import pandas as pd
 OPENAI_API_KEY = "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"
 
 def get_data_sample(filepath, num_lines=20):
-    with open(filepath, "r") as f:
+    with open(filepath, "r", encoding='utf-8-sig') as f:
         header = next(f)
 
         data = ""
@@ -15,7 +15,7 @@ def get_data_sample(filepath, num_lines=20):
             if line is None:
                 break
             data += line
-    
+
     return header, data
 
 
@@ -61,7 +61,7 @@ def main():
     header, data = get_data_sample(filepath)
     filename = os.path.basename(filepath)
     gpt_headers = get_chat_topic(filename, header, data)
-    
+
     generate_csv(gpt_headers, filepath)
 
 

@@ -3,6 +3,8 @@ from collections import defaultdict
 from scipy.spatial.distance import cosine
 import re
 
+words_not_in_embedding_space = set()
+
 def get_glove_embedding_space():
     """
     Load a small set of GloVe word embeddings (https://nlp.stanford.edu/projects/glove/)
@@ -10,7 +12,7 @@ def get_glove_embedding_space():
     filename = "../file_processing/glove.6B.50d.txt"  # TODO: add file to repo (currently gitignored)
     print("Reading embedding file...")
 
-    with open(filename, 'r') as f:
+    with open(filename, 'r', encoding='utf-8-sig') as f:
         embedding_space = {}
         for line in f:
             values = line.split()
@@ -35,7 +37,9 @@ def get_phrase_embedding(phrase, embedding_space):
         if word == '':
             continue
         if word not in embedding_space:
-            print(word, "not in embedding space")
+            if word not in words_not_in_embedding_space:
+                words_not_in_embedding_space.add(word)
+                print(f"'{word}' not in embedding space")
             continue
 
         word_embedding = embedding_space[word]

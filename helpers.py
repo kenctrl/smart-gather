@@ -18,7 +18,7 @@ def create_schema(er_schema: ERSchema) -> Dict[str, Table]:
                 seen.add(vertex.name)
             else:
                 raise Exception(f'Entity {vertex.name} already exists')
-                
+
     for edge in er_schema.edges:
         if edge.parent.object_type == ObjectType.ENTITY and edge.parent.name in tables:
             if edge.child.object_type == ObjectType.ENTITY:
@@ -95,7 +95,7 @@ def run(name: str, er_schema: ERSchema):
     # Save json file
     with open(f'{name}_schema.json', 'w') as f:
         json.dump(json_schema, f, indent=4)
-    
+
     # Save pydantic models
     subprocess.run(['datamodel-codegen', '--input-file-type', 'json', '--snake-case-field', '--input', f'{name}_schema.json', '--output', f'{name}_models.py', '--class-name', 'DATASET'])
 
@@ -105,6 +105,6 @@ def run(name: str, er_schema: ERSchema):
     erd.draw(animals_models.DATASET, out=f'{name}_diagram.png')
 
     os.chdir("../../..") # revert effect of chdir
-    
+
     output_dir = f"./output/{name}/{run_time}"
     return (output_dir, f"./output/{name}/{run_time}/{name}_schema.json")

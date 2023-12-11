@@ -7,7 +7,7 @@ def get_headers(scrape_result_file):
     """
     Given a list of CSVs from scraping, extract and yield headers from each file
     """
-    with open(scrape_result_file, 'r') as f:
+    with open(scrape_result_file, 'r', encoding='utf-8-sig') as f:
         for line in f:
             url = line.strip()
             csv_filename = url.split("/")[-1]
@@ -55,7 +55,7 @@ def main():
     scrape_results = "scrape_result_subset.txt"
 
     # month, day in all headers, sin in incoming_solar_final, ppt in precipitation_final
-    schema_headers = ['month', 'day', 'sme2_sin_w/m2', 'sme2_ppt_mm'] 
+    schema_headers = ['month', 'day', 'sme2_sin_w/m2', 'sme2_ppt_mm']
     best_filematch, best_score, all_metrics = get_best_dataset(schema_headers, scrape_results)
 
     filenames_by_score = sorted(all_metrics.keys(), key=lambda filename: -all_metrics[filename]['score'])

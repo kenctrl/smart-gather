@@ -49,7 +49,7 @@ def get_schema_headers(schema_file):
     Currently only supports one normalized table - return its column headers
     """
 
-    with open(schema_file, 'rb') as file:
+    with open(schema_file, 'rb', encoding='utf-8-sig') as file:
         schema = json.load(file)
 
     if schema:
@@ -65,7 +65,7 @@ def get_schema_headers(schema_file):
             'default_pk': default_pk,
             'non_default_pk': non_default_pk
         }
-    
+
 
 def main():
     print("=" * 80 + "\n")

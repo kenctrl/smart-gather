@@ -8,77 +8,102 @@ INPUT_PATH = "./available_datasets/"
 OUTPUT_PATH = "./generated_datasets/"
 
 examples = [
-	{
-		'name': '2 fake files, similar match',
-		'files': ["weather.csv", "states.csv"],
-		'schema_headers': ["rain", "temperature", "city"],
-		'output_file': 'joined_weather.csv'
-	},
-	{
-		'name': '3 fake files, similar match',
-		'files': ["weather.csv", "states.csv", "colors.csv"],
-		'schema_headers': ["rain", "temperature", "color", "capital"],
-		'output_file': 'joined_colors.csv'
-	},
-	{
-		'name': '2 real files, exact match',
-		'files': ["boys_to_girls.csv", "women_in_parliment.csv"],
-		'schema_headers': ["year", "country", "percentage women", "ratio girls"],
-		'output_file': 'UN_dataset_join_gpt.csv'
-	},
+    {
+        "name": "2 fake files, similar match",
+        "files": ["weather.csv", "states.csv"],
+        "schema_headers": ["rain", "temperature", "city"],
+        "output_file": "joined_weather.csv",
+        "expected_matches": {"weather.csv": [()]},
+    },
+    {
+        "name": "3 fake files, similar match",
+        "files": ["weather.csv", "states.csv", "colors.csv"],
+        "schema_headers": ["rain", "temperature", "color", "capital"],
+        "output_file": "joined_colors.csv",
+    },
+    {
+        "name": "2 real files, exact match",
+        "files": ["boys_to_girls.csv", "women_in_parliment.csv"],
+        "schema_headers": ["year", "country", "percentage women", "ratio girls"],
+        "output_file": "UN_dataset_join_gpt_headers.csv",
+    },
+    {
+        "name": "exp",
+        "files": ["boys_to_girls.csv", "women_in_parliment.csv"],
+        "schema_headers": ["year", "country", "ratio girls", "decade"],
+        "output_file": "exp.csv",
+    },
+    {
+        "name": "3 real files, exact match, include unneeded files",
+        "files": [
+            "target_components.csv",
+            "target_dictionary.csv",
+            "target_relations.csv",
+            "target_type.csv",
+        ],
+        "schema_headers": ["name", "target type", "desc", "component id"],
+        "output_file": "chem_targets.csv",
+        "expected_matches": {
+            "target_components.csv": [("component_id", "component id")],
+            "target_dictionary.csv": [("pref_name", "name")],
+            "target_type.csv": [
+                ("target_desc", "desc"),
+                ("target_type", "target type"),
+            ],
+        },
+    },
 ]
 
 
-if __name__== "__main__":
-	# df1 = pd.read_csv(INPUT_PATH + "women_in_parliment.csv")
-	# df2 = pd.read_csv(INPUT_PATH + "boys_to_girls.csv")
-	# df3 = df1.merge(df2, left_on=["Country", "Year"], right_on=["Region/Country/Area", "Year"])
-	# df3[:100][["Country", "Year", "Value_y"]].to_csv(OUTPUT_PATH + "test.csv", index=False)
+if __name__ == "__main__":
+    run_examples = [
+        # "2 fake files, similar match",
+        # "3 fake files, similar match",
+        "2 real files, exact match",
+        # "exp",
+        # "3 real files, exact match, include unneeded files",
+    ]
 
-	run_examples = [
-		# '2 fake files, similar match',
-		# '3 fake files, similar match',
-		'2 real files, exact match',
-	]
+    VERBOSE = 2
+    GPT = 1
 
-	VERBOSE = 2
-	GPT = 1
+    for example in examples:
+        if example["name"] not in run_examples:
+            continue
 
-	for example in examples:
-		if example['name'] not in run_examples:
-			continue
+        print("=== Running", example["name"])
+        print()
 
-		print("=== Running", example['name'])
-		print()
+        files = [INPUT_PATH + filename for filename in example["files"]]
+        schema_headers = example["schema_headers"]
+        output_file = example["output_file"]
 
-		files = [INPUT_PATH + filename for filename in example['files']]
-		schema_headers = example['schema_headers']
-		output_file = example['output_file']
+        if GPT:
+            plan = gpt_join.plan_join(files, schema_headers, print_results=VERBOSE >= 1)
+        else:
+            plan = manual_join.plan_join(
+                files, schema_headers, print_results=VERBOSE >= 1
+            )
 
-		if GPT:
-			plan = gpt_join.plan_join(files, schema_headers, print_results=VERBOSE >= 1)
-		else:
-			plan = manual_join.plan_join(files, schema_headers, print_results=VERBOSE >= 1)
-		
-		if plan["intersections"] is None:  # no join needed
-			print("No join needed")
-			continue
-		print("Plan:", plan)
+        if plan["intersections"] is None:  # no join needed
+            print("No join needed")
+            continue
+        print("Plan:", plan)
 
-		join = MultiTableJoin(plan["intersections"], schema_headers, plan["files_to_matches"])
-		if VERBOSE >= 2:
-			print(join)
+        join = MultiTableJoin(
+            plan["intersections"], schema_headers, plan["files_to_matches"]
+        )
+        if VERBOSE >= 2:
+            print(join)
 
-		result = join.get_result(write_to_file_name=OUTPUT_PATH + output_file, limit_rows=100)
-		if result is None:
-			print("Could not join tables")
-			continue
+        result = join.get_result(
+            write_to_file_name=OUTPUT_PATH + output_file, limit_rows=100
+        )
+        if result is None:
+            print("Could not join tables")
+            continue
 
-		print("Wrote result to", OUTPUT_PATH + output_file)
-		print(result.head())
-		print()
-		print()
-
-
-
-
+        print("Wrote result to", OUTPUT_PATH + output_file)
+        print(result.head())
+        print()
+        print()

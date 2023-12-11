@@ -13,10 +13,19 @@ embedding_space = get_glove_embedding_space()
 
 
 def get_headers(filename):
-    with open(filename, mode='r', encoding='utf-8-sig') as file:
-        csv_reader = csv.reader(file, delimiter="\n")
-        header = next(csv_reader)[0].split(',')
-        return header
+    sniffer = csv.Sniffer()
+    with open(filename, mode='r', encoding='utf-8-sig') as f:
+        dialect = sniffer.sniff(f.read(1024))
+        f.seek(0)
+        csv_reader = csv.reader(f, delimiter=dialect.delimiter)
+        a = next(csv_reader)
+        f.close()
+
+        # trim whitespace from headers
+        a = [col.strip() for col in a]
+        return a
+        # header = next(csv_reader)[0].split(';')
+        # return header
 
 
 def join_tables(files_to_matches, intersection, schema_headers, result_filename):
@@ -79,7 +88,6 @@ def find_header_intersection(csv_headers, embedding_space, num_files):
     Return format: dict mapping filenames part of the intersection to cols that most resemble each other
     (file1, file2) -> (best col name match in file1, best col name match in file2)
     """
-
     filenames = [fn for fn in csv_headers.keys()]
     intersections = []
 
@@ -185,7 +193,8 @@ def plan_join(files, schema_headers, print_results=False):
     }
 
     if len(files_to_matches) > 1:
-        plan['intersections'] = find_header_intersection(csv_headers, embedding_space, len(files_to_matches))
+        subset = {f: csv_headers[f] for f in files_to_matches} # only find intersection for files that contain schema cols
+        plan['intersections'] = find_header_intersection(subset, embedding_space, len(files_to_matches))
 
         if print_results:
             print("intersections:", plan['intersections'])

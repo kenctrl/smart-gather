@@ -1,5 +1,2 @@
 {
-  "files.associations": {
-    "void enqueue(queue_t* q, data_t value) {": "c"
-  }
 }
