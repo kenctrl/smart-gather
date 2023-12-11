@@ -3,16 +3,18 @@ import pandas as pd
 import random
 
 class SingleTableFilter:
-    def __init__(self, file_mapping):
+    def __init__(self, file_mapping, schema_headers):
         """Initializes a SingleTableFilter object
 
         Args:
             file_mapping (dict): {filename : [(file_col, schema_col), ...]}
+            schema_headers (list): list of requested headers for schema
         """
 
         assert(len(file_mapping) == 1)
 
         self.filename = list(file_mapping.keys())[0]
+        self.schema_headers = schema_headers
         
         self.headers = {}
         for f_col, s_col in file_mapping[self.filename]:
@@ -65,6 +67,7 @@ class SingleTableFilter:
         print("headers after rename", headers)
 
         self.result = self.df.drop_duplicates()
+        self.result = self.result[self.schema_headers]
 
         if limit_rows is not None and len(self.result) > limit_rows:
             self.result = self.result[:limit_rows]

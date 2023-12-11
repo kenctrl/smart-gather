@@ -472,7 +472,7 @@ if __name__ == "__main__":
             plan = manual_join.plan_join(files, schema_headers, verbose=VERBOSE >= 1)
 
         if plan["intersections"] is None:  # no join needed
-            join = SingleTableFilter(plan["files_to_matches"])
+            join = SingleTableFilter(plan["files_to_matches"], schema_headers)
         else:
             join = MultiTableJoin(
                 plan["intersections"], schema_headers, plan["files_to_matches"]
