@@ -128,7 +128,7 @@ examples = [
         "output_file": "chem_targets.csv",
         "expected_mapping": [
             ("name", "pref_name"),
-            ("target_type", "target type"),
+            ("target type", "target_type"),
             ("desc", "target_desc"),
             ("component id", "component_id"),
         ],
@@ -255,9 +255,9 @@ examples = [
         "baseline_file": "baseline_weather.csv",
         "output_file": "joined_weather_gpt_join.csv",
         "expected_mapping": [
-            ("precipitation", "rain"),
+            ("rain", "precipitation"),
             ("temperature", "temperature"),
-            ("capital", "city"),
+            ("city", "capital"),
         ],
         "expected_matches": {
             "weather.csv": [("precipitation", "rain"), ("temperature", "temperature")],
@@ -273,7 +273,7 @@ examples = [
         "baseline_file": "baseline_colors.csv",
         "output_file": "joined_colors_gpt_join.csv",
         "expected_mapping": [
-            ("precipitation", "rain"),
+            ("rain", "precipitation"),
             ("temperature", "temperature"),
             ("capital", "capital"),
             ("color", "color"),
@@ -296,10 +296,10 @@ examples = [
         "baseline_file": "baseline_un_dataset.csv",
         "output_file": "UN_dataset_join_gpt_join.csv",
         "expected_mapping": [
-            ("Year", "year"),
-            ("Region/Country/Area", "region"),
-            ("Name", "name"),
-            ("Value", "ratio"),
+            ("year", "Year"),
+            ("region", "Region/Country/Area"),
+            ("name", "Name"),
+            ("ratio", "Value"),
         ],
         "expected_matches": {
             "boys_to_girls.csv": [
@@ -327,10 +327,10 @@ examples = [
         "baseline_file": "baseline_un_dataset_2.csv",
         "output_file": "UN_dataset_join_gpt_header_gpt_join.csv",
         "expected_mapping": [
-            ("Year", "year"),
-            ("Ratio of Girls to Boys", "ratio girls"),
-            ("Year", "decade"),
-            ("Country or Area", "country"),
+            ("year", "Year"),
+            ("country", "Country or Area"),
+            ("ratio girls", "Ratio of Girls to Boys"),
+            ("decade", "Year"),
         ],
         "expected_matches": {
             "boys_to_girls_gpt_headers.csv": [
@@ -360,10 +360,10 @@ examples = [
         "baseline_file": "baseline_chem_targets.csv",
         "output_file": "chem_targets_gpt_join.csv",
         "expected_mapping": [
-            ("pref_name", "name"),
-            ("target_type", "target type"),
-            ("target_desc", "desc"),
-            ("component_id", "component id"),
+            ("name", "pref_name"),
+            ("target type", "target_type"),
+            ("desc", "target_desc"),
+            ("component id", "component_id"),
         ],
         "expected_matches": {
             "target_components.csv": [("component_id", "component id")],
@@ -400,11 +400,11 @@ examples = [
         "baseline_file": "baseline_fac_building.csv",
         "output_file": "joined_fac_building_gpt_join.csv",
         "expected_mapping": [
-            ("Building Name", "building name"),
-            ("Street Number", "street number"),
-            ("Street Name", "street name"),
-            ("Street Suffix", "street suffix"),
-            ("Num Of Rooms", "rooms"),
+            ("building name", "Building Name"),
+            ("street number", "Street Number"),
+            ("street name", "Street Name"),
+            ("street suffix", "Street Suffix"),
+            ("rooms", "Num Of Rooms"),
         ],
         "expected_matches": {
             "Fac_building_address.csv": [
