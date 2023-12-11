@@ -12,7 +12,7 @@ def get_glove_embedding_space():
     filename = "../file_processing/glove.6B.50d.txt"  # TODO: add file to repo (currently gitignored)
     print("Reading embedding file...")
 
-    with open(filename, 'r') as f:
+    with open(filename, 'r', encoding='utf-8-sig') as f:
         embedding_space = {}
         for line in f:
             values = line.split()

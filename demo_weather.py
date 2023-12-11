@@ -41,7 +41,7 @@ def get_schema_headers(schema_file):
     Currently only supports one normalized table - return its column headers
     """
 
-    with open(schema_file, 'rb') as file:
+    with open(schema_file, 'rb', encoding='utf-8-sig') as file:
         schema = json.load(file)
 
     if schema:
@@ -58,10 +58,10 @@ def get_schema_headers(schema_file):
             'non_default_pk': non_default_pk
         }
 
-    
+
 def get_scraper_topic_no_gpt(table_headers):
     """
-    Given the column headers from our normalized tables as input, 
+    Given the column headers from our normalized tables as input,
     generate a topic for the scraper to search on
     """
 
@@ -70,7 +70,7 @@ def get_scraper_topic_no_gpt(table_headers):
 
 def get_scraper_topic(table_headers, n_words=6):
     """
-    Given the column headers from our normalized tables as input, use OpenAI to 
+    Given the column headers from our normalized tables as input, use OpenAI to
     generate a topic for the scraper to search on
     """
 

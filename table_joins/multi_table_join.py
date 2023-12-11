@@ -1,5 +1,7 @@
 import csv
 import pandas as pd
+import random
+
 class MultiTableJoin:
 	def __init__(self, intersections_to_join_cols, schema_headers, files_to_cols = None):
 		"""Initializes a MultiTableJoin object
@@ -24,7 +26,7 @@ class MultiTableJoin:
 				intersections[file2][file1] = [(jc[1], jc[0], jc[2]) for jc in join_cols]
 		self.intersections = intersections
 
-		# create a dictionary {file: {col: schema_col}}
+		# create a dictionary {file: {col: [schema_col]}}
 		if files_to_cols is None:
 			self.projections = None
 		else:
@@ -32,7 +34,11 @@ class MultiTableJoin:
 			for file, matches in files_to_cols.items():
 				projections[file] = {}
 				for match in matches:
-					projections[file][match[0]] = match[1]
+					if match[0] not in projections[file]:
+						projections[file][match[0]] = []
+
+					projections[file][match[0]].append(match[1])
+
 			self.projections = projections
 
 		self.schema_headers = schema_headers
@@ -45,10 +51,13 @@ class MultiTableJoin:
 		if filename not in self.dfs:
 			if can_create:
 				sniffer = csv.Sniffer()
-				with open(filename, 'r') as f:
+				with open(filename, 'r', encoding='utf-8-sig') as f:
 					dialect = sniffer.sniff(f.read(1024))
 				f.close()
 				df = pd.read_csv(filename, sep=dialect.delimiter)
+
+				# trim whitespace from headers
+				df.columns = [col.strip() for col in df.columns]
 				# # remove unneeded columns  NOTE: will break multi column joins in its current form
 				# if self.projections is not None:
 				# 	for col in df.columns:
@@ -118,14 +127,14 @@ class MultiTableJoin:
 
 				# check for duplicate column names
 				if other_file not in seen_files:
-					for col in other_df.columns:
+					for schema_headers in other_df.columns:
 						found_duplicate = False
 						for seen_file, seen_file_columns in seen_columns:
-							if col in seen_file_columns:
-								self.distinguish_column_name(seen_file, col, result)
+							if schema_headers in seen_file_columns:
+								self.distinguish_column_name(seen_file, schema_headers, result)
 								found_duplicate = True
 						if found_duplicate:
-							self.distinguish_column_name(other_file, col, other_df)
+							self.distinguish_column_name(other_file, schema_headers, other_df)
 
 					seen_columns.append((other_file, other_df.columns))
 
@@ -203,14 +212,11 @@ class MultiTableJoin:
 
 		# project the result
 		if self.projections is not None:
-			projections = {}
 			for file in self.projections:
-				for col in self.projections[file]:
-					projections[self.get_current_column_name(file, col)] = self.projections[file][col]
-			print("projecting to", projections)
-			result.rename(columns=projections, inplace=True)
-			print("result columns:", result.columns)
-			print("and we want:", self.schema_headers)
+				for col, schema_headers in self.projections[file].items():
+					for schema_col in schema_headers:
+						result[schema_col] = result[self.get_current_column_name(file, col)]
+
 			result = result[self.schema_headers]
 
 		self.result = result
