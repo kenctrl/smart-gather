@@ -30,23 +30,18 @@ def get_phrase_embedding(phrase, embedding_space):
 
     separators = r'[:;,/!.\s_\-]+'
     words = re.split(separators, phrase)
-    phrase_embedding = None
+    phrase_embedding = np.zeros((50))
 
     for word in words:
         word = word.lower()
         if word == '':
             continue
         if word not in embedding_space:
-            if word not in words_not_in_embedding_space:
-                words_not_in_embedding_space.add(word)
-                print(f"'{word}' not in embedding space")
+            print(f"'{word}' not in embedding space")
             continue
 
         word_embedding = embedding_space[word]
-        if phrase_embedding is None:
-            phrase_embedding = word_embedding
-        else:
-            phrase_embedding += word_embedding
+        phrase_embedding += word_embedding
 
     return phrase_embedding
 
