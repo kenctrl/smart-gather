@@ -216,12 +216,12 @@ examples = [
 
 if __name__ == "__main__":
     run_examples = [
-        # "2 fake files, similar match",
+        "2 fake files, similar match",
         # "3 fake files, similar match",
         # "2 modified files, exact match",
         # "2 modified files, similar match, 1 to n column mapping",
         # "3 real files, exact match, include unneeded files",
-        "2 real files, similar match, include unneeded files",
+        # "2 real files, similar match, include unneeded files",
         # "2 real files, specificity + similarity match",
         # "2 real files, specificity + similarity match, GPT header",
     ]
@@ -229,7 +229,7 @@ if __name__ == "__main__":
 
 
     VERBOSE = 1
-    GPT = 0
+    GPT = 1
 
     for example in examples:
         if example["name"] not in run_examples:
