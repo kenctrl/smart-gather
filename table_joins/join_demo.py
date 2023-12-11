@@ -5,10 +5,14 @@ import gpt_join
 from gpt_optimizations.gpt_column_headers import generate_gpt_header
 from single_table_filter import SingleTableFilter
 from multi_table_join import MultiTableJoin
+import pickle
 
 INPUT_PATH = "./available_datasets/"
 OUTPUT_PATH = "./generated_datasets/"
 BASELINE_OUTPUT_PATH = "./baselines/"
+PICKLE_PATH = "./pickles/"
+MANUAL = "manual"
+GPT_HEADER = "gpt header"
 
 examples = [
     {
@@ -18,9 +22,9 @@ examples = [
         "baseline_file": "baseline_weather.csv",
         "output_file": "joined_weather.csv",
         "expected_mapping": [
-            ("precipitation", "rain"),
+            ("rain", "precipitation"), 
             ("temperature", "temperature"),
-            ("capital", "city"),
+            ("city", "capital"),
         ],
         "expected_matches": {
             "weather.csv": [("precipitation", "rain"), ("temperature", "temperature")],
@@ -36,10 +40,10 @@ examples = [
         "baseline_file": "baseline_colors.csv",
         "output_file": "joined_colors.csv",
         "expected_mapping": [
-            ("precipitation", "rain"),
+            ("rain", "precipitation"),
             ("temperature", "temperature"),
-            ("capital", "capital"),
             ("color", "color"),
+            ("capital", "capital"),
         ],
         "expected_matches": {
             "weather.csv": [("precipitation", "rain"), ("temperature", "temperature")],
@@ -59,10 +63,10 @@ examples = [
         "baseline_file": "baseline_un_dataset.csv",
         "output_file": "UN_dataset_join.csv",
         "expected_mapping": [
-            ("Year", "year"),
-            ("Region/Country/Area", "region"),
-            ("Name", "name"),
-            ("Value", "ratio"),
+            ("year", "Year"),
+            ("region", "Region/Country/Area"),
+            ("name", "Name"),
+            ("ratio", "Value"),
         ],
         "expected_matches": {
             "boys_to_girls.csv": [
@@ -90,10 +94,10 @@ examples = [
         "baseline_file": "baseline_un_dataset_2.csv",
         "output_file": "UN_dataset_join_gpt_header.csv",
         "expected_mapping": [
-            ("Year", "year"),
-            ("Ratio of Girls to Boys", "ratio girls"),
-            ("Year", "decade"),
-            ("Country or Area", "country"),
+            ("year", "Year"),
+            ("country", "Country or Area"),
+            ("ratio girls", "Ratio of Girls to Boys"),
+            ("decade", "Year"),
         ],
         "expected_matches": {
             "boys_to_girls_gpt_headers.csv": [
@@ -123,10 +127,10 @@ examples = [
         "baseline_file": "baseline_chem_targets.csv",
         "output_file": "chem_targets.csv",
         "expected_mapping": [
-            ("pref_name", "name"),
+            ("name", "pref_name"),
             ("target_type", "target type"),
-            ("target_desc", "desc"),
-            ("component_id", "component id"),
+            ("desc", "target_desc"),
+            ("component id", "component_id"),
         ],
         "expected_matches": {
             "target_components.csv": [("component_id", "component id")],
@@ -163,11 +167,11 @@ examples = [
         "baseline_file": "baseline_fac_building.csv",
         "output_file": "joined_fac_building.csv",
         "expected_mapping": [
-            ("Building Name", "building name"),
-            ("Street Number", "street number"),
-            ("Street Name", "street name"),
-            ("Street Suffix", "street suffix"),
-            ("Num Of Rooms", "rooms"),
+            ("building name", "Building Name"),
+            ("street number", "Street Number"),
+            ("street name", "Street Name"),
+            ("street suffix", "Street Suffix"),
+            ("rooms", "Num Of Rooms"),
         ],
         "expected_matches": {
             "Fac_building_address.csv": [
@@ -189,6 +193,8 @@ examples = [
     },
     {
         "name": "2 real files, specificity + similarity match",
+        "category": "un",
+        "type": MANUAL, 
         "files": [
             "Ratio of girls to boys in education.csv",
             "Seats held by women in Parliament.csv",
@@ -200,11 +206,20 @@ examples = [
             "Gender ratio",
             "Percentage women",
         ],
-        "output_file": "joined_women_un_metrics.csv",
+        "output_file": "un_manual.csv",
+        "expected_mapping": [
+            ("Year", "Year", "Ratio of girls to boys in education.csv", False),
+            ("Country", "", "Ratio of girls to boys in education.csv", False),
+            ("Education level", "Series", "Ratio of girls to boys in education.csv", True),
+            ("Gender ratio", "Value", "Ratio of girls to boys in education.csv", True),
+            ("Percentage women", "Value", "Seats held by women in Parliament.csv", True)
+        ],
         "use_gpt_join": False,
     },
     {
         "name": "2 real files, specificity + similarity match, gpt header",
+        "category": "un",
+        "type": GPT_HEADER,
         "files": [
             "GPT Header Ratio of girls to boys in education.csv",
             "GPT Header Seats held by women in Parliament.csv",
@@ -216,7 +231,21 @@ examples = [
             "Gender ratio",
             "Percentage women",
         ],
-        "output_file": "joined_women_un_metrics_gpt_header.csv",
+        "output_file": "un_gpt_header.csv",
+        "expected_mapping": [ # schema col to file col along with the col's file src
+            ("Year", "Year", "Ratio of girls to boys in education.csv", False),
+            ("Country", "", "Ratio of girls to boys in education.csv", False),
+            ("Education level", "Series", "Ratio of girls to boys in education.csv", True),
+            ("Gender ratio", "Value", "Ratio of girls to boys in education.csv", True),
+            ("Percentage women", "Value", "Seats held by women in Parliament.csv", True)
+        ], 
+        "gpt_mapping": [ # file col to gpt col.  # TODO: should be produced by the gpt header generation file
+            ("Year", "Year", "Ratio of girls to boys in education.csv", False),
+            ("", "Country", "Ratio of girls to boys in education.csv", False),
+            ("Series", "Education Indicator", "Ratio of girls to boys in education.csv", True),
+            ("Value", "Ratio", "Ratio of girls to boys in education.csv", True),
+            ("Value", "Percentage", "Seats held by women in Parliament.csv", True), 
+        ],
         "use_gpt_join": False,
     },
     {
@@ -439,21 +468,12 @@ if __name__ == "__main__":
         # "3 real files, exact match, include unneeded files",
         # "2 real files, similar match, include unneeded files",
         # "2 real files, specificity + similarity match",
-        # "2 real files, specificity + similarity match, gpt header",
-
-				# "2 fake files, similar match, gpt join",
-        # "3 fake files, similar match, gpt join", 
-        # "2 modified files, exact match, gpt join",
-        # "2 modified files, similar match, 1 to n column mapping, gpt header, gpt join",
-        "3 real files, exact match, include unneeded files, gpt join",
-        # "2 real files, similar match, include unneeded files, gpt join",
-        # "2 real files, specificity + similarity match, gpt join",
-        # "2 real files, specificity + similarity match, gpt header, gpt join",
+        "2 real files, specificity + similarity match, gpt header"
     ]
 
-
-
     VERBOSE = 1
+    GPT = 0
+    SAVE_MAPPING = True # create pickle storing (schema_col, file_col) tups
 
     for example in examples:
         if example["name"] not in run_examples:
@@ -485,6 +505,22 @@ if __name__ == "__main__":
         result = join.get_result(
             write_to_file_name=OUTPUT_PATH + output_file, limit_rows=100
         )
+
+        if SAVE_MAPPING:
+            if example['type'] == MANUAL:
+                baseline_filename = PICKLE_PATH + example['category'] + '_baseline.pickle'
+                with open(baseline_filename, 'wb') as f:
+                    pickle.dump(example['expected_mapping'], f)
+            
+            if example['type'] == GPT_HEADER:
+                baseline_filename = PICKLE_PATH + example['category'] + '_baseline_gpt_header.pickle'
+                with open(baseline_filename, 'wb') as f:
+                    pickle.dump(example['gpt_mapping'], f)
+
+            demo_filename = PICKLE_PATH + example['output_file']
+            demo_filename = demo_filename.replace('.csv', '.pickle')
+            with open(demo_filename, 'wb') as f:
+                pickle.dump(plan['expected_mapping'], f)
 
         if result is None:
             print("Could not join tables")
