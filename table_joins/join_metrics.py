@@ -13,25 +13,25 @@ if __name__ == '__main__':
     baseline_res = BASELINE_PATH + "baseline_un.csv"
     baseline_pkl = PKL_PATH + "un_baseline.pickle"
 
-    manual_res = GENERATED_PATH + "un_manual.csv"
-    manual_pkl = PKL_PATH + "un_manual.pickle"
+    regular_res = GENERATED_PATH + "joined_un.csv"
+    regular_pkl = PKL_PATH + "joined_un.pickle"
 
-    gpt_header_res = GENERATED_PATH + "un_gpt_header.csv"
+    gpt_header_res = GENERATED_PATH + "joined_un_gpt_header.csv"
     gpt_baseline_pkl = PKL_PATH + "un_baseline_gpt_header.pickle"
-    gpt_header_pkl = PKL_PATH + "un_gpt_header.pickle"
+    gpt_header_pkl = PKL_PATH + "joined_un_gpt_header.pickle"
 
-    gpt_join_res = GENERATED_PATH + "un_gpt_join.csv"
-    gpt_join_pkl = PKL_PATH + "un_gpt_join.pickle"
+    gpt_join_res = GENERATED_PATH + "joined_un_gpt_join.csv"
+    gpt_join_pkl = PKL_PATH + "joined_un_gpt_join.pickle"
 
-    gpt_header_gpt_join_res = GENERATED_PATH + "un_gpt_header_gpt_join.csv"
-    gpt_header_gpt_join_pkl = PKL_PATH + "un_gpt_join.pickle"
+    gpt_header_gpt_join_res = GENERATED_PATH + "joined_un_gpt_header_gpt_join.csv"
+    gpt_header_gpt_join_pkl = PKL_PATH + "joined_un_gpt_header_gpt_join.pickle"
 
     info = {
         "BASELINE": (baseline_res, baseline_pkl),
-        "MANUAL": (manual_res, manual_pkl),
+        "REGULAR": (regular_res, regular_pkl),
         "GPT HEADER": (gpt_header_res, gpt_baseline_pkl, gpt_header_pkl),
-        "GPT JOIN": (gpt_join_res, gpt_baseline_pkl),
-        "GPT HEADER GPT JOIN": (gpt_header_gpt_join_res, gpt_baseline_pkl)
+        "GPT JOIN": (gpt_join_res, gpt_join_pkl),
+        "GPT HEADER GPT JOIN": (gpt_header_gpt_join_res, gpt_baseline_pkl, gpt_header_gpt_join_pkl)
     }
 
     un_eval = EvaluatePerformance(info)

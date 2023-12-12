@@ -4,8 +4,8 @@ import random
 import pickle
 
 class EvaluatePerformance:
-    BASELINE, MANUAL, GPT_HEADER, GPT = 'BASELINE', 'MANUAL', 'GPT HEADER', 'GPT'
-    CATEGORIES = [BASELINE, MANUAL, GPT_HEADER, GPT]
+    BASELINE, REGULAR, GPT_HEADER, GPT_JOIN, GPT_HEADER_GPT_JOIN = 'BASELINE', 'REGULAR', 'GPT HEADER', 'GPT JOIN', 'GPT HEADER GPT JOIN'
+    CATEGORIES = [BASELINE, REGULAR, GPT_HEADER, GPT_JOIN, GPT_HEADER_GPT_JOIN]
     
     def __init__(self, pipeline_info):
         """Initializes a EvaluatePerformance object
@@ -13,7 +13,7 @@ class EvaluatePerformance:
         Args:
             data_file (str): name of base csv input file
             pipeline_info (dict):
-                - key options: "BASELINE", "MANUAL", "GPT HEADERS", "GPT"
+                - key options: "BASELINE", "REGULAR", "GPT HEADERS", "GPT"
                 - values: (output.csv, col_mapping.pickle) or
                           (output, col_mapping, gpt_header_mapping)
                           for BASELINE looking to compare GPT results
@@ -41,8 +41,7 @@ class EvaluatePerformance:
 
     def _get_data(self):
         """
-        Create dict mapping keys in set of "BASELINE", "MANUAL", "GPT HEADERS", "GPT"
-        to a dataframe containing csv's data
+        Create dict mapping keys in CATEGORIES set to a dataframe containing csv's data
         """
         data = {}
 
@@ -56,14 +55,15 @@ class EvaluatePerformance:
 
     def _get_header_mapping(self):
         """
-        Create dict mapping keys in set of "BASELINE", "MANUAL", "GPT HEADERS", "GPT"
-        to a list of tuples (schema_col, file_col)
+        Create dict mapping keys in CATEGORIES set to a list of tuples (schema_col, 
+        file_col)
         """
+        
         header_mapping = {}
 
         for category, info in self.pipeline_info.items():
             # have file -> gpt col info, schema -> gpt col info, get schema -> file col info
-            if category == self.GPT_HEADER:
+            if category == self.GPT_HEADER or category == self.GPT_HEADER_GPT_JOIN:
                 with open(info[1], 'rb') as f:
                     file_col_to_gpt_col = pickle.load(f)
                 with open(info[2], 'rb') as f:
@@ -94,9 +94,10 @@ class EvaluatePerformance:
 
     def _evaluate_data_match(self):
         """
-        Create dict mapping keys in set of "BASELINE", "MANUAL", "GPT HEADERS", "GPT"
-        to % rows of the data that exactly match the baseline result
+        Create dict mapping keys in CATEGORIES set to %rows of the data that 
+        exactly match the baseline result
         """
+
         self.data_performance = {}
         baseline_df = self.data[self.BASELINE]
 
@@ -108,8 +109,8 @@ class EvaluatePerformance:
 
     
     def _check_headers_valid(self, baseline_header, other_header):
-        assert len(baseline_header) == 4, len(baseline_header)# (schema col, file col, file source, file source matters)
-        assert len(other_header) == 3, len(other_header) # (schema col, file col, file source)
+        assert len(baseline_header) == 4 # (schema col, file col, file source, file source matters)
+        assert len(other_header) == 3 # (schema col, file col, file source)
         assert baseline_header[0] == other_header[0] # schema col should always align
             
 
@@ -135,9 +136,10 @@ class EvaluatePerformance:
 
     def _evaluate_header_match(self):
         """
-        Create dict mapping keys in set of "BASELINE", "MANUAL", "GPT HEADERS", "GPT"
-        to % headers of data that exactly match the baseline result
+        Create dict mapping keys in CATEGORIES set to %headers of data that exactly 
+        match the baseline result
         """
+
         self.header_performance = {}
         baseline_headers = self.header_mapping[self.BASELINE]
 
@@ -150,8 +152,7 @@ class EvaluatePerformance:
 
     def evaluate_performance(self):
         """
-        Returns dict with keys in set of "MANUAL", "GPT HEADERS", "GPT"
-        mapped to tuple (% header match, % data match)
+        Returns dict with keys in CATEGORIES set mapped to tuple (%header match, %data match)
         """
 
         self._evaluate_data_match()

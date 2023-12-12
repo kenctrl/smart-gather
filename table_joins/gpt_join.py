@@ -133,6 +133,8 @@ def plan_join(files, schema_headers, verbose=False):
         gpt_input += f"Schema {idx}:\n" + ", ".join(headers) + "\n\n"
     cols_to_matches, files_to_matches = get_matches(schema_headers, csv_headers)
 
+    expected_mapping = [(schema_col, info[1], info[0]) for schema_col, info in cols_to_matches.items()]
+
     if verbose:
         print("cols to matches:", cols_to_matches)
         print()
@@ -142,6 +144,7 @@ def plan_join(files, schema_headers, verbose=False):
     plan = {
         'cols_to_matches': cols_to_matches,
         'files_to_matches': files_to_matches,
+        'expected_mapping': expected_mapping,
         'intersections': None
     }
 
