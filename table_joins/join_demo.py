@@ -181,10 +181,10 @@ chem_examples = [
         "output_file": "joined_chem_targets_gpt_header.csv",
         "baseline_file": "baseline_chem_targets.csv",
         "files": [
-            "target_components.csv",
-            "target_dictionary.csv",
-            "target_relations.csv",
-            "target_type.csv",
+            "GPT HEADER target_components.csv",
+            "GPT HEADER target_dictionary.csv",
+            "GPT HEADER target_relations.csv",
+            "GPT HEADER target_type.csv",
         ],
         "schema_headers": ["name", "target type", "desc", "component id"],
         "expected_mapping": [
@@ -193,7 +193,12 @@ chem_examples = [
             ("desc", "target_desc", "target_type.csv", True),
             ("component id", "component_id", "target_components.csv", True),
         ],
-        "gpt_mapping": [], # TODO
+        "gpt_mapping": [ # file col to gpt col
+            ("pref_name", "Preferred Name", "target_dictionary.csv", True),
+            ("target_type", "Target Category", "target_type.csv", False),
+            ("target_desc", "Target Description", "target_type.csv", True),
+            ("component_id", "Component_ID", "target_components.csv", True),
+        ],
         "expected_matches": {
             "target_components.csv": [("component_id", "component id")],
             "target_dictionary.csv": [("pref_name", "name")],
@@ -252,10 +257,10 @@ chem_examples = [
         "output_file": "joined_chem_targets_gpt_header_gpt_join.csv",
         "baseline_file": "baseline_chem_targets.csv",
         "files": [
-            "target_components.csv",
-            "target_dictionary.csv",
-            "target_relations.csv",
-            "target_type.csv",
+            "GPT HEADER target_components.csv",
+            "GPT HEADER target_dictionary.csv",
+            "GPT HEADER target_relations.csv",
+            "GPT HEADER target_type.csv",
         ],
         "schema_headers": ["name", "target type", "desc", "component id"],
         "expected_mapping": [
@@ -264,7 +269,12 @@ chem_examples = [
             ("desc", "target_desc", "target_type.csv", True),
             ("component id", "component_id", "target_components.csv", True),
         ],
-        "gpt_mapping": [], # TODO
+        "gpt_mapping": [ # file col to gpt col
+            ("pref_name", "Preferred Name", "target_dictionary.csv", True),
+            ("target_type", "Target Category", "target_type.csv", False),
+            ("target_desc", "Target Description", "target_type.csv", True),
+            ("component_id", "Component_ID", "target_components.csv", True),
+        ],
         "expected_matches": {
             "target_components.csv": [("component_id", "component id")],
             "target_dictionary.csv": [("pref_name", "name")],
@@ -477,9 +487,9 @@ if __name__ == "__main__":
         # "UN + gpt join", 
         # "UN + gpt header + gpt join",
         "regular chem targets", 
-        # "chem targets + gpt header",
+        "chem targets + gpt header",
         "chem targets + gpt join",
-        # "chem targets + gpt header + gpt join",
+        "chem targets + gpt header + gpt join",
         # "regular fac building",
         # "fac building + gpt header",
         # "fac building + gpt join",
@@ -518,7 +528,7 @@ if __name__ == "__main__":
             print(join)
 
         result = join.get_result(
-            write_to_file_name=OUTPUT_PATH + output_file, limit_rows=100
+            write_to_file_name=OUTPUT_PATH + output_file, limit_rows=None
         )
 
         if SAVE_MAPPING:

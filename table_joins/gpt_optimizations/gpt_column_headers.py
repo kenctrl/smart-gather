@@ -37,7 +37,7 @@ def get_chat_topic(filename, header, data):
     Here's an excerpt from a file titled "{filename}".
     As you can tell, the column names within the csv don't perfectly reflect the actual content of the data. 
     Generate a set of headers more representative of the data to replace the current header.  
-    Output the answer only as a list of comma-separated values, in the order of 
+    Output the answer as a string and using the same delimiter as shown in the header, in the order of 
     the columns that they should label, with no other output.
 
     Header: {header}
@@ -49,26 +49,29 @@ def get_chat_topic(filename, header, data):
 
     client = openai.OpenAI(api_key = OPENAI_API_KEY)
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=[
         {"role": "system",
         "content": prompt}
         ],
         temperature=0,
-        max_tokens=256
+        max_tokens=512
     )
     return response.choices[0].message.content
 
 
 def generate_csv(gpt_headers, filepath):
     # Specify the path to your CSV file
-    new_headers = gpt_headers.split(",")
-    df = pd.read_csv(filepath)
-    df.columns = new_headers
+    f = open(filepath, "r")
+    lines = f.readlines()
+    lines[0] = gpt_headers
+    if gpt_headers[-1] != "\n":
+        lines[0] += "\n"
 
     directory, filename = os.path.split(filepath)
     gpt_filepath = os.path.join(directory, "GPT HEADER " + filename)
-    df.to_csv(gpt_filepath, index=False)
+    with open(gpt_filepath, "w") as f:
+        f.writelines(lines)
     
     return gpt_filepath
 
@@ -82,4 +85,10 @@ def generate_gpt_header(filepath):
     filename = os.path.basename(filepath)
     gpt_headers = get_chat_topic(filename, header, data)
 
+    print("gpt headers:", gpt_headers)
+
     return generate_csv(gpt_headers, filepath)
+
+if __name__ == '__main__':
+    generate_gpt_header("../available_datasets/target_type.csv")
+

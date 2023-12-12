@@ -15,22 +15,22 @@ def evaluate(dataset_category):
     regular_res = GENERATED_PATH + f"joined_{dataset_category}.csv"
     regular_pkl = PKL_PATH + f"joined_{dataset_category}.pickle"
 
-    # gpt_header_res = GENERATED_PATH + f"joined_{dataset_category}_gpt_header.csv"
-    # gpt_baseline_pkl = PKL_PATH + f"{dataset_category}_baseline_gpt_header.pickle"
-    # gpt_header_pkl = PKL_PATH + f"joined_{dataset_category}_gpt_header.pickle"
+    gpt_header_res = GENERATED_PATH + f"joined_{dataset_category}_gpt_header.csv"
+    gpt_baseline_pkl = PKL_PATH + f"{dataset_category}_baseline_gpt_header.pickle"
+    gpt_header_pkl = PKL_PATH + f"joined_{dataset_category}_gpt_header.pickle"
 
     gpt_join_res = GENERATED_PATH + f"joined_{dataset_category}_gpt_join.csv"
     gpt_join_pkl = PKL_PATH + f"joined_{dataset_category}_gpt_join.pickle"
 
-    # gpt_header_gpt_join_res = GENERATED_PATH + f"joined_{dataset_category}_gpt_header_gpt_join.csv"
-    # gpt_header_gpt_join_pkl = PKL_PATH + f"joined_{dataset_category}_gpt_header_gpt_join.pickle"
+    gpt_header_gpt_join_res = GENERATED_PATH + f"joined_{dataset_category}_gpt_header_gpt_join.csv"
+    gpt_header_gpt_join_pkl = PKL_PATH + f"joined_{dataset_category}_gpt_header_gpt_join.pickle"
 
     info = {
         "BASELINE": (baseline_res, baseline_pkl),
         "REGULAR": (regular_res, regular_pkl),
-        # "GPT HEADER": (gpt_header_res, gpt_baseline_pkl, gpt_header_pkl),
+        "GPT HEADER": (gpt_header_res, gpt_baseline_pkl, gpt_header_pkl),
         "GPT JOIN": (gpt_join_res, gpt_join_pkl),
-        # "GPT HEADER GPT JOIN": (gpt_header_gpt_join_res, gpt_baseline_pkl, gpt_header_gpt_join_pkl)
+        "GPT HEADER GPT JOIN": (gpt_header_gpt_join_res, gpt_baseline_pkl, gpt_header_gpt_join_pkl)
     }
 
     evaluator = EvaluatePerformance(info)
