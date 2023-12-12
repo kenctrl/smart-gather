@@ -153,10 +153,10 @@ chem_examples = [
         "baseline_file": "baseline_chem_targets.csv",
         "schema_headers": ["name", "target type", "desc", "component id"],
         "expected_mapping": [
-            ("name", "pref_name"),
-            ("target type", "target_type"),
-            ("desc", "target_desc"),
-            ("component id", "component_id"),
+            ("name", "pref_name", "target_dictionary.csv", True),
+            ("target type", "target_type", "target_type.csv", False),
+            ("desc", "target_desc", "target_type.csv", True),
+            ("component id", "component_id", "target_components.csv", True),
         ],
         "expected_matches": {
             "target_components.csv": [("component_id", "component id")],
@@ -188,10 +188,10 @@ chem_examples = [
         ],
         "schema_headers": ["name", "target type", "desc", "component id"],
         "expected_mapping": [
-            ("name", "pref_name"),
-            ("target type", "target_type"),
-            ("desc", "target_desc"),
-            ("component id", "component_id"),
+            ("name", "pref_name", "target_dictionary.csv", True),
+            ("target type", "target_type", "target_type.csv", False),
+            ("desc", "target_desc", "target_type.csv", True),
+            ("component id", "component_id", "target_components.csv", True),
         ],
         "gpt_mapping": [], # TODO
         "expected_matches": {
@@ -224,10 +224,10 @@ chem_examples = [
         ],
         "schema_headers": ["name", "target type", "desc", "component id"],
         "expected_mapping": [
-            ("name", "pref_name"),
-            ("target type", "target_type"),
-            ("desc", "target_desc"),
-            ("component id", "component_id"),
+            ("name", "pref_name", "target_dictionary.csv", True),
+            ("target type", "target_type", "target_type.csv", False),
+            ("desc", "target_desc", "target_type.csv", True),
+            ("component id", "component_id", "target_components.csv", True),
         ],
         "expected_matches": {
             "target_components.csv": [("component_id", "component id")],
@@ -259,10 +259,10 @@ chem_examples = [
         ],
         "schema_headers": ["name", "target type", "desc", "component id"],
         "expected_mapping": [
-            ("name", "pref_name"),
-            ("target type", "target_type"),
-            ("desc", "target_desc"),
-            ("component id", "component_id"),
+            ("name", "pref_name", "target_dictionary.csv", True),
+            ("target type", "target_type", "target_type.csv", False),
+            ("desc", "target_desc", "target_type.csv", True),
+            ("component id", "component_id", "target_components.csv", True),
         ],
         "gpt_mapping": [], # TODO
         "expected_matches": {
@@ -472,13 +472,13 @@ examples = un_examples + fac_examples + chem_examples
 
 if __name__ == "__main__":
     run_examples = [
-        "regular UN",
-        "UN + gpt header",
-        "UN + gpt join", 
-        "UN + gpt header + gpt join",
-        # "regular chem targets", 
+        # "regular UN",
+        # "UN + gpt header",
+        # "UN + gpt join", 
+        # "UN + gpt header + gpt join",
+        "regular chem targets", 
         # "chem targets + gpt header",
-        # "chem targets + gpt join",
+        "chem targets + gpt join",
         # "chem targets + gpt header + gpt join",
         # "regular fac building",
         # "fac building + gpt header",

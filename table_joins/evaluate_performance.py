@@ -2,6 +2,7 @@ import csv
 import pandas as pd
 import random
 import pickle
+import os
 
 class EvaluatePerformance:
     BASELINE, REGULAR, GPT_HEADER, GPT_JOIN, GPT_HEADER_GPT_JOIN = 'BASELINE', 'REGULAR', 'GPT HEADER', 'GPT JOIN', 'GPT HEADER GPT JOIN'
@@ -78,6 +79,13 @@ class EvaluatePerformance:
                 header_file = info[1]
                 with open(header_file, 'rb') as f:
                     col_info = pickle.load(f)
+
+            for ix, c in enumerate(col_info):
+                modified_mapping = list(c)
+                filepath = c[2]
+                f = os.path.split(filepath)[1]
+                modified_mapping[2] = f # set source to always just be filename
+                col_info[ix] = tuple(modified_mapping)
             
             header_mapping[category] = sorted(col_info)
 
