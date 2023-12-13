@@ -97,12 +97,12 @@ def run(name: str, er_schema: ERSchema):
         json.dump(json_schema, f, indent=4)
 
     # Save pydantic models
-    subprocess.run(['datamodel-codegen', '--input-file-type', 'json', '--snake-case-field', '--input', f'{name}_schema.json', '--output', f'{name}_models.py', '--class-name', 'DATASET'])
+    # subprocess.run(['datamodel-codegen', '--input-file-type', 'json', '--snake-case-field', '--input', f'{name}_schema.json', '--output', f'{name}_models.py', '--class-name', 'DATASET'])
 
     # Save erdantic diagram
-    package_name = f'output.{name}.{run_time}'
-    animals_models = importlib.import_module(f'.{name}_models', package=package_name)
-    erd.draw(animals_models.DATASET, out=f'{name}_diagram.png')
+    # package_name = f'output.{name}.{run_time}'
+    # animals_models = importlib.import_module(f'.{name}_models', package=package_name)
+    # erd.draw(animals_models.DATASET, out=f'{name}_diagram.png')
 
     os.chdir("../../..") # revert effect of chdir
 

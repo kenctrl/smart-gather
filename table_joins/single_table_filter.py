@@ -15,13 +15,13 @@ class SingleTableFilter:
 
         self.filename = list(file_mapping.keys())[0]
         self.schema_headers = schema_headers
-        
+
         self.headers = {}
         for f_col, s_col in file_mapping[self.filename]:
             self.headers[f_col] = self.headers.get(f_col, []) + [s_col]
 
         self.get_df()
-    
+
     def get_df(self) -> pd.DataFrame:
         """
         Create raw df from csv file
@@ -38,8 +38,7 @@ class SingleTableFilter:
         self.df = df
 
         headers = self.df.columns.tolist()
-        print("original headers", headers)
-            
+
         return self.df
 
     def _replace_col(self, row) -> None:
@@ -47,24 +46,23 @@ class SingleTableFilter:
         Given a row of the input file df, create a dict mapping its values into
         the schema format
         """
-        
+
         new_row = {}
         for file_col, schema_cols in self.headers.items():
             for schema_col in schema_cols:
                 new_row[schema_col] = row[file_col]
-        
+
         return new_row
 
     def get_result(self, write_to_file_name=None, limit_rows=None, verbose=False) -> pd.DataFrame:
         """
-        Create a df with the schema headers populated with input csv data. Save 
+        Create a df with the schema headers populated with input csv data. Save
         `limit_rows` rows if specified by `write_to_file_name`.
         """
 
         self.df = pd.DataFrame(self.df.apply(self._replace_col, axis=1).tolist())
-        
+
         headers = self.df.columns.tolist()
-        print("headers after rename", headers)
 
         self.result = self.df.drop_duplicates()
         self.result = self.result[self.schema_headers]

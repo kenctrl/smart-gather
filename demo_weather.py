@@ -1,6 +1,10 @@
 import json
 import openai
-OPENAI_API_KEY = "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"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 from er_types import *
 from helpers import run

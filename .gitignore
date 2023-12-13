@@ -10,3 +10,4 @@ evaluate_csv_options.py
 jaccard_similarity.py
 sklearn_version.py
 word2vec.py
+.env

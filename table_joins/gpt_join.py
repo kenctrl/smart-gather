@@ -1,8 +1,12 @@
 import openai
-from manual_join import get_headers, get_matches
-from gpt_optimizations.gpt_column_headers import get_data_sample
+import os
+from dotenv import load_dotenv
+from .manual_join import get_headers, get_matches
+from .gpt_optimizations.gpt_column_headers import get_data_sample
 
-OPENAI_API_KEY = "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"
+load_dotenv()
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+
 client = openai.OpenAI(api_key = OPENAI_API_KEY)
 
 def get_gpt_input(schema_headers, csv_headers, filename_1, filename_2):
@@ -136,9 +140,9 @@ def plan_join(files, schema_headers, verbose=False):
     expected_mapping = [(schema_col, info[1], info[0]) for schema_col, info in cols_to_matches.items()]
 
     if verbose:
-        print("cols to matches:", cols_to_matches)
+        print("Columns to matches:", cols_to_matches)
         print()
-        print("files to matches:", files_to_matches)
+        print("Files to matched columns:", files_to_matches)
         print()
 
     plan = {
@@ -211,7 +215,7 @@ def plan_join(files, schema_headers, verbose=False):
         plan['intersections'] = find_header_intersection_gpt(schema_headers, csv_headers, files_to_matches, print_results=verbose)
 
         if verbose:
-            print("intersections:", plan['intersections'])
+            print("intersections:", plan['Intersections'])
             print()
 
     return plan

@@ -2,7 +2,7 @@ import csv
 import time
 import pandas as pd
 
-from multi_table_join import MultiTableJoin
+from .multi_table_join import MultiTableJoin
 
 import sys
 sys.path.append("../")
@@ -35,7 +35,6 @@ def join_tables(files_to_matches, intersection, schema_headers, result_filename)
     """
 
     join = MultiTableJoin(intersection, schema_headers, files_to_matches)
-    print(join)
     result = join.get_result(result_filename)
     if result is None:
         print("Could not join tables")
@@ -183,9 +182,9 @@ def plan_join(files, schema_headers, verbose=False):
     expected_mapping = [(schema_col, info[1], info[0]) for schema_col, info in cols_to_matches.items()]
 
     if verbose:
-        print("cols to matches:", cols_to_matches)
+        print("Columns to matches:", cols_to_matches)
         print()
-        print("files to matches:", files_to_matches)
+        print("Files to matched columns:", files_to_matches)
         print()
 
     plan = {
@@ -200,7 +199,7 @@ def plan_join(files, schema_headers, verbose=False):
         plan['intersections'] = find_header_intersection(subset, embedding_space, len(files_to_matches))
 
         if verbose:
-            print("intersections:", plan['intersections'])
+            print("Intersections:", plan['intersections'])
             print()
 
     return plan

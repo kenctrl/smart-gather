@@ -3,8 +3,10 @@ import os
 import openai
 import pandas as pd
 import random
+from dotenv import load_dotenv
 
-OPENAI_API_KEY = "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"
+load_dotenv()
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 def get_data_sample(filepath, num_lines=20, random_sample=False):
     """
@@ -35,9 +37,9 @@ def get_chat_topic(filename, header, data):
 
     prompt = f"""
     Here's an excerpt from a file titled "{filename}".
-    As you can tell, the column names within the csv don't perfectly reflect the actual content of the data. 
-    Generate a set of headers more representative of the data to replace the current header.  
-    Output the answer as a string and using the same delimiter as shown in the header, in the order of 
+    As you can tell, the column names within the csv don't perfectly reflect the actual content of the data.
+    Generate a set of headers more representative of the data to replace the current header.
+    Output the answer as a string and using the same delimiter as shown in the header, in the order of
     the columns that they should label, with no other output.
 
     Header: {header}
@@ -72,7 +74,7 @@ def generate_csv(gpt_headers, filepath):
     gpt_filepath = os.path.join(directory, "GPT HEADER " + filename)
     with open(gpt_filepath, "w") as f:
         f.writelines(lines)
-    
+
     return gpt_filepath
 
 def generate_gpt_header(filepath):

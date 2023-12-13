@@ -9,7 +9,7 @@ def get_glove_embedding_space():
     """
     Load a small set of GloVe word embeddings (https://nlp.stanford.edu/projects/glove/)
     """
-    filename = "../file_processing/glove.6B.50d.txt"  # TODO: add file to repo (currently gitignored)
+    filename = "./file_processing/glove.6B.50d.txt"  # TODO: add file to repo (currently gitignored)
     print("Reading embedding file...")
 
     with open(filename, 'r', encoding='utf-8-sig') as f:
