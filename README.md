@@ -11,8 +11,8 @@ python -m venv smart_gather_env
 source smart_gather_env/bin/activate
 python -m pip install -r requirements.txt
 ```
-If graphviz installation fails and you're on an M1 Mac, try this:
-```
+If `pygraphviz` installation fails and you're on an Mac with an M series chip, try running the commands below before you retry installing the requirements:
+```bash
 brew install graphviz
 python -m pip install \
     --global-option=build_ext \
