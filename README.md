@@ -39,7 +39,7 @@ Our pipeline can be broken down into the subtasks below.  We link the main files
    - `data_collection/scraper.py`
 2. Normalized table generation
    - ER relationships: `er_schema_normalization/er_types.py`
-   - ER to normalized table generation: `helpers.py`
+   - ER to normalized table generation: `er_schema_normalization/helpers.py`
 3. Determining column similarity
    - GloVE embedding and tokenization: `file_processing/utils/glove_col_similarity.py`
 4. Executing table joins
