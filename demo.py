@@ -1,7 +1,5 @@
 import json
 import openai
-import sys
-import os
 from dotenv import load_dotenv
 
 import sys
