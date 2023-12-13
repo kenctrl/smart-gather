@@ -2,9 +2,16 @@
 
 Data collection is typically a long and tedious process. Smart Gather aims to address this issue.  Given an entity relationship (ER) schema, Smart Gather normalizes the schema, scapes multiple data sources, and executes joins table joins to generate accurate data.
 
-## Run Demo
+## Demo Instructions
+
+### Setup OpenAI API Key
 Running the demo requires access to OpenAI's API.  Before running the command below, please run `export OPENAI_API_KEY=<your_key>`.
 
+### Setup GloVE embeddings
+1. Download here: https://www.kaggle.com/datasets/rtatman/glove-global-vectors-for-word-representation/
+2. Unzip and move `glove.6B.50d.txt` into the `file_processing` folder.
+
+### Run Demo
 To test out our pipeline, run `python demo.py [--gpt-headers] [--gpt-join]`. The default settings use the manual pipeline without GPT augmentation. Add the `--gpt-headers` flag to view GPT-suggested header results. Add the `--gpt-join` flag to view GPT-suggested join results.
 
 Note: It is expected that results generated with the GPT header flag perform significantly better due to the demo dataset's poor header quality.
