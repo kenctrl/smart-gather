@@ -1,11 +1,25 @@
 import csv
 import pandas as pd
+import pickle
+
+import sys
+import os
+
+# Get the current directory
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Get the parent directory
+parent_directory = os.path.dirname(current_directory)
+
+# Add the parent directory to sys.path
+sys.path.append(parent_directory)
+
+# Now you can import your module
 import manual_join
 import gpt_join
 from gpt_optimizations.gpt_column_headers import generate_gpt_header
 from single_table_filter import SingleTableFilter
 from multi_table_join import MultiTableJoin
-import pickle
 
 INPUT_PATH = "./available_datasets/"
 OUTPUT_PATH = "./generated_datasets/"

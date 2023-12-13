@@ -1,8 +1,21 @@
 import openai
-import os
 from dotenv import load_dotenv
-from .manual_join import get_headers, get_matches
-from .gpt_optimizations.gpt_column_headers import get_data_sample
+
+import sys
+import os
+
+# Get the current directory
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Get the parent directory
+parent_directory = os.path.dirname(current_directory)
+
+# Add the parent directory to sys.path
+sys.path.append(parent_directory)
+
+# Now you can import your module
+from manual_join import get_headers, get_matches
+from gpt_optimizations.gpt_column_headers import get_data_sample
 
 load_dotenv()
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
@@ -215,7 +228,7 @@ def plan_join(files, schema_headers, verbose=False):
         plan['intersections'] = find_header_intersection_gpt(schema_headers, csv_headers, files_to_matches, print_results=verbose)
 
         if verbose:
-            print("intersections:", plan['Intersections'])
+            print("Intersections:", plan['intersections'])
             print()
 
     return plan

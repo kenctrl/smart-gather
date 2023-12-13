@@ -3,13 +3,20 @@ from collections import defaultdict
 from scipy.spatial.distance import cosine
 import re
 
-words_not_in_embedding_space = set()
+import sys
+import os
+
+# Get the current directory
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Get the parent directory
+parent_directory = os.path.dirname(current_directory)
 
 def get_glove_embedding_space():
     """
     Load a small set of GloVe word embeddings (https://nlp.stanford.edu/projects/glove/)
     """
-    filename = "./file_processing/glove.6B.50d.txt"  # TODO: add file to repo (currently gitignored)
+    filename = os.path.join(parent_directory, 'glove.6B.50d.txt')
     print("Reading embedding file...")
 
     with open(filename, 'r', encoding='utf-8-sig') as f:

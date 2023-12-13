@@ -2,12 +2,20 @@ import csv
 import time
 import pandas as pd
 
-from .multi_table_join import MultiTableJoin
-
 import sys
-sys.path.append("../")
+import os
+
+# Get the current directory
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Get the parent directory
+parent_directory = os.path.dirname(current_directory)
+
+# Add the parent directory to sys.path
+sys.path.append(parent_directory)
+
+from multi_table_join import MultiTableJoin
 from file_processing.utils.glove_col_similarity import *
-sys.path.pop()
 
 embedding_space = get_glove_embedding_space()
 

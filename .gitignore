@@ -11,3 +11,4 @@ jaccard_similarity.py
 sklearn_version.py
 word2vec.py
 .env
+er_output/*

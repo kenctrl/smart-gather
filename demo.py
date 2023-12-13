@@ -3,6 +3,13 @@ import openai
 import sys
 import os
 from dotenv import load_dotenv
+
+import sys
+import os
+
+sys.path.append(os.getcwd() + "/table_joins")
+
+# Now you can import your module
 from table_joins.multi_table_join import MultiTableJoin
 from table_joins.single_table_filter import SingleTableFilter
 from table_joins import manual_join, gpt_join
