@@ -4,6 +4,13 @@ Data collection is typically a long and tedious process. Smart Gather aims to ad
 
 ## Demo Instructions
 
+### Setup Env
+```
+cd smart_gather
+python -m venv smart_gather_env
+python -m pip install -r requirements.txt
+```
+
 ### Setup OpenAI API Key
 Running the demo requires access to OpenAI's API.  Before running the command below, please run `export OPENAI_API_KEY=<your_key>`.
 

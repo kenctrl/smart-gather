@@ -12,3 +12,4 @@ sklearn_version.py
 word2vec.py
 .env
 er_output/*
+smart_gather_env/*
