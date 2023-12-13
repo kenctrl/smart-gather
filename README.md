@@ -1,6 +1,6 @@
-# Smart Gather: Intelligent and Automated Data Collection From Schema To Table
+# Smart Gather: Intelligent and Automated Data Collection From Schema to Table
 
-Data collection is typically a long and tedious process. Smart Gather aims to address this issue.  Given an entity relationship (ER) schema, Smart Gather normalizes the schema, scapes multiple data sources, and executes joins table joins to generate accurate data.
+Data collection is typically a long and tedious process. Smart Gather aims to address this issue.  Given an entity relationship (ER) schema, Smart Gather normalizes the schema, scapes multiple data sources, and executes table joins to generate accurate data.
 
 ## Demo Instructions
 
