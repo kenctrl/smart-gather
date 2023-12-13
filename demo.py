@@ -46,7 +46,7 @@ def create_demo_schema():
         edges=[CYDCountry, CYDYear, CYDGenderRatio, CYDEducationLevel, CYDPercentageWomen]
     )
 
-    output_dir, schema_filename = run('Country', schema)
+    output_dir, schema_filename = run('demo', schema)
     return output_dir, schema_filename
 
 
@@ -125,7 +125,7 @@ def main():
     print(f"(Skipping scraping stage - using pre-downloaded data: {files})")
     print()
 
-    if "--gpt-pipeline" in flags:
+    if "--gpt-join" in flags:
         plan = gpt_join.plan_join(files, schema_headers, verbose=False)
     else:
         plan = manual_join.plan_join(files, schema_headers, verbose=True)
@@ -138,7 +138,19 @@ def main():
             plan["intersections"], schema_headers, plan["files_to_matches"]
         )
 
-    output_file = OUTPUT_PATH + "output.csv"
+    # filename indicates set of flags used to generate output
+    identifiers = "pipeline_"
+    if len(flags) == 0: # running just base_pipeline
+        identifiers = "base_" + identifiers
+    if "--gpt-join" in flags:
+        identifiers += "w_gpt_join_"
+    if "--gpt-headers" in flags:
+        identifiers += "w_gpt_headers_"
+
+    if not os.path.exists(OUTPUT_PATH):
+      os.mkdir(OUTPUT_PATH)
+
+    output_file = OUTPUT_PATH + identifiers + "output.csv"
     result = join.get_result(
         write_to_file_name=output_file, limit_rows=None
     )

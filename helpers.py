@@ -79,32 +79,29 @@ def print_entity_relations(er_schema: ERSchema):
     result += '=' * 80 + '\n'
     print(result)
 
-def run(name: str, er_schema: ERSchema):
-    run_time = time.time_ns()
-    os.chdir('./output')
-    if not os.path.exists(name):
-      os.mkdir(name)
-    os.chdir(name)
-    if not os.path.exists(f'{run_time}'):
-      os.mkdir(f'{run_time}')
-    os.chdir(f'{run_time}')
+def run(schema_name: str, er_schema: ERSchema):
+    timestamp = time.time_ns()
+    OUTPUT_DIR = f"./er_output/{schema_name}/{timestamp}"
+    print("output dir:", OUTPUT_DIR)
+    FILEPATH = f"{OUTPUT_DIR}/{schema_name}_schema.json"
+    print("filepath:", FILEPATH)
+
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
     json_schema = create_json_schema(er_schema)
     print("Generated schema:", json_schema)
     print()
 
     # Save json file
-    with open(f'{name}_schema.json', 'w') as f:
+    with open(FILEPATH, 'w') as f:
         json.dump(json_schema, f, indent=4)
 
     # Save pydantic models
-    # subprocess.run(['datamodel-codegen', '--input-file-type', 'json', '--snake-case-field', '--input', f'{name}_schema.json', '--output', f'{name}_models.py', '--class-name', 'DATASET'])
+    # subprocess.run(['datamodel-codegen', '--input-file-type', 'json', '--snake-case-field', '--input', f'{schema_name}_schema.json', '--output', f'{schema_name}_models.py', '--class-schema_name', 'DATASET'])
 
     # Save erdantic diagram
-    # package_name = f'output.{name}.{run_time}'
-    # animals_models = importlib.import_module(f'.{name}_models', package=package_name)
-    # erd.draw(animals_models.DATASET, out=f'{name}_diagram.png')
+    # package_schema_name = f'output.{schema_name}.{run_time}'
+    # animals_models = importlib.import_module(f'.{schema_name}_models', package=package_schema_name)
+    # erd.draw(animals_models.DATASET, out=f'{schema_name}_diagram.png')
 
-    os.chdir("../../..") # revert effect of chdir
-
-    output_dir = f"./output/{name}/{run_time}"
-    return (output_dir, f"./output/{name}/{run_time}/{name}_schema.json")
+    return (OUTPUT_DIR, FILEPATH)
