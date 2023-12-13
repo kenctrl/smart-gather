@@ -1,9 +1,6 @@
-#editor.detectIndentation#
-from er_types import *
+from er_schema_normalization.er_types import *
 import json
-import subprocess
 import erdantic as erd
-import importlib
 import os
 import time
 

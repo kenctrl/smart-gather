@@ -1,6 +1,5 @@
 import csv
 import pandas as pd
-import random
 
 class SingleTableFilter:
     def __init__(self, file_mapping, schema_headers):

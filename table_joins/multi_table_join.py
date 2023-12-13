@@ -1,6 +1,5 @@
 import csv
 import pandas as pd
-import random
 
 class MultiTableJoin:
 	def __init__(self, intersections_to_join_cols, schema_headers, files_to_cols = None):

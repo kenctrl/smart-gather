@@ -38,7 +38,7 @@ Our pipeline can be broken down into the subtasks below.  We link the main files
 1. Sourcing data (not used to produce final results but still usable to scrape data from data.gov)
    - `data_collection/scraper.py`
 2. Normalized table generation
-   - ER relationships: `er_types.py`
+   - ER relationships: `er_schema_normalization/er_types.py`
    - ER to normalized table generation: `helpers.py`
 3. Determining column similarity
    - GloVE embedding and tokenization: `file_processing/utils/glove_col_similarity.py`

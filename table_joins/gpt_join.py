@@ -165,65 +165,6 @@ def plan_join(files, schema_headers, verbose=False):
         'intersections': None
     }
 
-    # csv_headers = { file: get_headers(file) for file in files }
-    # gpt_input = get_gpt_input(schema_headers, csv_headers)
-    # if verbose:
-    #     print("gpt input:", gpt_input)
-    #     print()
-
-    # prompt = "Given Schema 0 and Schema 1, sample rows for each schema, and the final schema headers, generate a mapping from each final schema header to the one best column match in Schema 0 or Schema 1. The output format is a list of length-three tuples that contain the corresponding final schema header, the schema it came from, and the column name from that schema that it matches to.\n"
-    # # match each column from Schema 0 to a column from Schema 2 only if they represent the same data. Output the answer only as a list of length-three tuples that contain the corresponding columns from Schema 0 and Schema 1 as the first two elements and a name representing both columns as the third element, with no other output."
-    # if print_results:
-    #   print("gpt prompt:", prompt)
-    #   print()
-
-    # client = openai.OpenAI(api_key = OPENAI_API_KEY)
-    # response = client.chat.completions.create(
-    #   model="gpt-4",
-    #   messages=[
-    #   {"role": "system",
-    #   "content": gpt_input + prompt}
-    #   ],
-    #   temperature=0,
-    #   max_tokens=256
-    # )
-
-    # print_results = True
-    # if print_results:
-    #     print("gpt output:\n", response.choices[0].message.content)
-    #     print()
-
-    # str_response = response.choices[0].message.content
-
-    # # Convert string into list of tuples
-    # str_response = str_response.replace("[", "").replace("]", "").replace("(", "").replace(")", "").replace("'", "").replace('"', "").replace("\n", "")
-    # str_response = str_response.split(", ")
-    # lis_response = []
-    # for i in range(0, len(str_response), 3):
-    #     lis_response.append((str_response[i], str_response[i+1], str_response[i+2]))
-    # print("response:", lis_response)
-
-    # cols_to_matches = {}
-    # for col, schema_name, schema_col_name in lis_response:
-    #     schema_idx = int(schema_name.split(" ")[1])
-    #     cols_to_matches[col] = (files[schema_idx], schema_col_name, 1)
-
-    # files_to_matches = {}
-    # for schema_col, match_info in cols_to_matches.items():
-    #     filename, col, score = match_info
-    #     files_to_matches[filename] = files_to_matches.get(filename, []) + [(col, schema_col)]
-
-    # print("cols to matches:", cols_to_matches)
-    # print()
-    # print("files to matches:", files_to_matches)
-    # print()
-
-    # plan = {
-    #     'cols_to_matches': cols_to_matches,
-    #     'files_to_matches': files_to_matches,
-    #     'intersections': None
-    # }
-
     if len(files_to_matches) > 1:
         plan['intersections'] = find_header_intersection_gpt(schema_headers, csv_headers, files_to_matches, print_results=verbose)
 

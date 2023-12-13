@@ -1,6 +1,6 @@
-from er_types import *
+from er_schema_normalization.er_types import *
 import json
-from helpers import run
+from er_schema_normalization.helpers import run
 from demo_weather import get_schema_headers, get_scraper_topic, get_scraper_topic_no_gpt
 from data_collection.scraper import generate_scraped_urls
 from file_processing.create_er_csv import generate_smart_data
@@ -82,7 +82,7 @@ def main():
         print("Scraper topic:", topic)
         print()
         try:
-            generate_smart_data(output_dir, schema_headers, "links.txt")
+            generate_smart_data(output_dir, schema_headers, "../data_collection/links.txt")
             found_with_gpt = True
             break
         except:
@@ -96,7 +96,7 @@ def main():
         print("Scraper topic:", topic)
         print()
         generate_scraped_urls(topic)
-        generate_smart_data(output_dir, schema_headers, "links.txt")
+        generate_smart_data(output_dir, schema_headers, "../data_collection/links.txt")
 
     print("=" * 80 + "\n")
 

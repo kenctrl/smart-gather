@@ -1,5 +1,3 @@
-import csv
-import pandas as pd
 import pickle
 
 import sys
