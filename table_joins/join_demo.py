@@ -21,7 +21,7 @@ un_examples = [
     {
         "name": "regular UN",
         "category": "un",
-        "type": REGULAR, 
+        "type": REGULAR,
         "output_file": "joined_un.csv",
         "files": [
             "Ratio of girls to boys in education.csv",
@@ -67,13 +67,13 @@ un_examples = [
             ("Education level", "Series", "Ratio of girls to boys in education.csv", True),
             ("Gender ratio", "Value", "Ratio of girls to boys in education.csv", True),
             ("Percentage women", "Value", "Seats held by women in Parliament.csv", True)
-        ], 
+        ],
         "gpt_mapping": [ # file col to gpt col
             ("Year", "Year", "Ratio of girls to boys in education.csv", False),
             ("", "Country", "Ratio of girls to boys in education.csv", False),
             ("Series", "Education Indicator", "Ratio of girls to boys in education.csv", True),
             ("Value", "Ratio", "Ratio of girls to boys in education.csv", True),
-            ("Value", "Percentage", "Seats held by women in Parliament.csv", True), 
+            ("Value", "Percentage", "Seats held by women in Parliament.csv", True),
         ],
         "use_gpt_join": False,
     },
@@ -100,7 +100,7 @@ un_examples = [
             ("Education level", "Series", "Ratio of girls to boys in education.csv", True),
             ("Gender ratio", "Value", "Ratio of girls to boys in education.csv", True),
             ("Percentage women", "Value", "Seats held by women in Parliament.csv", True)
-        ], 
+        ],
         "use_gpt_join": True,
     },
     {
@@ -126,13 +126,13 @@ un_examples = [
             ("Education level", "Series", "Ratio of girls to boys in education.csv", True),
             ("Gender ratio", "Value", "Ratio of girls to boys in education.csv", True),
             ("Percentage women", "Value", "Seats held by women in Parliament.csv", True)
-        ], 
+        ],
         "gpt_mapping": [ # file col to gpt col
             ("Year", "Year", "Ratio of girls to boys in education.csv", False),
             ("", "Country", "Ratio of girls to boys in education.csv", False),
             ("Series", "Education Indicator", "Ratio of girls to boys in education.csv", True),
             ("Value", "Ratio", "Ratio of girls to boys in education.csv", True),
-            ("Value", "Percentage", "Seats held by women in Parliament.csv", True), 
+            ("Value", "Percentage", "Seats held by women in Parliament.csv", True),
         ],
         "use_gpt_join": True,
     }
@@ -140,7 +140,7 @@ un_examples = [
 
 chem_examples = [
     {
-        "name": "regular chem targets", 
+        "name": "regular chem targets",
         "category": "chem_targets",
         "type": REGULAR,
         "output_file": "joined_chem_targets.csv",
@@ -341,7 +341,7 @@ fac_examples = [
     },
     {
         "name": "fac building + gpt header",
-        "category": "fac_building", 
+        "category": "fac_building",
         "type": GPT_HEADER,
         "output_file": "joined_fac_building_gpt_header.csv",
         "files": [
@@ -387,7 +387,7 @@ fac_examples = [
     },
     {
         "name": "fac building + gpt join",
-        "category": "fac_building", 
+        "category": "fac_building",
         "type": GPT_JOIN,
         "output_file": "joined_fac_building_gpt_join.csv",
         "files": [
@@ -432,7 +432,7 @@ fac_examples = [
     },
     {
         "name": "fac building + gpt header + gpt join",
-        "category": "fac_building", 
+        "category": "fac_building",
         "type": GPT_JOIN,
         "output_file": "joined_fac_building_gpt_join.csv",
         "files": [
@@ -484,9 +484,9 @@ if __name__ == "__main__":
     run_examples = [
         # "regular UN",
         # "UN + gpt header",
-        # "UN + gpt join", 
+        # "UN + gpt join",
         # "UN + gpt header + gpt join",
-        "regular chem targets", 
+        "regular chem targets",
         "chem targets + gpt header",
         "chem targets + gpt join",
         "chem targets + gpt header + gpt join",
@@ -537,9 +537,9 @@ if __name__ == "__main__":
             with open(baseline_filename, 'wb') as f:
                 print("~ pickling baseline results to", baseline_filename)
                 pickle.dump(example['expected_mapping'], f)
-            
+
             # pickle expected gpt header mapping
-            if example['type'] == GPT_HEADER or example['type'] == GPT_HEADER_GPT_JOIN: 
+            if example['type'] == GPT_HEADER or example['type'] == GPT_HEADER_GPT_JOIN:
                 gpt_baseline_filename = PICKLE_PATH + example['category'] + '_baseline_gpt_header.pickle'
                 with open(gpt_baseline_filename, 'wb') as f:
                     print("~ pickling baseline gpt header results to", gpt_baseline_filename)

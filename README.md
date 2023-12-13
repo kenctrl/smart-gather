@@ -3,8 +3,8 @@
 Data collection is typically a long and tedious process. Smart Gather aims to address this issue.  Given an entity relationship (ER) schema, Smart Gather normalizes the schema, scapes multiple data sources, and executes joins table joins to generate accurate data.
 
 ## Run Demo
-To test out our pipeline, run `python demo.py`.  We use GPT-generated headers as default for this demo dataset. To view our raw pipeline results, pass in the `--manual-pipeline` flag.  
-Note: it is expected behavior that the default pipeline results are worse than those produced with GPT headers enabled due to poor header quality.
+To test out our pipeline, run `python demo.py [--gpt-headers] [--gpt-pipeline]`. The default settings use the manual pipeline without GPT-enhanced headers. Use the `--gpt-headers` flag to view results with those headers, and use `--gpt-pipeline` to see the results of a GPT-suggested join.
+Note: it is expected behavior that the results irrespective of pipeline are worse than those produced with GPT headers enabled due to poor header quality.
 
 ## Pipeline Details and Code Pointers
 Our pipeline can be broken down into the subtasks below.  We link the main files used to complete each portion.
