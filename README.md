@@ -8,7 +8,17 @@ Data collection is typically a long and tedious process. Smart Gather aims to ad
 ```
 cd smart_gather
 python -m venv smart_gather_env
+source smart_gather_env/bin/activate
 python -m pip install -r requirements.txt
+```
+If graphviz installation fails and you're on an M1 Mac, try this:
+```
+brew install graphviz
+python -m pip install \
+    --global-option=build_ext \
+    --global-option="-I$(brew --prefix graphviz)/include/" \
+    --global-option="-L$(brew --prefix graphviz)/lib/" \
+    pygraphviz
 ```
 
 ### Setup OpenAI API Key
